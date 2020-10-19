@@ -1,0 +1,10 @@
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-1_Full64; Runtime version N-2017.12-SP2-1_Full64;  Oct 19 16:34 2020
+Time:   0 out:   x
+$finish called from file "HWA_test.sv", line 40.
+$finish at simulation time                  110
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 110
+CPU Time:      0.270 seconds;       Data structure size:   0.0Mb
+Mon Oct 19 16:34:39 2020
