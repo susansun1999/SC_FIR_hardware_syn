@@ -34,9 +34,10 @@ end
 // generate (optional)
     always_comb begin
         out = b[0]*mux_in[0];
-        for(int i = 1; i < `length; i=i+1) begin
-            out = out + b[i]*mux_in[i];
+        for(int i = 1; i < `order/2; i=i+1) begin
+            out = out + b[i]*(mux_in[i]+mux_in[`order-i]);
         end
+        out = out + b[9]*mux_in[9];
     end
 
 

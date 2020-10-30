@@ -1,11 +1,11 @@
 Chronologic VCS simulator copyright 1991-2017
 Contains Synopsys proprietary information.
-Compiler version N-2017.12-SP2-1_Full64; Runtime version N-2017.12-SP2-1_Full64;  Oct 30 10:29 2020
+Compiler version N-2017.12-SP2-1_Full64; Runtime version N-2017.12-SP2-1_Full64;  Oct 30 10:38 2020
 Time:   0  out:xxxxxxxxxxxxx
-Time:745001  out:0001111101011
+Time:665001  out:0001111100010
 $finish called from file "BC_FIR_test.v", line 37.
 $finish at simulation time              4096500
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 4096500
-CPU Time:      0.290 seconds;       Data structure size:   0.6Mb
-Fri Oct 30 10:29:17 2020
+CPU Time:      0.290 seconds;       Data structure size:   0.5Mb
+Fri Oct 30 10:38:32 2020
