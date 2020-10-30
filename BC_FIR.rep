@@ -1,0 +1,478 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : design
+Design : BC_FIR
+Version: O-2018.06
+Date   : Fri Oct 30 10:29:08 2020
+****************************************
+
+Design allows ideal nets on clock nets.
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Local Link Library:
+
+    {lec25dscc25_TT.db}
+
+Flip-Flop Types:
+
+    No flip-flop types specified.
+
+Latch Types:
+
+    No latch types specified.
+
+Operating Conditions:
+
+
+    Operating Condition Name : nom_pvt
+    Library : lec25dscc25_TT
+    Process :   1.00
+    Temperature :  25.00
+    Voltage :   2.50
+    Interconnect Model : balanced_tree
+
+Wire Loading Model:
+
+    Selected manually by the user.
+
+Name           :   tsmcwire
+Location       :   lec25dscc25_TT
+Resistance     :   0.2642
+Capacitance    :   0.000132782
+Area           :   0.27
+Slope          :   0.74
+Fanout   Length   Points Average Cap Std Deviation
+--------------------------------------------------------------
+     1     0.89
+     2     1.48
+     3     2.44
+     4     3.18
+     5     3.92
+
+
+
+Wire Loading Model Mode: top.
+
+Timing Ranges:
+
+    No timing ranges specified.
+
+Pin Input Delays:
+
+    None specified.
+
+Pin Output Delays:
+
+    None specified.
+
+Disabled Timing Arcs:
+
+    No arcs disabled.
+
+Required Licenses:
+
+    None Required
+
+Design Parameters:
+
+    None specified.
+1
+ 
+****************************************
+Report : area
+Design : BC_FIR
+Version: O-2018.06
+Date   : Fri Oct 30 10:29:08 2020
+****************************************
+
+Library(s) Used:
+
+    lec25dscc25_TT (File: /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db)
+
+Number of ports:                          982
+Number of nets:                          2917
+Number of cells:                         1820
+Number of combinational cells:           1314
+Number of sequential cells:               483
+Number of macros/black boxes:               0
+Number of buf/inv:                        113
+Number of references:                      26
+
+Combinational area:             124673.130684
+Buf/Inv area:                     3807.129692
+Noncombinational area:           72824.966064
+Macro/Black Box area:                0.000000
+Net Interconnect area:             851.795725
+
+Total cell area:                197498.096748
+Total area:                     198349.892473
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -max_paths 2
+        -transition_time
+Design : BC_FIR
+Version: O-2018.06
+Date   : Fri Oct 30 10:29:08 2020
+****************************************
+
+Operating Conditions: nom_pvt   Library: lec25dscc25_TT
+Wire Load Model Mode: top
+
+  Startpoint: mux_in_large_reg[1][1]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[12] (output port)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BC_FIR             tsmcwire              lec25dscc25_TT
+
+  Point                                       Fanout     Trans      Incr       Path
+  ------------------------------------------------------------------------------------
+  mux_in_large_reg[1][1]/CLK (dffs1)                      0.89      0.00       0.00 r
+  mux_in_large_reg[1][1]/Q (dffs1)                        0.37      0.33       0.33 r
+  next_mux_in_large[2][1] (net)                 5                   0.00       0.33 r
+  mult_36/B[1] (BC_FIR_DW02_mult_0)                                 0.00       0.33 r
+  mult_36/add1[1] (net)                                             0.00       0.33 r
+  mult_36/FS_2/B[1] (BC_FIR_DW01_add_10)                            0.00       0.33 r
+  mult_36/FS_2/B[1] (net)                                           0.00       0.33 r
+  mult_36/FS_2/U67/DIN1 (nnd2s1)                          0.37      0.00       0.33 r
+  mult_36/FS_2/U67/Q (nnd2s1)                             0.27      0.13       0.46 f
+  mult_36/FS_2/n43 (net)                        3                   0.00       0.46 f
+  mult_36/FS_2/U66/DIN3 (oai21s1)                         0.27      0.00       0.46 f
+  mult_36/FS_2/U66/Q (oai21s1)                            0.31      0.14       0.60 r
+  mult_36/FS_2/n54 (net)                        1                   0.00       0.60 r
+  mult_36/FS_2/U65/DIN (hi1s1)                            0.31      0.00       0.60 r
+  mult_36/FS_2/U65/Q (hi1s1)                              0.58      0.28       0.88 f
+  mult_36/FS_2/SUM[0] (net)                     1                   0.00       0.88 f
+  mult_36/FS_2/SUM[0] (BC_FIR_DW01_add_10)                          0.00       0.88 f
+  mult_36/PRODUCT[1] (net)                                          0.00       0.88 f
+  mult_36/PRODUCT[1] (BC_FIR_DW02_mult_0)                           0.00       0.88 f
+  N1 (net)                                                          0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/B[1] (BC_FIR_DW01_add_9)         0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/B[1] (net)                       0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/U1_1/BIN (fadd1s2)     0.58      0.01       0.89 f
+  add_9_root_add_0_root_add_38_I18/U1_1/OUTC (fadd1s2)     0.19     0.39       1.27 f
+  add_9_root_add_0_root_add_38_I18/carry[2] (net)     1             0.00       1.27 f
+  add_9_root_add_0_root_add_38_I18/U1_2/CIN (fadd1s2)     0.19      0.00       1.28 f
+  add_9_root_add_0_root_add_38_I18/U1_2/OUTC (fadd1s2)     0.19     0.28       1.56 f
+  add_9_root_add_0_root_add_38_I18/carry[3] (net)     1             0.00       1.56 f
+  add_9_root_add_0_root_add_38_I18/U1_3/CIN (fadd1s2)     0.19      0.00       1.57 f
+  add_9_root_add_0_root_add_38_I18/U1_3/OUTC (fadd1s2)     0.19     0.28       1.85 f
+  add_9_root_add_0_root_add_38_I18/carry[4] (net)     1             0.00       1.85 f
+  add_9_root_add_0_root_add_38_I18/U1_4/CIN (fadd1s2)     0.19      0.00       1.85 f
+  add_9_root_add_0_root_add_38_I18/U1_4/OUTC (fadd1s2)     0.19     0.28       2.14 f
+  add_9_root_add_0_root_add_38_I18/carry[5] (net)     1             0.00       2.14 f
+  add_9_root_add_0_root_add_38_I18/U1_5/CIN (fadd1s2)     0.19      0.00       2.14 f
+  add_9_root_add_0_root_add_38_I18/U1_5/OUTC (fadd1s2)     0.19     0.28       2.42 f
+  add_9_root_add_0_root_add_38_I18/carry[6] (net)     1             0.00       2.42 f
+  add_9_root_add_0_root_add_38_I18/U1_6/CIN (fadd1s2)     0.19      0.00       2.43 f
+  add_9_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.30     0.53       2.96 r
+  add_9_root_add_0_root_add_38_I18/SUM[6] (net)     1               0.00       2.96 r
+  add_9_root_add_0_root_add_38_I18/SUM[6] (BC_FIR_DW01_add_9)       0.00       2.96 r
+  N84 (net)                                                         0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/A[6] (BC_FIR_DW01_add_8)         0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/A[6] (net)                       0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/U1_6/AIN (fadd1s2)     0.30      0.01       2.96 r
+  add_8_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.24     0.45       3.42 f
+  add_8_root_add_0_root_add_38_I18/SUM[6] (net)     1               0.00       3.42 f
+  add_8_root_add_0_root_add_38_I18/SUM[6] (BC_FIR_DW01_add_8)       0.00       3.42 f
+  N58 (net)                                                         0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/B[6] (BC_FIR_DW01_add_7)         0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/B[6] (net)                       0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/U1_6/BIN (fadd1s2)     0.24      0.01       3.42 f
+  add_7_root_add_0_root_add_38_I18/U1_6/OUTC (fadd1s2)     0.19     0.32       3.74 f
+  add_7_root_add_0_root_add_38_I18/carry[7] (net)     1             0.00       3.74 f
+  add_7_root_add_0_root_add_38_I18/U1_7/CIN (fadd1s2)     0.19      0.00       3.75 f
+  add_7_root_add_0_root_add_38_I18/U1_7/OUTC (fadd1s2)     0.19     0.28       4.03 f
+  add_7_root_add_0_root_add_38_I18/carry[8] (net)     1             0.00       4.03 f
+  add_7_root_add_0_root_add_38_I18/U1_8/CIN (fadd1s2)     0.19      0.00       4.04 f
+  add_7_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.28     0.52       4.56 r
+  add_7_root_add_0_root_add_38_I18/SUM[8] (net)     1               0.00       4.56 r
+  add_7_root_add_0_root_add_38_I18/SUM[8] (BC_FIR_DW01_add_7)       0.00       4.56 r
+  N190 (net)                                                        0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/B[8] (BC_FIR_DW01_add_6)         0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/B[8] (net)                       0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/U1_8/BIN (fadd1s2)     0.28      0.01       4.56 r
+  add_3_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.24     0.46       5.03 f
+  add_3_root_add_0_root_add_38_I18/SUM[8] (net)     1               0.00       5.03 f
+  add_3_root_add_0_root_add_38_I18/SUM[8] (BC_FIR_DW01_add_6)       0.00       5.03 f
+  N138 (net)                                                        0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/B[8] (BC_FIR_DW01_add_1)         0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/B[8] (net)                       0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/U1_8/BIN (fadd1s2)     0.24      0.01       5.03 f
+  add_1_root_add_0_root_add_38_I18/U1_8/OUTC (fadd1s2)     0.19     0.32       5.36 f
+  add_1_root_add_0_root_add_38_I18/carry[9] (net)     1             0.00       5.36 f
+  add_1_root_add_0_root_add_38_I18/U1_9/CIN (fadd1s2)     0.19      0.00       5.36 f
+  add_1_root_add_0_root_add_38_I18/U1_9/OUTC (fadd1s2)     0.19     0.28       5.64 f
+  add_1_root_add_0_root_add_38_I18/carry[10] (net)     1            0.00       5.64 f
+  add_1_root_add_0_root_add_38_I18/U1_10/CIN (fadd1s2)     0.19     0.00       5.65 f
+  add_1_root_add_0_root_add_38_I18/U1_10/OUTC (fadd1s2)     0.19     0.28      5.93 f
+  add_1_root_add_0_root_add_38_I18/carry[11] (net)     1            0.00       5.93 f
+  add_1_root_add_0_root_add_38_I18/U1_11/CIN (fadd1s2)     0.19     0.00       5.94 f
+  add_1_root_add_0_root_add_38_I18/U1_11/OUTC (fadd1s2)     0.19     0.28      6.22 f
+  add_1_root_add_0_root_add_38_I18/carry[12] (net)     1            0.00       6.22 f
+  add_1_root_add_0_root_add_38_I18/U1_12/CIN (fadd1s2)     0.19     0.00       6.22 f
+  add_1_root_add_0_root_add_38_I18/U1_12/OUTS (fadd1s2)     0.28     0.52      6.74 r
+  add_1_root_add_0_root_add_38_I18/SUM[12] (net)     1              0.00       6.74 r
+  add_1_root_add_0_root_add_38_I18/SUM[12] (BC_FIR_DW01_add_1)      0.00       6.74 r
+  N220 (net)                                                        0.00       6.74 r
+  add_0_root_add_0_root_add_38_I18/B[12] (BC_FIR_DW01_add_0)        0.00       6.74 r
+  add_0_root_add_0_root_add_38_I18/B[12] (net)                      0.00       6.74 r
+  add_0_root_add_0_root_add_38_I18/U1_12/BIN (fadd1s2)     0.28     0.01       6.75 r
+  add_0_root_add_0_root_add_38_I18/U1_12/OUTS (fadd1s2)     0.48     0.61      7.36 f
+  add_0_root_add_0_root_add_38_I18/SUM[12] (net)     1              0.00       7.36 f
+  add_0_root_add_0_root_add_38_I18/SUM[12] (BC_FIR_DW01_add_0)      0.00       7.36 f
+  out[12] (net)                                                     0.00       7.36 f
+  out[12] (out)                                           0.48      0.02       7.39 f
+  data arrival time                                                            7.39
+
+  max_delay                                                        10.00      10.00
+  output external delay                                             0.00      10.00
+  data required time                                                          10.00
+  ------------------------------------------------------------------------------------
+  data required time                                                          10.00
+  data arrival time                                                           -7.39
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  2.61
+
+
+  Startpoint: mux_in_large_reg[1][1]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[11] (output port)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BC_FIR             tsmcwire              lec25dscc25_TT
+
+  Point                                       Fanout     Trans      Incr       Path
+  ------------------------------------------------------------------------------------
+  mux_in_large_reg[1][1]/CLK (dffs1)                      0.89      0.00       0.00 r
+  mux_in_large_reg[1][1]/Q (dffs1)                        0.37      0.33       0.33 r
+  next_mux_in_large[2][1] (net)                 5                   0.00       0.33 r
+  mult_36/B[1] (BC_FIR_DW02_mult_0)                                 0.00       0.33 r
+  mult_36/add1[1] (net)                                             0.00       0.33 r
+  mult_36/FS_2/B[1] (BC_FIR_DW01_add_10)                            0.00       0.33 r
+  mult_36/FS_2/B[1] (net)                                           0.00       0.33 r
+  mult_36/FS_2/U67/DIN1 (nnd2s1)                          0.37      0.00       0.33 r
+  mult_36/FS_2/U67/Q (nnd2s1)                             0.27      0.13       0.46 f
+  mult_36/FS_2/n43 (net)                        3                   0.00       0.46 f
+  mult_36/FS_2/U66/DIN3 (oai21s1)                         0.27      0.00       0.46 f
+  mult_36/FS_2/U66/Q (oai21s1)                            0.31      0.14       0.60 r
+  mult_36/FS_2/n54 (net)                        1                   0.00       0.60 r
+  mult_36/FS_2/U65/DIN (hi1s1)                            0.31      0.00       0.60 r
+  mult_36/FS_2/U65/Q (hi1s1)                              0.58      0.28       0.88 f
+  mult_36/FS_2/SUM[0] (net)                     1                   0.00       0.88 f
+  mult_36/FS_2/SUM[0] (BC_FIR_DW01_add_10)                          0.00       0.88 f
+  mult_36/PRODUCT[1] (net)                                          0.00       0.88 f
+  mult_36/PRODUCT[1] (BC_FIR_DW02_mult_0)                           0.00       0.88 f
+  N1 (net)                                                          0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/B[1] (BC_FIR_DW01_add_9)         0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/B[1] (net)                       0.00       0.88 f
+  add_9_root_add_0_root_add_38_I18/U1_1/BIN (fadd1s2)     0.58      0.01       0.89 f
+  add_9_root_add_0_root_add_38_I18/U1_1/OUTC (fadd1s2)     0.19     0.39       1.27 f
+  add_9_root_add_0_root_add_38_I18/carry[2] (net)     1             0.00       1.27 f
+  add_9_root_add_0_root_add_38_I18/U1_2/CIN (fadd1s2)     0.19      0.00       1.28 f
+  add_9_root_add_0_root_add_38_I18/U1_2/OUTC (fadd1s2)     0.19     0.28       1.56 f
+  add_9_root_add_0_root_add_38_I18/carry[3] (net)     1             0.00       1.56 f
+  add_9_root_add_0_root_add_38_I18/U1_3/CIN (fadd1s2)     0.19      0.00       1.57 f
+  add_9_root_add_0_root_add_38_I18/U1_3/OUTC (fadd1s2)     0.19     0.28       1.85 f
+  add_9_root_add_0_root_add_38_I18/carry[4] (net)     1             0.00       1.85 f
+  add_9_root_add_0_root_add_38_I18/U1_4/CIN (fadd1s2)     0.19      0.00       1.85 f
+  add_9_root_add_0_root_add_38_I18/U1_4/OUTC (fadd1s2)     0.19     0.28       2.14 f
+  add_9_root_add_0_root_add_38_I18/carry[5] (net)     1             0.00       2.14 f
+  add_9_root_add_0_root_add_38_I18/U1_5/CIN (fadd1s2)     0.19      0.00       2.14 f
+  add_9_root_add_0_root_add_38_I18/U1_5/OUTC (fadd1s2)     0.19     0.28       2.42 f
+  add_9_root_add_0_root_add_38_I18/carry[6] (net)     1             0.00       2.42 f
+  add_9_root_add_0_root_add_38_I18/U1_6/CIN (fadd1s2)     0.19      0.00       2.43 f
+  add_9_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.30     0.53       2.96 r
+  add_9_root_add_0_root_add_38_I18/SUM[6] (net)     1               0.00       2.96 r
+  add_9_root_add_0_root_add_38_I18/SUM[6] (BC_FIR_DW01_add_9)       0.00       2.96 r
+  N84 (net)                                                         0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/A[6] (BC_FIR_DW01_add_8)         0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/A[6] (net)                       0.00       2.96 r
+  add_8_root_add_0_root_add_38_I18/U1_6/AIN (fadd1s2)     0.30      0.01       2.96 r
+  add_8_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.24     0.45       3.42 f
+  add_8_root_add_0_root_add_38_I18/SUM[6] (net)     1               0.00       3.42 f
+  add_8_root_add_0_root_add_38_I18/SUM[6] (BC_FIR_DW01_add_8)       0.00       3.42 f
+  N58 (net)                                                         0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/B[6] (BC_FIR_DW01_add_7)         0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/B[6] (net)                       0.00       3.42 f
+  add_7_root_add_0_root_add_38_I18/U1_6/BIN (fadd1s2)     0.24      0.01       3.42 f
+  add_7_root_add_0_root_add_38_I18/U1_6/OUTC (fadd1s2)     0.19     0.32       3.74 f
+  add_7_root_add_0_root_add_38_I18/carry[7] (net)     1             0.00       3.74 f
+  add_7_root_add_0_root_add_38_I18/U1_7/CIN (fadd1s2)     0.19      0.00       3.75 f
+  add_7_root_add_0_root_add_38_I18/U1_7/OUTC (fadd1s2)     0.19     0.28       4.03 f
+  add_7_root_add_0_root_add_38_I18/carry[8] (net)     1             0.00       4.03 f
+  add_7_root_add_0_root_add_38_I18/U1_8/CIN (fadd1s2)     0.19      0.00       4.04 f
+  add_7_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.28     0.52       4.56 r
+  add_7_root_add_0_root_add_38_I18/SUM[8] (net)     1               0.00       4.56 r
+  add_7_root_add_0_root_add_38_I18/SUM[8] (BC_FIR_DW01_add_7)       0.00       4.56 r
+  N190 (net)                                                        0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/B[8] (BC_FIR_DW01_add_6)         0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/B[8] (net)                       0.00       4.56 r
+  add_3_root_add_0_root_add_38_I18/U1_8/BIN (fadd1s2)     0.28      0.01       4.56 r
+  add_3_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.24     0.46       5.03 f
+  add_3_root_add_0_root_add_38_I18/SUM[8] (net)     1               0.00       5.03 f
+  add_3_root_add_0_root_add_38_I18/SUM[8] (BC_FIR_DW01_add_6)       0.00       5.03 f
+  N138 (net)                                                        0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/B[8] (BC_FIR_DW01_add_1)         0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/B[8] (net)                       0.00       5.03 f
+  add_1_root_add_0_root_add_38_I18/U1_8/BIN (fadd1s2)     0.24      0.01       5.03 f
+  add_1_root_add_0_root_add_38_I18/U1_8/OUTC (fadd1s2)     0.19     0.32       5.36 f
+  add_1_root_add_0_root_add_38_I18/carry[9] (net)     1             0.00       5.36 f
+  add_1_root_add_0_root_add_38_I18/U1_9/CIN (fadd1s2)     0.19      0.00       5.36 f
+  add_1_root_add_0_root_add_38_I18/U1_9/OUTC (fadd1s2)     0.19     0.28       5.64 f
+  add_1_root_add_0_root_add_38_I18/carry[10] (net)     1            0.00       5.64 f
+  add_1_root_add_0_root_add_38_I18/U1_10/CIN (fadd1s2)     0.19     0.00       5.65 f
+  add_1_root_add_0_root_add_38_I18/U1_10/OUTC (fadd1s2)     0.19     0.28      5.93 f
+  add_1_root_add_0_root_add_38_I18/carry[11] (net)     1            0.00       5.93 f
+  add_1_root_add_0_root_add_38_I18/U1_11/CIN (fadd1s2)     0.19     0.00       5.94 f
+  add_1_root_add_0_root_add_38_I18/U1_11/OUTS (fadd1s2)     0.28     0.52      6.46 r
+  add_1_root_add_0_root_add_38_I18/SUM[11] (net)     1              0.00       6.46 r
+  add_1_root_add_0_root_add_38_I18/SUM[11] (BC_FIR_DW01_add_1)      0.00       6.46 r
+  N219 (net)                                                        0.00       6.46 r
+  add_0_root_add_0_root_add_38_I18/B[11] (BC_FIR_DW01_add_0)        0.00       6.46 r
+  add_0_root_add_0_root_add_38_I18/B[11] (net)                      0.00       6.46 r
+  add_0_root_add_0_root_add_38_I18/U1_11/BIN (fadd1s2)     0.28     0.01       6.46 r
+  add_0_root_add_0_root_add_38_I18/U1_11/OUTS (fadd1s2)     0.48     0.61      7.08 f
+  add_0_root_add_0_root_add_38_I18/SUM[11] (net)     1              0.00       7.08 f
+  add_0_root_add_0_root_add_38_I18/SUM[11] (BC_FIR_DW01_add_0)      0.00       7.08 f
+  out[11] (net)                                                     0.00       7.08 f
+  out[11] (out)                                           0.48      0.02       7.10 f
+  data arrival time                                                            7.10
+
+  max_delay                                                        10.00      10.00
+  output external delay                                             0.00      10.00
+  data required time                                                          10.00
+  ------------------------------------------------------------------------------------
+  data required time                                                          10.00
+  data arrival time                                                           -7.10
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  2.90
+
+
+1
+ 
+****************************************
+Report : constraint
+        -verbose
+        -max_delay
+Design : BC_FIR
+Version: O-2018.06
+Date   : Fri Oct 30 10:29:08 2020
+****************************************
+
+
+  Startpoint: mux_in_large_reg[1][1]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[12] (output port)
+  Path Group: output_grp
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  BC_FIR             tsmcwire              lec25dscc25_TT
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  mux_in_large_reg[1][1]/CLK (dffs1)                      0.00       0.00 r
+  mux_in_large_reg[1][1]/Q (dffs1)                        0.33       0.33 r
+  mult_36/FS_2/U67/Q (nnd2s1)                             0.13       0.46 f
+  mult_36/FS_2/U66/Q (oai21s1)                            0.14       0.60 r
+  mult_36/FS_2/U65/Q (hi1s1)                              0.29       0.88 f
+  add_9_root_add_0_root_add_38_I18/U1_1/OUTC (fadd1s2)     0.39      1.27 f
+  add_9_root_add_0_root_add_38_I18/U1_2/OUTC (fadd1s2)     0.29      1.56 f
+  add_9_root_add_0_root_add_38_I18/U1_3/OUTC (fadd1s2)     0.29      1.85 f
+  add_9_root_add_0_root_add_38_I18/U1_4/OUTC (fadd1s2)     0.29      2.14 f
+  add_9_root_add_0_root_add_38_I18/U1_5/OUTC (fadd1s2)     0.29      2.42 f
+  add_9_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.53      2.96 r
+  add_8_root_add_0_root_add_38_I18/U1_6/OUTS (fadd1s2)     0.46      3.42 f
+  add_7_root_add_0_root_add_38_I18/U1_6/OUTC (fadd1s2)     0.33      3.74 f
+  add_7_root_add_0_root_add_38_I18/U1_7/OUTC (fadd1s2)     0.29      4.03 f
+  add_7_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.52      4.56 r
+  add_3_root_add_0_root_add_38_I18/U1_8/OUTS (fadd1s2)     0.47      5.03 f
+  add_1_root_add_0_root_add_38_I18/U1_8/OUTC (fadd1s2)     0.33      5.36 f
+  add_1_root_add_0_root_add_38_I18/U1_9/OUTC (fadd1s2)     0.29      5.64 f
+  add_1_root_add_0_root_add_38_I18/U1_10/OUTC (fadd1s2)     0.29     5.93 f
+  add_1_root_add_0_root_add_38_I18/U1_11/OUTC (fadd1s2)     0.29     6.22 f
+  add_1_root_add_0_root_add_38_I18/U1_12/OUTS (fadd1s2)     0.52     6.74 r
+  add_0_root_add_0_root_add_38_I18/U1_12/OUTS (fadd1s2)     0.62     7.36 f
+  out[12] (out)                                           0.02       7.39 f
+  data arrival time                                                  7.39
+
+  max_delay                                              10.00      10.00
+  output external delay                                   0.00      10.00
+  data required time                                                10.00
+  --------------------------------------------------------------------------
+  data required time                                                10.00
+  data arrival time                                                 -7.39
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.61
+
+
+1
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : reference
+Design : BC_FIR
+Version: O-2018.06
+Date   : Fri Oct 30 10:29:09 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BC_FIR_DW01_add_0              2139.955204       1   2139.955204  h
+BC_FIR_DW01_add_1              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_2              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_3              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_4              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_5              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_6              2123.366405       1   2123.366405  h
+BC_FIR_DW01_add_7              1957.478405       1   1957.478405  h
+BC_FIR_DW01_add_8              1957.478405       1   1957.478405  h
+BC_FIR_DW01_add_9              2123.366405       1   2123.366405  h
+BC_FIR_DW02_mult_0             3276.288006       1   3276.288006  h
+BC_FIR_DW02_mult_1            11628.749630       1  11628.749630  h
+BC_FIR_DW02_mult_2             8360.755199       1   8360.755199  h
+BC_FIR_DW02_mult_3            10691.481800       1  10691.481800  h
+BC_FIR_DW02_mult_4            11487.744629       1  11487.744629  h
+BC_FIR_DW02_mult_5            10127.463238       1  10127.463238  h
+BC_FIR_DW02_mult_6            11487.744629       1  11487.744629  h
+BC_FIR_DW02_mult_7            10691.481800       1  10691.481800  h
+BC_FIR_DW02_mult_8             8352.460800       1   8352.460800  h
+BC_FIR_DW02_mult_9            11628.749630       1  11628.749630  h
+BC_FIR_DW02_mult_10            3276.288006       1   3276.288006  h
+dffs1              lec25dscc25_TT   157.593994     398 62722.409668 n
+dffs2              lec25dscc25_TT   174.182007      58 10102.556396 n
+i1s1               lec25dscc25_TT    33.177601      19   630.374416
+i1s3               lec25dscc25_TT    41.472000       7   290.304001
+ib1s1              lec25dscc25_TT    33.177601      55  1824.768047
+-----------------------------------------------------------------------------
+Total 26 references                                 197498.096748
+1

@@ -1,0 +1,26 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Thu Oct 29 22:57:54 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     12
+    Shorted outputs (LINT-31)                                      12
+--------------------------------------------------------------------------------
+
+Warning: In design 'VDC', output port 'out_re[11]' is connected directly to output port 'out[0]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[10]' is connected directly to output port 'out[1]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[9]' is connected directly to output port 'out[2]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[8]' is connected directly to output port 'out[3]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[7]' is connected directly to output port 'out[4]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[6]' is connected directly to output port 'out[5]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[5]' is connected directly to output port 'out[6]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[4]' is connected directly to output port 'out[7]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[3]' is connected directly to output port 'out[8]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[2]' is connected directly to output port 'out[9]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[1]' is connected directly to output port 'out[10]'. (LINT-31)
+Warning: In design 'VDC', output port 'out_re[0]' is connected directly to output port 'out[11]'. (LINT-31)
+1
