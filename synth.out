@@ -1,0 +1,443 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+                 Version O-2018.06 for linux64 - May 21, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+#/***********************************************************/
+#/*   FILE        : defaults.tcl                            */
+#/*   Description : Default Synopsys Design Compiler Script */
+#/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
+#/*   You'll need to minimally set design_name & read files */
+#/***********************************************************/
+set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+./ /afs/umich.edu/class/eecs470/lib/synopsys/
+set target_library "lec25dscc25_TT.db"
+lec25dscc25_TT.db
+set link_library [concat  "*" $target_library]
+* lec25dscc25_TT.db
+#/***********************************************************/
+#/* Set some flags to suppress warnings we don't care about */
+set suppress_errors [concat $suppress_errors "UID-401"]
+UID-401
+suppress_message {"VER-130"}
+#/***********************************************************/
+#/* The following five lines must be updated for every      */
+#/* new design                                              */
+#/***********************************************************/
+analyze -f sverilog [list "HWA_total.v"  "in_ctrl.v" "HWA.v" "VDC.v"]
+Running PRESTO HDLC
+Compiling source file ./HWA_total.v
+Compiling source file ./in_ctrl.v
+Compiling source file ./HWA.v
+Warning:  ./HWA.v:33: Redeclaration of port 'sel_bits'. (VER-331)
+Compiling source file ./VDC.v
+Presto compilation completed successfully.
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+1
+elaborate HWA_total
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'HWA_total'.
+Information: Building the design 'VDC'. (HDL-193)
+
+Inferred memory devices in process
+	in routine VDC line 34 in file
+		'./VDC.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      count_reg      | Flip-flop |  12   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'in_ctrl'. (HDL-193)
+
+Inferred memory devices in process
+	in routine in_ctrl line 34 in file
+		'./in_ctrl.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  mux_in_large_reg   | Flip-flop |  912  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'HWA'. (HDL-193)
+Warning:  ./HWA.v:138: signed to unsigned conversion occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine HWA line 140 in file
+		'./HWA.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |  13   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+1
+set design_name HWA_total
+HWA_total
+set clock_name clock
+clock
+set CLK_PERIOD 10
+10
+#/***********************************************************/
+#/* The rest of this file may be left alone for most small  */
+#/* to moderate sized designs.  You may need to alter it    */
+#/* when synthesizing your final project.                   */
+#/***********************************************************/
+set SYN_DIR ./
+./
+#/***********************************************************/
+#/* Set some flags for optimisation */
+set compile_top_all_paths "true"
+true
+set auto_wire_load_selection "false"
+false
+set compile_seqmap_synchronous_extraction "true"
+true
+#/***********************************************************/
+#/*  Clk Periods/uncertainty/transition                     */
+set CLK_TRANSITION 0.1
+0.1
+set CLK_UNCERTAINTY 0.1
+0.1
+set CLK_LATENCY 0.1
+0.1
+#/* Input/output Delay values */
+set AVG_INPUT_DELAY 0.1
+0.1
+set AVG_OUTPUT_DELAY 0.1
+0.1
+#/* Critical Range (ns) */
+set CRIT_RANGE 1.0
+1.0
+#/***********************************************************/
+#/* Design Constrains: Not all used                         */
+set MAX_TRANSITION 1.0
+1.0
+set FAST_TRANSITION 0.1
+0.1
+set MAX_FANOUT 32
+32
+set MID_FANOUT 8
+8
+set LOW_FANOUT 1
+1
+set HIGH_DRIVE 0
+0
+set HIGH_LOAD 1.0
+1.0
+set AVG_LOAD 0.1
+0.1
+set AVG_FANOUT_LOAD 10
+10
+#/***********************************************************/
+#/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
+#BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
+set DRIVING_CELL dffacs1
+dffacs1
+#/* DONT_USE_LIST = {   } */
+#/*************operation cons**************/
+#/*OP_WCASE = WCCOM;
+#OP_BCASE = BCCOM;*/
+set WIRE_LOAD "tsmcwire"
+tsmcwire
+set LOGICLIB lec25dscc25_TT
+lec25dscc25_TT
+#/*****************************/
+#/* Sourcing the file that sets the Search path and the libraries(target,link) */
+set sys_clk $clock_name
+clock
+set netlist_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".vg"]
+./HWA_total.vg
+set ddc_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".ddc"]
+./HWA_total.ddc
+set rep_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".rep"]
+./HWA_total.rep
+set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $design_name] ".chk"] ]
+./HWA_total.chk
+#/* if we didnt find errors at this point, run */
+if {  $dc_shell_status != [list] } {
+   current_design $design_name
+  link
+  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+  set_wire_load_mode top
+  set_fix_multiple_port_nets -outputs -buffer_constants
+  create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
+  set_clock_uncertainty $CLK_UNCERTAINTY $sys_clk
+  set_fix_hold $sys_clk
+  group_path -from [all_inputs] -name input_grp
+  group_path -to [all_outputs] -name output_grp
+  set_driving_cell  -lib_cell $DRIVING_CELL [all_inputs]
+  remove_driving_cell [find port $sys_clk]
+  set_fanout_load $AVG_FANOUT_LOAD [all_outputs]
+  set_load $AVG_LOAD [all_outputs]
+  set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
+  remove_input_delay -clock $sys_clk [find port $sys_clk]
+  set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
+  set_critical_range $CRIT_RANGE [current_design]
+  set_max_delay $CLK_PERIOD [all_outputs]
+  set MAX_FANOUT $MAX_FANOUT
+  set MAX_TRANSITION $MAX_TRANSITION
+  uniquify
+  ungroup -all -flatten
+  redirect $chk_file { check_design }
+  compile -map_effort medium
+  write -hier -format verilog -output $netlist_file $design_name
+  write -hier -format ddc -output $ddc_file $design_name
+  redirect $rep_file { report_design -nosplit }
+  redirect -append $rep_file { report_area }
+  redirect -append $rep_file { report_timing -max_paths 2 -input_pins -nets -transition_time -nosplit }
+  redirect -append $rep_file { report_constraint -max_delay -verbose -nosplit }
+  remove_design -all
+  read_file -format verilog $netlist_file
+  current_design $design_name
+  redirect -append $rep_file { report_reference -nosplit }
+  quit
+} else {
+   quit
+}
+Current design is 'HWA_total'.
+
+  Linking design 'HWA_total'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (4 designs)               /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/HWA_total.db, etc
+  lec25dscc25_TT (library)    /afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db
+
+Current design is 'HWA_total'.
+Information: Uniquified 4 instances of design 'HWA'. (OPT-1056)
+Information: Updating graph... (UID-83)
+Warning: Design 'HWA_total' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'HWA_total'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'HWA_total_DW01_add_0'
+  Processing 'HWA_total_DW01_cmp2_0'
+  Processing 'HWA_total_DW01_cmp2_1'
+  Processing 'HWA_total_DW01_cmp2_2'
+  Processing 'HWA_total_DW01_cmp2_3'
+  Processing 'HWA_total_DW01_cmp2_4'
+  Processing 'HWA_total_DW01_cmp2_5'
+  Processing 'HWA_total_DW01_cmp2_6'
+  Processing 'HWA_total_DW01_cmp2_7'
+  Processing 'HWA_total_DW01_cmp2_8'
+  Processing 'HWA_total_DW01_cmp2_9'
+  Processing 'HWA_total_DW01_add_1'
+  Processing 'HWA_total_DW01_cmp2_10'
+  Processing 'HWA_total_DW01_cmp2_11'
+  Processing 'HWA_total_DW01_cmp2_12'
+  Processing 'HWA_total_DW01_cmp2_13'
+  Processing 'HWA_total_DW01_cmp2_14'
+  Processing 'HWA_total_DW01_cmp2_15'
+  Processing 'HWA_total_DW01_cmp2_16'
+  Processing 'HWA_total_DW01_add_2'
+  Processing 'HWA_total_DW01_cmp2_17'
+  Processing 'HWA_total_DW01_cmp2_18'
+  Processing 'HWA_total_DW01_cmp2_19'
+  Processing 'HWA_total_DW01_cmp2_20'
+  Processing 'HWA_total_DW01_cmp2_21'
+  Processing 'HWA_total_DW01_cmp2_22'
+  Processing 'HWA_total_DW01_cmp2_23'
+  Processing 'HWA_total_DW01_cmp2_24'
+  Processing 'HWA_total_DW01_add_3'
+  Processing 'HWA_total_DW01_cmp2_25'
+  Processing 'HWA_total_DW01_cmp2_26'
+  Processing 'HWA_total_DW01_cmp2_27'
+  Processing 'HWA_total_DW01_cmp2_28'
+  Processing 'HWA_total_DW01_cmp2_29'
+  Processing 'HWA_total_DW01_cmp2_30'
+  Processing 'HWA_total_DW01_cmp2_31'
+  Processing 'HWA_total_DW01_inc_0'
+  Processing 'HWA_total_DW01_cmp2_32'
+  Processing 'HWA_total_DW01_cmp2_33'
+  Processing 'HWA_total_DW01_cmp2_34'
+  Processing 'HWA_total_DW01_cmp2_35'
+  Processing 'HWA_total_DW01_cmp2_36'
+  Processing 'HWA_total_DW01_cmp2_37'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:05  240246.5      0.00       0.0       0.0                                0.00  
+    0:00:05  240246.5      0.00       0.0       0.0                                0.00  
+    0:00:05  240246.5      0.00       0.0       0.0                                0.00  
+    0:00:05  240246.5      0.00       0.0       0.0                                0.00  
+    0:00:05  240246.5      0.00       0.0       0.0                                0.00  
+    0:00:05  209563.2      0.00       0.0       0.0                                0.00  
+    0:00:05  209389.0      0.00       0.0       0.0                                0.00  
+    0:00:05  209389.0      0.00       0.0       0.0                                0.00  
+    0:00:05  209389.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200813.0      0.00       0.0       0.0                                0.00  
+    0:00:06  200232.4      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  200232.4      0.00       0.0       0.0                             -114.33  
+    0:00:06  200249.0      0.00       0.0       0.0                             -114.33  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  200249.0      0.00       0.0       0.0                             -114.33  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:06  200249.0      0.00       0.0       0.0                             -114.33  
+    0:00:06  200249.0      0.00       0.0       0.0                             -114.33  
+    0:00:06  199386.4      0.00       0.0       0.0                             -114.10  
+    0:00:06  199062.9      0.00       0.0       0.0                             -114.10  
+    0:00:06  198930.2      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  198897.0      0.00       0.0       0.0                             -114.10  
+    0:00:06  201178.0      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[35][9]/DIN   -108.86  
+    0:00:06  203823.9      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[15][0]/DIN   -102.71  
+    0:00:07  206212.7      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[15][10]/DIN    -97.23  
+    0:00:07  208278.0      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[38][7]/DIN    -92.53  
+    0:00:07  210426.2      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[16][2]/DIN    -87.49  
+    0:00:07  212533.0      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[39][2]/DIN    -82.63  
+    0:00:07  214896.9      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[31][3]/DIN    -77.12  
+    0:00:07  217070.0      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[31][10]/DIN    -72.08  
+    0:00:08  219458.8      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[3][0]/DIN    -66.69  
+    0:00:08  221864.2      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[42][7]/DIN    -60.98  
+    0:00:08  223904.6      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[32][5]/DIN    -56.27  
+    0:00:08  226011.4      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[49][9]/DIN    -51.43  
+    0:00:08  228118.2      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[47][2]/DIN    -46.52  
+    0:00:08  230266.4      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[55][7]/DIN    -41.53  
+    0:00:09  232373.2      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[53][7]/DIN    -36.60  
+    0:00:09  234347.3      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[60][1]/DIN    -32.11  
+    0:00:09  236520.4      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[66][9]/DIN    -27.05  
+    0:00:09  238519.4      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[62][8]/DIN    -22.42  
+    0:00:09  240493.4      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[65][6]/DIN    -17.81  
+    0:00:09  242807.6      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[17][6]/DIN    -12.19  
+    0:00:09  244806.5      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[72][8]/DIN     -7.51  
+    0:00:10  246938.2      0.00       0.0       0.0 my_in_ctrl/mux_in_large_reg[75][4]/DIN     -2.38  
+    0:00:10  247950.1      0.00       0.0       0.0                                0.00  
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:10  247950.1      0.00       0.0       0.0                                0.00  
+    0:00:10  247950.1      0.00       0.0       0.0                                0.00  
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/HWA_total.vg'.
+Writing ddc file './HWA_total.ddc'.
+Removing design 'HWA_total'
+Removing design 'HWA_total_DW01_inc_0'
+Removing library 'lec25dscc25_TT'
+Removing library 'gtech'
+Removing library 'standard.sldb'
+Loading db file '/afs/umich.edu/class/eecs470/lib/synopsys/lec25dscc25_TT.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/gtech.db'
+Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
+  Loading link library 'lec25dscc25_TT'
+  Loading link library 'gtech'
+Loading verilog file '/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/HWA_total.vg'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/HWA_total.vg
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/HWA_total_DW01_inc_0.db:HWA_total_DW01_inc_0'
+Loaded 2 designs.
+Current design is 'HWA_total_DW01_inc_0'.
+Current design is 'HWA_total'.
+
+Thank you...

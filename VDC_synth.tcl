@@ -13,7 +13,6 @@
 read_file -f sverilog [list "VDC.v"]
 set design_name VDC
 set clock_name clock
-set reset_name reset
 set CLK_PERIOD 10
 
 
@@ -106,9 +105,6 @@ if {  $dc_shell_status != [list] } {
   set_input_delay $AVG_INPUT_DELAY -clock $sys_clk [all_inputs]
   remove_input_delay -clock $sys_clk [find port $sys_clk]
   set_output_delay $AVG_OUTPUT_DELAY -clock $sys_clk [all_outputs]
-  set_dont_touch $reset_name
-  set_resistance 0 $reset_name
-  set_drive 0 $reset_name
   set_critical_range $CRIT_RANGE [current_design]
   set_max_delay $CLK_PERIOD [all_outputs]
   set MAX_FANOUT $MAX_FANOUT

@@ -1,93 +1,144 @@
-# Given no targets, 'make' will default to building 'simv', the simulated version
-# of the pipeline
-
-# make          <- compile (and run) simv if needed
-
-# As shortcuts, any of the following will build if necessary and then run the
-# specified target
-
-# make sim      <- runs simv (after compiling simv if needed)
-# make dve      <- runs DVE interactively (after compiling it if needed)
-#                                
-
+# make          <- runs simv (after compiling simv if needed)
+# make all      <- runs simv (after compiling simv if needed)
+# make simv     <- compile simv if needed (but do not run)
+# make syn      <- runs syn_simv (after synthesizing if needed then 
+#                                 compiling synsimv if needed)
 # make clean    <- remove files created during compilations (but not synthesis)
 # make nuke     <- remove all files created during compilation and synthesis
 #
-# synthesis command not included in this Makefile
+# To compile additional files, add them to the TESTBENCH or SIMFILES as needed
+# Every .vg file will need its own rule and one or more synthesis scripts
+# The information contained here (in the rules for those vg files) will be 
+# similar to the information in those scripts but that seems hard to avoid.
 #
+# make assembly SOURCE=test_progs/rv32_copy.s
+# make program SOURCE=test_progs/quicksort.c
+
+SOURCE = test_progs/haha.s
+
+CRT = crt.s
+LINKERS = linker.lds
+ASLINKERS = aslinker.lds
+
+DEBUG_FLAG = -g
+CFLAGS =  -mno-relax -march=rv32im -mabi=ilp32 -nostartfiles -std=gnu11 -mstrict-align -I exception_handler
+OFLAGS = -O0
+ASFLAGS = -mno-relax -march=rv32im -mabi=ilp32 -nostartfiles -Wno-main -mstrict-align
+OBJFLAGS = -SD -M no-aliases 
+OBJDFLAGS = -SD -M numeric,no-aliases
+
+##########################################################################
+# IF YOU AREN'T USING A CAEN MACHINE, CHANGE THIS TO FALSE OR OVERRIDE IT
+CAEN = 1
+##########################################################################
+ifeq (1, $(CAEN))
+	GCC = riscv gcc
+	OBJDUMP = riscv objdump
+	AS = riscv as
+	ELF2HEX = riscv elf2hex
+else
+	GCC = riscv64-unknown-elf-gcc
+	OBJDUMP = riscv64-unknown-elf-objdump
+	AS = riscv64-unknown-elf-as
+	ELF2HEX = elf2hex
+endif
+all: simv
+	./simv | tee program.out
+
+compile: $(CRT) $(LINKERS)
+	$(GCC) $(CFLAGS) $(OFLAGS) $(CRT) $(SOURCE) -T $(LINKERS) -o program.elf
+	$(GCC) $(CFLAGS) $(DEBUG_FLAG) $(OFLAGS) $(CRT) $(SOURCE) -T $(LINKERS) -o program.debug.elf
+assemble: $(ASLINKERS)
+	$(GCC) $(ASFLAGS) $(SOURCE) -T $(ASLINKERS) -o program.elf 
+	cp program.elf program.debug.elf
+disassemble: program.debug.elf
+	$(OBJDUMP) $(OBJFLAGS) program.debug.elf > program.dump
+	$(OBJDUMP) $(OBJDFLAGS) program.debug.elf > program.debug.dump
+	rm program.debug.elf
+hex: program.elf
+	$(ELF2HEX) 8 8192 program.elf > program.mem
+
+program: compile disassemble hex
+	@:
+
+debug_program:
+	gcc -lm -g -std=gnu11 -DDEBUG $(SOURCE) -o debug_bin
+assembly: assemble disassemble hex
+	@:
+
 
 ################################################################################
 ## CONFIGURATION
 ################################################################################
 
-VCS = SW_VCS=2017.12-SP2-1 vcs -sverilog +vc -Mupdate -line -full64
+VCS = vcs -V -sverilog +vc -Mupdate -line -full64 +vcs+vcdpluson -debug_pp 
 LIB = /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
 
-# SIMULATION CONFIG
+# For visual debugger
+VISFLAGS = -lncurses
 
-SIMFILES	= BC_FIR.v
-TESTBENCH	= BC_FIR_test.v
 
-# SYNTHESIS CONFIG
-SYNFILES	= BC_FIR.vg
+##### 
+# Modify starting here
+#####
 
-# Passed through to .tcl scripts:
+
+TESTBENCH = HWA_total_test.v
+#TESTBENCH = BC_total_test.v
+
+HEADERS = 
+
+SIMFILES = HWA_total.v in_ctrl.v HWA.v VDC.v
+#SIMFILES = BC_total.v BC_FIR.v in_ctrl.v
+		
+SYNFILES = HWA_total.vg
+#SYNFILES = BC_total.vg
+
 export CLOCK_NET_NAME = clock
 export RESET_NET_NAME = reset
-export CLOCK_PERIOD = 10	# TODO: You will want to make this more aggresive
+export HEADERS = params.svh 
+export SOURCES = verilog/rob.sv 
+export DESIGN_NAME = rob
 
-################################################################################
-## RULES
-################################################################################
+export CLOCK_PERIOD = 5	# TODO: You will want to make this more aggresive
 
-# Default target:
-all:	simv
-	./simv | tee program.out
+HWA_total.vg:      $(HEADERS) $(SIMFILES) HWA_total_synth.tcl
+	dc_shell-t -f ./HWA_total_synth.tcl | tee synth.out 
 
-.PHONY: all
+BC_total.vg:      $(HEADERS) $(SIMFILES) BC_total_synth.tcl
+	dc_shell-t -f ./BC_total_synth.tcl | tee synth.out 
+ 
 
-# Simulation:
-
-sim:	simv $(ASSEMBLED)
-	./simv | tee sim_program.out
-
+#####
+# Should be no need to modify after here
+#####
 simv:	$(HEADERS) $(SIMFILES) $(TESTBENCH)
-	$(VCS) $^ -o simv
+	$(VCS) $(HEADERS) $(TESTBENCH) $(SIMFILES) -o simv
 
-.PHONY: sim
+dve:	$(HEADERS) $(SIMFILES) $(TESTBENCH)
+	$(VCS) +memcbk $(HEADERS) $(TESTBENCH) $(SIMFILES) -o dve -R -gui
+.PHONY:	dve
 
-# Debugging
+# For visual debugger
+vis_simv:	$(HEADERS) $(SIMFILES) $(VTUBER)
+	$(VCS) $(VISFLAGS) $(VTUBER) $(HEADERS) $(SIMFILES) -o vis_simv 
+	./vis_simv
 
-dve_simv:	$(HEADERS) $(SIMFILES) $(TESTBENCH)
-	$(VCS) +memcbk $^ -o $@ -gui
-
-dve:	dve_simv $(ASSEMBLED)
-	./$<
-
-clean:
-	rm -rvf simv *.daidir csrc vcs.key program.out \
-	syn_simv syn_simv.daidir syn_program.out \
-	dve *.vpd *.vcd *.dump ucli.key 
-
-nuke:	clean
-	rm -rvf *.vg *.rep *.db *.chk *.log *.out DVEfiles/
-
-.PHONY: clean nuke dve
-
-# Synthesis
-
-syn_simv:	$(SYNFILES) $(TESTBENCH)
-	$(VCS) $(TESTBENCH) $(SYNFILES) $(LIB) -o syn_simv
+syn_simv:	$(HEADERS) $(SYNFILES) $(TESTBENCH)
+	$(VCS) $(HEADERS) $(TESTBENCH) $(SYNFILES) $(LIB) -o syn_simv 
 
 syn:	syn_simv
 	./syn_simv | tee syn_program.out
 
-HWA.vg: HWA.v VDC.vg HWA_synth.tcl
-	dc_shell-t -f HWA_synth.tcl | tee HWA_synth.out
 
+clean:
+	rm -rf *simv *simv.daidir csrc vcs.key program.out *.key
+	rm -rf vis_simv vis_simv.daidir
+	rm -rf dve* inter.vpd DVEfiles
+	rm -rf syn_simv syn_simv.daidir syn_program.out
+	rm -rf synsimv synsimv.daidir csrc vcdplus.vpd vcs.key synprog.out processor.out writeback.out vc_hdrs.h
+	rm -f *.elf *.dump *.mem debug_bin
 
-VDC.vg: VDC.v VDC_synth.tcl
-	dc_shell-t -f VDC_synth.tcl | tee VDC_synth.out
-
-BC_FIR.vg: BC_FIR.v BC_FIR_synth.tcl
-	dc_shell-t -f BC_FIR_synth.tcl | tee BC_FIR_synth.out
+nuke:	clean
+	rm -rf *.vg *.rep *.ddc *.chk command.log *.syn
+	rm -rf *.out command.log *.db *.svf *.mr *.pvl

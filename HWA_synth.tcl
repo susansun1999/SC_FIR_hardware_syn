@@ -14,7 +14,7 @@ read_file -f ddc [list "VDC.ddc"]
 set_dont_touch VDC
 read_file -f sverilog [list "HWA.v"]
 set design_name HWA
-set clock_name clock_d
+set clock_name clock
 #set reset_name reset
 set CLK_PERIOD 10
 

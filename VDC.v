@@ -13,7 +13,7 @@
 
 
 module VDC(
-    input                   reset,
+    input                   start,
     input                   clock,
     output logic [`n-1: 0]  out_re,// in reverse order
     output logic [`n-1: 0]  out // in original order
@@ -32,7 +32,7 @@ end
 assign out = count;
 
 always_ff @(posedge clock) begin
-    if(reset) begin
+    if(start) begin
         count <= 0;
     end 
     else begin

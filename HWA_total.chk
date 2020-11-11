@@ -1,0 +1,19 @@
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06
+Date:        Tue Nov 10 23:02:57 2020
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      1
+    Unloaded inputs (LINT-8)                                        1
+
+Nets                                                                1
+    Unloaded nets (LINT-2)                                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'HWA_total', net 'in[12]' driven by pin 'in[12]' has no loads. (LINT-2)
+Warning: In design 'HWA_total', input port 'in[12]' is unloaded. (LINT-8)
+1
