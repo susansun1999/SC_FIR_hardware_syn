@@ -83,16 +83,16 @@ VISFLAGS = -lncurses
 #####
 
 
-TESTBENCH = HWA_total_test.v
-#TESTBENCH = BC_total_test.v
+#TESTBENCH = HWA_total_test.v
+TESTBENCH = BC_total_test.v
 
 HEADERS = 
 
-SIMFILES = HWA_total.v in_ctrl.v HWA.v VDC.v
-#SIMFILES = BC_total.v BC_FIR.v in_ctrl.v
+#SIMFILES = HWA_total.v in_ctrl.v HWA.v HWA_1.v VDC.v
+SIMFILES = BC_total.v BC_FIR.v BC_FIR_1.v in_ctrl.v
 		
-SYNFILES = HWA_total.vg
-#SYNFILES = BC_total.vg
+#SYNFILES = HWA_total.vg
+SYNFILES = BC_total.vg
 
 export CLOCK_NET_NAME = clock
 export RESET_NET_NAME = reset

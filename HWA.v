@@ -1,19 +1,10 @@
 //might use symmetric property to save area
-//`define n 2
-//`define pow2n 4
-//`define order 3
-//`define length 4
-//`define len_idx 2 // ceil(log2(4))=2
-//`define scale   2
-//`define total_input_size `scale*`length
-
 `define n 12
 `define pow2n 4096
 `define order 18
 `define length 19
 
 //localparam [`order:0] sign_b = `length'b1111;
-localparam [`order:0] sign_b = `length'b0011001100011001100;
 
 module HWA(
     input [`n:0]                in[`order:0],//Binary number
@@ -27,9 +18,9 @@ module HWA(
 //    output logic [`n:0]         mapping_idx
 );
 
+localparam [`order:0] sign_b = `length'b0011001100011001100;
 
 
-logic [`n-1:0]       sel_bits; // select bits // which is also the number of current cycle
 logic [`n:0]         next_out; //running Binary output
 logic [`order:0]     SN_in, xored_in;
 

@@ -17,7 +17,7 @@ suppress_message {"VER-130"}
 #/* The following five lines must be updated for every      */
 #/* new design                                              */
 #/***********************************************************/
-analyze -f sverilog [list "BC_total.v"  "in_ctrl.v" "BC_FIR.v"]
+analyze -f sverilog [list "BC_total.v"  "in_ctrl.v" "BC_FIR.v" "BC_FIR_1.v"]
 elaborate BC_total
 set design_name BC_total
 set clock_name clock

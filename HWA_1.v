@@ -2,10 +2,8 @@
 
 `define n 12
 `define pow2n 4096
-//localparam [`order:0] sign_b = `length'b1111;
-localparam [38:0] sign_b = 39'b110011001100110011000110011001100110011;
 
-module HWA(
+module HWA_1(
     input [`n:0]                in[38:0],//Binary number
     input                       start,
     input                       clock,// digital clock
@@ -15,9 +13,8 @@ module HWA(
     output logic                done
 );
 
+localparam [38:0] sign_b = 39'b110011001100110011000110011001100110011;
 
-logic [`n-1:0]       sel_bits; // select bits // which is also the number of current cycle
-logic [`n-1:0]       R_y; //random numbers from RNG
 logic [`n:0]         next_out; //running Binary output
 logic [38:0]     SN_in, xored_in;
 
@@ -115,7 +112,7 @@ assign tenth_level[1] = (sel_bits[9] & nineth_level[1])|(~sel_bits[9] & xored_in
 assign tenth_level[2] = (sel_bits[9] & nineth_level[2])|(~sel_bits[9] & xored_in[20]);
 
 // eleventh_level
-assign eleventh_level[0] = (sel_bits[10] & tenth_level[0])|(~sel_bits[10] & tenth_level[3]);
+assign eleventh_level[0] = (sel_bits[10] & tenth_level[0])|(~sel_bits[10] & tenth_level[2]);
 assign eleventh_level[1] = (sel_bits[10] & tenth_level[1])|(~sel_bits[10] & xored_in[19]);
 
 

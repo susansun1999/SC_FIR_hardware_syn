@@ -4,7 +4,6 @@
 `define length 19
 `define orderm 38
 `define lengthm 39
-`define len_idx 5 // ceil(log2(19))=5
 
 module HWA_total(
     input [`n:0]                in,//Binary number
@@ -59,10 +58,10 @@ module HWA_total(
     in_ctrl_4 my_in_ctrl_4(.in(in_8_4),.clock(clock),.out(out_8_4));
     HWA_1     my_HWA_44(.in(out_8_4),.start(start),.clock(clock),.R_y(R_y),.sel_bits(sel_bits),.out(in_8_4_2),.done());
 
-    in_ctrl_2 my_in_ctrl_2(.in(in_8_4_2),.clock(clock),.out(out_8_4_2));
+    in_ctrl_2 my_in_ctrl_5(.in(in_8_4_2),.clock(clock),.out(out_8_4_2));
     HWA_1     my_HWA_55(.in(out_8_4_2),.start(start),.clock(clock),.R_y(R_y),.sel_bits(sel_bits),.out(in_8_4_2_1),.done());
 
-    in_ctrl_4 my_in_ctrl_4(.in(in_8_4_2_1),.clock(clock),.out(out_8_4_2_1));
+    in_ctrl_4 my_in_ctrl_6(.in(in_8_4_2_1),.clock(clock),.out(out_8_4_2_1));
     HWA_1     my_HWA_66(.in(out_8_4_2_1),.start(start),.clock(clock),.R_y(R_y),.sel_bits(sel_bits),.out(out[4*(`n+1)-1:3*(`n+1)]),.done());
 
 endmodule

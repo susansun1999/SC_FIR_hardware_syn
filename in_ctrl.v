@@ -32,10 +32,13 @@ end
 
 endmodule
 
+
+
+
 module in_ctrl_1(
     input [`n:0]                in,//Binary number
     input                       clock,
-    output logic [`n:0]         out [38:0],//Binary number
+    output logic [`n:0]         out [38:0]//Binary number
 );
 
 logic [`n-1:0]       mux_in_large [1*39-1:0];
@@ -54,11 +57,12 @@ end
 always_ff @(posedge clock) begin
     mux_in_large <= next_mux_in_large;
 end
+endmodule
 
 module in_ctrl_2(
     input [`n:0]                in,//Binary number
     input                       clock,
-    output logic [`n:0]         out [38:0],//Binary number
+    output logic [`n:0]         out [38:0]//Binary number
 );
 
 logic [`n-1:0]       mux_in_large [2*39-1:0];
@@ -77,13 +81,12 @@ end
 always_ff @(posedge clock) begin
     mux_in_large <= next_mux_in_large;
 end
-
 endmodule
 
 module in_ctrl_4(
     input [`n:0]                in,//Binary number
     input                       clock,
-    output logic [`n:0]         out [38:0],//Binary number
+    output logic [`n:0]         out [38:0]//Binary number
 );
 
 logic [`n-1:0]       mux_in_large [4*39-1:0];

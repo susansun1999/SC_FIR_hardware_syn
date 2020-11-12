@@ -2,7 +2,7 @@
 ****************************************
 check_design summary:
 Version:     O-2018.06
-Date:        Tue Nov 10 19:24:59 2020
+Date:        Wed Nov 11 20:20:00 2020
 ****************************************
 
                    Name                                            Total
@@ -10,10 +10,88 @@ Date:        Tue Nov 10 19:24:59 2020
 Inputs/Outputs                                                      1
     Unloaded inputs (LINT-8)                                        1
 
-Nets                                                                1
-    Unloaded nets (LINT-2)                                          1
+Nets                                                               79
+    Unloaded nets (LINT-2)                                         79
 --------------------------------------------------------------------------------
 
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][0]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][1]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][2]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][3]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][4]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][5]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][6]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][7]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][8]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][9]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][10]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2_1[38][11]' driven by pin 'my_in_ctrl_6/mux_in_large_reg[155][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_8_4_2_1[12]' driven by pin 'my_BC_FIR_55/add_14/Z_12' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][0]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][1]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][2]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][3]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][4]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][5]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][6]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][7]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][8]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][9]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][10]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4_2[38][11]' driven by pin 'my_in_ctrl_5/mux_in_large_reg[77][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_8_4_2[12]' driven by pin 'my_BC_FIR_44/add_14/Z_12' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][0]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][1]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][2]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][3]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][4]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][5]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][6]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][7]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][8]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][9]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][10]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_8_4[38][11]' driven by pin 'my_in_ctrl_4/mux_in_large_reg[155][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][0]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][1]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][2]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][3]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][4]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][5]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][6]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][7]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][8]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][9]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][10]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2_1[38][11]' driven by pin 'my_in_ctrl_3/mux_in_large_reg[38][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_4_2_1[12]' driven by pin 'my_BC_FIR_22/add_14/Z_12' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][0]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][1]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][2]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][3]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][4]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][5]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][6]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][7]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][8]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][9]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][10]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_4_2[38][11]' driven by pin 'my_in_ctrl_2/mux_in_large_reg[77][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][0]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][0]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][1]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][1]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][2]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][2]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][3]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][3]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][4]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][4]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][5]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][5]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][6]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][6]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][7]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][7]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][8]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][8]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][9]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][9]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][10]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][10]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'out_2_1[38][11]' driven by pin 'my_in_ctrl_1/mux_in_large_reg[38][11]/Q' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_8_4[12]' driven by pin 'my_BC_FIR4/add_14/Z_12' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_4_2[12]' driven by pin 'my_BC_FIR3/add_14/Z_12' has no loads. (LINT-2)
+Warning: In design 'BC_total', net 'in_2_1[12]' driven by pin 'my_BC_FIR2/add_14/Z_12' has no loads. (LINT-2)
 Warning: In design 'BC_total', net 'in[12]' driven by pin 'in[12]' has no loads. (LINT-2)
 Warning: In design 'BC_total', input port 'in[12]' is unloaded. (LINT-8)
 1

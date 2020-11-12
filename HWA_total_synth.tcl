@@ -17,7 +17,7 @@ suppress_message {"VER-130"}
 #/* The following five lines must be updated for every      */
 #/* new design                                              */
 #/***********************************************************/
-analyze -f sverilog [list "HWA_total.v"  "in_ctrl.v" "HWA.v" "VDC.v"]
+analyze -f sverilog [list "HWA_total.v"  "in_ctrl.v" "HWA.v" "HWA_1.v" "VDC.v"]
 elaborate HWA_total
 set design_name HWA_total
 set clock_name clock

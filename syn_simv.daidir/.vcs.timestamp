@@ -36,16 +36,16 @@
 -sverilog
 /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
 /usr/caen/vcs-2017.12-SP2-1/linux64/bin/vcs1
-HWA_total.vg
-HWA_total_test.v
+BC_total.vg
+BC_total_test.v
 params.svh
 55
 sysc_uni_pwd=/home/sunsusan/Desktop/SC_FIR_hardware_syn
 _LMFILES_=/usr/caen/misc/modules/vcs/2017.12-SP2-1
-XDG_SESSION_ID=6630
+XDG_SESSION_ID=4939
 XDG_RUNTIME_DIR=/run/user/114191087
 XDG_DATA_DIRS=/home/sunsusan/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-VSCODE_IPC_HOOK_CLI=/run/user/114191087/vscode-ipc-94c2374a-1c1c-412f-92ed-20e9c478a7bf.sock
+VSCODE_IPC_HOOK_CLI=/run/user/114191087/vscode-ipc-a9073c83-a376-4f97-86fb-ae326ce1dfcb.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/114191087/vscode-git-d868c3aca4.sock
 VSCODE_GIT_ASKPASS_NODE=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node
 VSCODE_GIT_ASKPASS_MAIN=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/extensions/git/dist/askpass-main.js
@@ -61,8 +61,8 @@ UNAME=/bin/uname
 TOOL_HOME=/usr/caen/vcs-2017.12-SP2-1/linux64
 TERM_PROGRAM_VERSION=1.51.0
 TERM_PROGRAM=vscode
-SSH_CONNECTION=75.46.42.228 52358 141.213.74.64 22
-SSH_CLIENT=75.46.42.228 52358 22
+SSH_CONNECTION=75.46.42.228 59805 141.211.232.118 22
+SSH_CLIENT=75.46.42.228 59805 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SOURCES=verilog/rob.sv 
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
@@ -83,7 +83,7 @@ LOADEDMODULES=vcs/2017.12-SP2-1
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 LAMMPS_POTENTIALS=/usr/share/lammps/potentials
-KRB5CCNAME=FILE:/tmp/krb5cc_114191087_KqgmKb
+KRB5CCNAME=FILE:/tmp/krb5cc_114191087_0QnYLg
 KDEDIRS=/usr
 HISTCONTROL=ignoredups
 HEADERS=params.svh 
@@ -98,9 +98,9 @@ AMD_ENTRYPOINT=vs/server/remoteExtensionHostProcess
 0
 5
 1062689876 /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
-1605067388 HWA_total.vg
-1604599241 HWA_total_test.v
-1605051280 params.svh
+1605144106 BC_total.vg
+1605138359 BC_total_test.v
+1605138361 params.svh
 1531624678 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/vcsdp.tab
 5
 0 
@@ -108,4 +108,4 @@ AMD_ENTRYPOINT=vs/server/remoteExtensionHostProcess
 1531624898 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/liberrorinf.so
 1531624871 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1531625298 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvfs.so
-1605067400 syn_simv.daidir
+1605144130 syn_simv.daidir

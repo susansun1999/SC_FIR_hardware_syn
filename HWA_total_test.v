@@ -45,7 +45,7 @@ initial begin
 		@(negedge clock);//10
 		start = 0;
 		quit = 0;
-		quit <= #4096000 1;
+		quit <= #1000 1;
 		while(~quit) begin
 		in = `n'b11;
 		#80;
