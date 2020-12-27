@@ -34,21 +34,21 @@
 -o syn_simv
 -picarchive
 -sverilog
-/afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
+/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.v
 /usr/caen/vcs-2017.12-SP2-1/linux64/bin/vcs1
-BC_total.vg
-BC_total_test.v
+SC_fb/HWA_total_test.v
 params.svh
+synth/HWA_total.vg
 55
 sysc_uni_pwd=/home/sunsusan/Desktop/SC_FIR_hardware_syn
 _LMFILES_=/usr/caen/misc/modules/vcs/2017.12-SP2-1
-XDG_SESSION_ID=4939
+XDG_SESSION_ID=3364
 XDG_RUNTIME_DIR=/run/user/114191087
 XDG_DATA_DIRS=/home/sunsusan/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-VSCODE_IPC_HOOK_CLI=/run/user/114191087/vscode-ipc-a9073c83-a376-4f97-86fb-ae326ce1dfcb.sock
+VSCODE_IPC_HOOK_CLI=/run/user/114191087/vscode-ipc-fba53d9a-1bf7-4521-b6f4-3a01efe4956f.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/114191087/vscode-git-d868c3aca4.sock
-VSCODE_GIT_ASKPASS_NODE=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node
-VSCODE_GIT_ASKPASS_MAIN=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_NODE=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/node
+VSCODE_GIT_ASKPASS_MAIN=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/git/dist/askpass-main.js
 VMR_MODE_FLAG=64
 VERBOSE_LOGGING=true
 VCS_MODE_FLAG=64
@@ -59,10 +59,10 @@ VCS_ARCH=linux64
 USES_VSCODE_SERVER_SPAWN=true
 UNAME=/bin/uname
 TOOL_HOME=/usr/caen/vcs-2017.12-SP2-1/linux64
-TERM_PROGRAM_VERSION=1.51.0
+TERM_PROGRAM_VERSION=1.52.1
 TERM_PROGRAM=vscode
-SSH_CONNECTION=75.46.42.228 59805 141.211.232.118 22
-SSH_CLIENT=75.46.42.228 59805 22
+SSH_CONNECTION=75.46.42.228 51096 141.213.74.68 22
+SSH_CLIENT=75.46.42.228 51096 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SOURCES=verilog/rob.sv 
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
@@ -83,11 +83,11 @@ LOADEDMODULES=vcs/2017.12-SP2-1
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 LAMMPS_POTENTIALS=/usr/share/lammps/potentials
-KRB5CCNAME=FILE:/tmp/krb5cc_114191087_0QnYLg
+KRB5CCNAME=FILE:/tmp/krb5cc_114191087_TDIQ6v
 KDEDIRS=/usr
 HISTCONTROL=ignoredups
 HEADERS=params.svh 
-GIT_ASKPASS=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/extensions/git/dist/askpass.sh
+GIT_ASKPASS=/afs/umich.edu/user/s/u/sunsusan/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/extensions/git/dist/askpass.sh
 DESIGN_NAME=rob
 COLORTERM=truecolor
 CLOCK_PERIOD=5	
@@ -97,10 +97,10 @@ BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`_}
 AMD_ENTRYPOINT=vs/server/remoteExtensionHostProcess
 0
 5
-1062689876 /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
-1605144106 BC_total.vg
-1605138359 BC_total_test.v
-1605138361 params.svh
+1605149575 /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.v
+1609017270 synth/HWA_total.vg
+1609016726 SC_fb/HWA_total_test.v
+1609012990 params.svh
 1531624678 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/vcsdp.tab
 5
 0 
@@ -108,4 +108,4 @@ AMD_ENTRYPOINT=vs/server/remoteExtensionHostProcess
 1531624898 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/liberrorinf.so
 1531624871 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1531625298 /usr/caen/vcs-2017.12-SP2-1/linux64/lib/libvfs.so
-1605144130 syn_simv.daidir
+1609017278 syn_simv.daidir

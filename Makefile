@@ -72,7 +72,8 @@ assembly: assemble disassemble hex
 ################################################################################
 
 VCS = vcs -V -sverilog +vc -Mupdate -line -full64 +vcs+vcdpluson -debug_pp 
-LIB = /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
+#LIB = /afs/umich.edu/class/eecs470/lib/verilog/lec25dscc25.v
+LIB = /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.v
 
 # For visual debugger
 VISFLAGS = -lncurses
@@ -83,16 +84,18 @@ VISFLAGS = -lncurses
 #####
 
 
-#TESTBENCH = HWA_total_test.v
-TESTBENCH = BC_total_test.v
+#TESTBENCH = SC_fb/HWA_total_test.v
+TESTBENCH = BC_fb/BC_total_test.v
 
 HEADERS = 
 
-#SIMFILES = HWA_total.v in_ctrl.v HWA.v HWA_1.v VDC.v
-SIMFILES = BC_total.v BC_FIR.v BC_FIR_1.v in_ctrl.v
+#SIMFILES = SC_fb/HWA_total.v in_Ctrl/in_ctrl.v SC_fb/HWA_opt.v SC_fb/HWA_1_opt.v VDC/VDC.v
+#SIMFILES = fb_matlab/fir.v 
+SIMFILES = BC_fb/BC_total.v BC_fb/BC_FIR.v BC_fb/BC_FIR_1.v in_Ctrl/in_ctrl.v
 		
-#SYNFILES = HWA_total.vg
-SYNFILES = BC_total.vg
+#SYNFILES = synth/HWA_total.vg
+SYNFILES = synth/BC_total.vg
+#SYNFILES = fir.vg
 
 export CLOCK_NET_NAME = clock
 export RESET_NET_NAME = reset
@@ -102,12 +105,14 @@ export DESIGN_NAME = rob
 
 export CLOCK_PERIOD = 5	# TODO: You will want to make this more aggresive
 
-HWA_total.vg:      $(HEADERS) $(SIMFILES) HWA_total_synth.tcl
-	dc_shell-t -f ./HWA_total_synth.tcl | tee synth.out 
+synth/HWA_total.vg:      $(HEADERS) $(SIMFILES) synth/HWA_total_synth.tcl
+	cd synth && dc_shell-t -f ./HWA_total_synth.tcl | tee synth.out 
 
-BC_total.vg:      $(HEADERS) $(SIMFILES) BC_total_synth.tcl
-	dc_shell-t -f ./BC_total_synth.tcl | tee synth.out 
+synth/BC_total.vg:      $(HEADERS) $(SIMFILES) synth/BC_total_synth.tcl
+	cd synth && dc_shell-t -f ./BC_total_synth.tcl | tee synth.out 
  
+fir.vg:      $(HEADERS) $(SIMFILES) fir_synth.tcl
+	dc_shell-t -f ./fir_synth.tcl | tee synth.out  
 
 #####
 # Should be no need to modify after here
@@ -140,5 +145,5 @@ clean:
 	rm -f *.elf *.dump *.mem debug_bin
 
 nuke:	clean
-	rm -rf *.vg *.rep *.ddc *.chk command.log *.syn
-	rm -rf *.out command.log *.db *.svf *.mr *.pvl
+	cd synth && rm -rf *.vg *.rep *.ddc *.chk command.log *.syn
+	cd synth && rm -rf *.out command.log *.db *.svf *.mr *.pvl

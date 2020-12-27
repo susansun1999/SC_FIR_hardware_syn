@@ -1,0 +1,14 @@
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-1_Full64; Runtime version N-2017.12-SP2-1_Full64;  Dec 27 11:02 2020
+VCD+ Writer N-2017.12-SP2-1_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+Time:   0 out:          x
+Time:325000 out:          X
+Time:1405000 out:          X
+Time:3225000 out:          X
+$finish called from file "BC_fb/BC_total_test.v", line 38.
+$finish at simulation time              4096500
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 4096500
+CPU Time:      0.350 seconds;       Data structure size:   0.1Mb
+Sun Dec 27 11:02:49 2020
