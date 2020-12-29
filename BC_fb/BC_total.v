@@ -6,71 +6,111 @@
 `define lengthm 39
 
 module BC_total(
-    input [`n:0]                in,//Binary number
+    input [`n-1:0]                in,//Binary number
+    input                       reset,
     input                       clock,
-    output logic [(`n+1)*4-1:0] out
+    output logic [`n*4-1:0] out
 );
 
-    logic [`n:0]         out_1 [`order:0];//Binary number
-    logic [`n:0]         out_2 [`order:0];//Binary number
-    logic [`n:0]         out_3 [`order:0];//Binary number
-    logic [`n:0]         out_4 [`order:0];//Binary number
+    logic [`n-1:0]         out_1 [`order:0];//Binary number
+    logic [`n-1:0]         out_2 [`order:0];//Binary number
+    logic [`n-1:0]         out_3 [`order:0];//Binary number
+    logic [`n-1:0]         out_4 [`order:0];//Binary number
+    logic                clock_1;
+    logic                clock_2;
+    logic                clock_3;
 
-    logic [`n:0]         in_2_1;//Binary number
-    logic [`n:0]         out_2_1 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_2_1 [`orderm:0];//Binary number
 
-    logic [`n:0]         in_4_2;//Binary number
-    logic [`n:0]         out_4_2 [`orderm:0];//Binary number
+    logic [`n-1:0]         all_in_3 [`orderm:0];//Binary number
+    logic [`n-1:0]         all_out_3;//Binary number
 
-    logic [`n:0]         in_4_2_1;//Binary number
-    logic [`n:0]         out_4_2_1 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_4_2 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_4_2_1 [`orderm:0];//Binary number
+    
+    logic [`n-1:0]         all_in_4 [`orderm:0];//Binary number
+    logic [`n-1:0]         all_out_4;
 
-    logic [`n:0]         in_8_4;//Binary number
-    logic [`n:0]         out_8_4 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_8_4 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_8_4_2 [`orderm:0];//Binary number
+    logic [`n-1:0]         out_8_4_2_1 [`orderm:0];//Binary number
 
-    logic [`n:0]         in_8_4_2;//Binary number
-    logic [`n:0]         out_8_4_2 [`orderm:0];//Binary number
+    logic [`n-1:0]         all_in[19-1:0];//Binary number
+    logic [`n-1:0]         all_out;//Binary number
 
-    logic [`n:0]         in_8_4_2_1;//Binary number
-    logic [`n:0]         out_8_4_2_1 [`orderm:0];//Binary number
+    logic [1:0]         counter;
 
-    logic [`n:0]         all_in[(19*4-1):0];//Binary number
-    logic [`n:0]         all_out[3:0];//Binary number
+    always_ff @(posedge clock) begin
+        if(reset) begin
+            counter = 0;
+        end 
+        else begin
+            counter = counter + 1;
+        end
+    end
 
-    assign all_in[19-1:0] = out_1;
-    assign all_in[19*2-1:19] = out_2;
-    assign all_in[19*3-1:19*2] = out_3;
-    assign all_in[19*4-1:19*3] = out_4;
-    assign out[`n:0] = all_out[0];
-    assign in_2_1 = all_out[1];
-    assign in_4_2 = all_out[2];
-    assign in_8_4 = all_out[3];
+    always_comb begin
+        case (counter)
+        2'b0:
+        begin
+            all_in = out_2;
+            all_in_3 = out_4_2;  
+            all_in_4 = out_8_4_2;          
+        end
+        2'b1:
+        begin
+            all_in = out_1;
+            all_in_3 = out_4_2_1;
+            all_in_4 = out_8_4_2_1;            
+        end
+        2'b10:
+        begin
+            all_in = out_4;
+            all_in_3 = out_4_2_1;    
+            all_in_4 = out_8_4_2_1;
+        end
+        2'b11:
+        begin
+            all_in = out_3;
+            all_in_3 = out_4_2; 
+            all_in_4 = out_8_4;          
+        end
+        endcase
+    end
 
+    assign clock_1 = (counter == 2'b1);
+    assign clock_2 = (counter == 2'b0);
+    assign clock_3 = (counter == 2'b11);
+
+    assign out[3*`n-1:2*`n] = all_out_3;
+    assign out[`n-1:0] = all_out;
+    assign out[4*`n-1:3*`n] = all_out_4;
 // input to 4 output
-    in_ctrl my_in_ctrl(.in,.clock,.out_1,.out_2,.out_3,.out_4);
+    in_ctrl my_in_ctrl(.in,.clock(counter[1]),.out_1,.out_2,.out_3,.out_4);
 // 4 output to 4 output
-    BC_FIR  my_BC_FIR1(.in(all_in),.clock(clock),.out(all_out));
-//    BC_FIR  my_BC_FIR2(.in(out_2),.clock(clock),.out(in_2_1));
-//    BC_FIR  my_BC_FIR3(.in(out_3),.clock(clock),.out(in_4_2));
-//    BC_FIR  my_BC_FIR4(.in(out_4),.clock(clock),.out(in_8_4));
+    BC_FIR  my_BC_FIR1(.in(all_in),.out(all_out));
+
 // 2 cascading filter
-    in_ctrl_1 my_in_ctrl_1(.in(in_2_1),.clock(clock),.out(out_2_1));
-    BC_FIR_1  my_BC_FIR_11(.in(out_2_1),.clock(clock),.out(out[2*(`n+1)-1:`n+1]));
+// only read in the output after counter = 0
+    in_ctrl_1 my_in_ctrl_1(.in(all_out),.clock(clock_1),.out(out_2_1));
+    
+    BC_FIR_1  my_BC_FIR_11(.in(out_2_1),.out(out[2*`n-1:`n]));
 // 3 cascading filter
-    in_ctrl_2 my_in_ctrl_2(.in(in_4_2),.clock(clock),.out(out_4_2));
-    BC_FIR_1  my_BC_FIR_22(.in(out_4_2),.clock(clock),.out(in_4_2_1));
-
-    in_ctrl_1 my_in_ctrl_3(.in(in_4_2_1),.clock(clock),.out(out_4_2_1));
-    BC_FIR_1  my_BC_FIR_33(.in(out_4_2_1),.clock(clock),.out(out[3*(`n+1)-1:2*(`n+1)]));
+// only read in the output after counter = 2'b11, counter = 0
+    in_ctrl_2 my_in_ctrl_2(.in(all_out),.clock(clock_2),.out(out_4_2));
+// only read in the output after counter = 2'b00, counter = 2'b1
+    in_ctrl_1 my_in_ctrl_3(.in(all_out_3),.clock(clock_1),.out(out_4_2_1));
+    
+    BC_FIR_1  my_BC_FIR_22(.in(all_in_3),.out(all_out_3));
 // 4 cascading filter
-    in_ctrl_4 my_in_ctrl_4(.in(in_8_4),.clock(clock),.out(out_8_4));
-    BC_FIR_1  my_BC_FIR_44(.in(out_8_4),.clock(clock),.out(in_8_4_2));
+// only read in the output after counter = 2'b10, counter = 2'b11
+    in_ctrl_4 my_in_ctrl_4(.in(all_out),.clock(clock_3),.out(out_8_4));
+// only read in the output after counter = 2'b11, counter = 2'b00
+    in_ctrl_2 my_in_ctrl_5(.in(all_out_4),.clock(clock_2),.out(out_8_4_2));
+// only read in the output after counter = 2'b0, counter = 2'b1
+    in_ctrl_4 my_in_ctrl_6(.in(all_out_4),.clock(clock_1),.out(out_8_4_2_1));
 
-    in_ctrl_2 my_in_ctrl_5(.in(in_8_4_2),.clock(clock),.out(out_8_4_2));
-    BC_FIR_1  my_BC_FIR_55(.in(out_8_4_2),.clock(clock),.out(in_8_4_2_1));
-
-    in_ctrl_4 my_in_ctrl_6(.in(in_8_4_2_1),.clock(clock),.out(out_8_4_2_1));
-    BC_FIR_1  my_BC_FIR_66(.in(out_8_4_2_1),.clock(clock),.out(out[4*(`n+1)-1:3*(`n+1)]));
+    BC_FIR_1  my_BC_FIR_44(.in(all_in_4),.out(all_out_4));
 
 endmodule
 

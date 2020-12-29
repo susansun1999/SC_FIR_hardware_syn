@@ -6,6 +6,7 @@
 
 `define n 12
 `define pow2n 4096
+`define pow2n_2 1024
 //`define order 18
 //`define length 19
 //`define len_idx 5 // ceil(log2(19))=5
@@ -14,9 +15,9 @@
 
 
 module testbench();
-    logic [`n:0]     in;//Binary (the probability can be 1)
+    logic [`n-1:0]     in;// Binary (the probability can be 1)
     logic            clock;// digital clock
-    logic [(`n+1)*4-1:0]  out;//Binary
+    logic [`n*4-6:0]  out;//Binary
 	logic 			 quit;
 	logic			 start;
 // 	logic [`n-1:0]   sel_bits;
@@ -27,15 +28,15 @@ module testbench();
 
 
 always begin
-	#1000;
+	#5;
 	clock=~clock;
 end
-
+// the clock cycle is 10
 
 initial begin
 		//$vcdpluson;
-		$monitor("Time:%4.0f out[0]:%d out[3]:%d",
-				$time,out[`n:0],out[4*(`n+1)-1:3*(`n+1)]);
+		$monitor("Time:%4.0f out:%d",
+				$time,out);
 		// time 0
 		clock=0;
 		@(negedge clock);//10
@@ -45,10 +46,10 @@ initial begin
 		@(negedge clock);//10
 		start = 0;
 		quit = 0;
-		quit <= #1000 1;
+		quit <= #100000 1;
 		while(~quit) begin
 		in = `n'b11;
-		#80;
+		#40960;
 		in = in + `n'b100;
 		end
 

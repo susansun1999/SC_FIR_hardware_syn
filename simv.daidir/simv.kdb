@@ -7,7 +7,7 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=testbench 
+TOP=testbench in_ctrl_SC in_ctrl_1_SC in_ctrl_1_SC_2 in_ctrl_2_SC in_ctrl_4_SC 
 
 [Value]
 WREALX=ffff534e50535f58

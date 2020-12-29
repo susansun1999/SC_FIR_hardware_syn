@@ -6,18 +6,19 @@
 
 
 module testbench();
-    logic [`n:0]         in;//Binary number
+    logic [`n-1:0]         in;//Binary number
     logic                clock;// sampling clock
-    logic [(`n+1)*4-1:0] out;//Binary number
+    logic [`n*4-1:0] out;//Binary number
+	logic				 reset;
 	logic quit;
-    BC_total myBC_total (.in,.clock,.out);
+
+    BC_total myBC_total (.in,.reset,.clock,.out);
 
 always begin
-	#5000;
+	#500;
 	clock=~clock;
-    #5000;
 end
-
+// the clock cycle is 1000
 
 initial begin
 		//$vcdpluson;
@@ -25,10 +26,14 @@ initial begin
 				$time,out);
 		clock=0;
 		quit = 0;
-		quit <= #4096000 1;
+		@(negedge clock);//10
+		reset = 1;
+		quit <= #400000 1;
+		@(negedge clock);//10
+		reset = 0;
 		while(~quit) begin
 		in = `n'b11;
-		#500;
+		#40000;
 		in = in + `n'b100;
 		end
 

@@ -1,11 +1,10 @@
 Information: Updating design information... (UID-85)
-Warning: Design 'HWA_total' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : design
 Design : HWA_total
 Version: O-2018.06
-Date   : Sat Dec 26 16:14:31 2020
+Date   : Tue Dec 29 16:21:59 2020
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -92,29 +91,29 @@ Design Parameters:
 Report : area
 Design : HWA_total
 Version: O-2018.06
-Date   : Sat Dec 26 16:14:31 2020
+Date   : Tue Dec 29 16:21:59 2020
 ****************************************
 
 Library(s) Used:
 
     NangateOpenCellLibrary (File: /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.db)
 
-Number of ports:                           91
-Number of nets:                          8649
-Number of cells:                         7953
-Number of combinational cells:           3970
-Number of sequential cells:              3982
+Number of ports:                           81
+Number of nets:                          5913
+Number of cells:                         5291
+Number of combinational cells:           2544
+Number of sequential cells:              2746
 Number of macros/black boxes:               0
-Number of buf/inv:                       1202
-Number of references:                      46
+Number of buf/inv:                        685
+Number of references:                      49
 
-Combinational area:               3882.270008
-Buf/Inv area:                      783.369999
-Noncombinational area:           17991.441349
+Combinational area:               2618.504009
+Buf/Inv area:                      473.746001
+Noncombinational area:           12420.071550
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 21873.711356
+Total cell area:                 15038.575559
 Total area:                 undefined
 1
 Warning: There are infeasible paths detected in your design that were ignored during optimization. Please run 'report_timing -attributes' and/or 'create_qor_snapshot/query_qor_snapshot -infeasible_paths' to identify these paths.  (OPT-1721)
@@ -129,17 +128,15 @@ Report : timing
         -transition_time
 Design : HWA_total
 Version: O-2018.06
-Date   : Sat Dec 26 16:14:31 2020
+Date   : Tue Dec 29 16:21:59 2020
 ****************************************
-
- # A fanout number of 1000 was used for high fanout net computations.
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: vdc/count_reg[8]
+  Startpoint: vdc/count_reg[10]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: my_HWA_22/out_reg[2]
+  Endpoint: my_HWA_44/out_reg[8]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: clock
   Path Type: max
@@ -152,172 +149,163 @@ Wire Load Model Mode: top
   ---------------------------------------------------------------------
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
-  vdc/count_reg[8]/CK (DFF_X1)             0.00      0.00 #     0.00 r
-  vdc/count_reg[8]/QN (DFF_X1)             0.02      0.08       0.08 r
-  net60798 (net)                 4                   0.00       0.08 r
-  U1646/A (BUF_X1)                         0.02      0.01       0.09 r
-  U1646/Z (BUF_X1)                         0.02      0.04       0.13 r
-  net60778 (net)                 3                   0.00       0.13 r
-  U2060/A (INV_X1)                         0.02      0.02       0.15 r
-  U2060/ZN (INV_X1)                        0.02      0.03       0.17 f
-  net60766 (net)                 6                   0.00       0.17 f
-  U3089/B1 (OAI22_X1)                      0.02      0.02       0.19 f
-  U3089/ZN (OAI22_X1)                      0.04      0.05       0.24 r
-  n3124 (net)                    2                   0.00       0.24 r
-  U1286/A2 (AND2_X1)                       0.04      0.01       0.25 r
-  U1286/ZN (AND2_X1)                       0.02      0.05       0.30 r
-  n1620 (net)                    2                   0.00       0.30 r
-  U3091/C2 (OAI221_X1)                     0.02      0.02       0.32 r
-  U3091/ZN (OAI221_X1)                     0.02      0.03       0.35 f
-  n3129 (net)                    1                   0.00       0.35 f
-  U3092/A (AOI221_X1)                      0.02      0.01       0.36 f
-  U3092/ZN (AOI221_X1)                     0.05      0.08       0.44 r
-  n3143 (net)                    1                   0.00       0.44 r
-  U3102/B1 (OAI21_X1)                      0.05      0.01       0.45 r
-  U3102/ZN (OAI21_X1)                      0.02      0.02       0.47 f
-  n3144 (net)                    1                   0.00       0.47 f
-  U3103/A (OAI211_X1)                      0.02      0.01       0.49 f
-  U3103/ZN (OAI211_X1)                     0.03      0.03       0.52 r
-  n3231 (net)                    2                   0.00       0.52 r
-  U3190/A (INV_X1)                         0.03      0.02       0.53 r
-  U3190/ZN (INV_X1)                        0.01      0.01       0.54 f
-  n3232 (net)                    1                   0.00       0.54 f
-  U3191/B1 (OAI22_X1)                      0.01      0.01       0.56 f
-  U3191/ZN (OAI22_X1)                      0.03      0.04       0.60 r
-  n3234 (net)                    1                   0.00       0.60 r
-  U1677/A (INV_X1)                         0.03      0.01       0.61 r
-  U1677/ZN (INV_X1)                        0.01      0.01       0.62 f
-  n1843 (net)                    1                   0.00       0.62 f
-  U1678/A1 (AND3_X1)                       0.01      0.01       0.63 f
-  U1678/ZN (AND3_X1)                       0.01      0.03       0.66 f
-  n3285 (net)                    1                   0.00       0.66 f
-  U3234/A1 (NAND4_X1)                      0.01      0.01       0.67 f
-  U3234/ZN (NAND4_X1)                      0.02      0.02       0.69 r
-  n3288 (net)                    1                   0.00       0.69 r
-  U3235/A1 (OR2_X1)                        0.02      0.01       0.70 r
-  U3235/ZN (OR2_X1)                        0.01      0.03       0.73 r
-  n3311 (net)                    2                   0.00       0.73 r
-  U3236/A1 (NAND2_X1)                      0.01      0.02       0.75 r
-  U3236/ZN (NAND2_X1)                      0.01      0.02       0.77 f
-  n3301 (net)                    2                   0.00       0.77 f
-  U1675/A1 (NAND2_X1)                      0.01      0.02       0.78 f
-  U1675/ZN (NAND2_X1)                      0.02      0.03       0.81 r
-  n3293 (net)                    3                   0.00       0.81 r
-  U3239/A1 (NAND3_X1)                      0.02      0.02       0.83 r
-  U3239/ZN (NAND3_X1)                      0.01      0.03       0.86 f
-  n3294 (net)                    1                   0.00       0.86 f
-  U1653/A (XNOR2_X1)                       0.01      0.02       0.87 f
-  U1653/ZN (XNOR2_X1)                      0.01      0.04       0.91 f
-  n3295 (net)                    1                   0.00       0.91 f
-  U3240/A2 (NOR2_X1)                       0.01      0.01       0.93 f
-  U3240/ZN (NOR2_X1)                       0.02      0.03       0.96 r
-  my_HWA_22/N15 (net)            1                   0.00       0.96 r
-  my_HWA_22/out_reg[2]/D (DFF_X1)          0.02      0.01       0.97 r
-  data arrival time                                             0.97
+  vdc/count_reg[10]/CK (DFF_X1)            0.00      0.00       0.00 r
+  vdc/count_reg[10]/Q (DFF_X1)             0.04      0.11       0.11 r
+  R_y[1] (net)                   7                   0.00       0.11 r
+  U2389/A1 (NAND2_X1)                      0.04      0.02       0.14 r
+  U2389/ZN (NAND2_X1)                      0.02      0.03       0.16 f
+  n2422 (net)                    2                   0.00       0.16 f
+  U2390/A1 (NAND2_X1)                      0.02      0.02       0.18 f
+  U2390/ZN (NAND2_X1)                      0.02      0.03       0.21 r
+  n3256 (net)                    4                   0.00       0.21 r
+  U1629/A (CLKBUF_X3)                      0.02      0.02       0.23 r
+  U1629/Z (CLKBUF_X3)                      0.02      0.05       0.27 r
+  n1575 (net)                    6                   0.00       0.27 r
+  U871/A1 (AND2_X2)                        0.02      0.02       0.29 r
+  U871/ZN (AND2_X2)                        0.01      0.04       0.33 r
+  n1533 (net)                    3                   0.00       0.33 r
+  U1481/A (INV_X1)                         0.01      0.02       0.35 r
+  U1481/ZN (INV_X1)                        0.01      0.01       0.36 f
+  n3139 (net)                    1                   0.00       0.36 f
+  U3033/A1 (NAND3_X1)                      0.01      0.01       0.37 f
+  U3033/ZN (NAND3_X1)                      0.01      0.02       0.39 r
+  n3142 (net)                    1                   0.00       0.39 r
+  U3034/A1 (NAND2_X1)                      0.01      0.01       0.40 r
+  U3034/ZN (NAND2_X1)                      0.01      0.01       0.42 f
+  n3143 (net)                    1                   0.00       0.42 f
+  U3035/A (AOI221_X1)                      0.01      0.01       0.43 f
+  U3035/ZN (AOI221_X1)                     0.05      0.08       0.50 r
+  n3145 (net)                    1                   0.00       0.50 r
+  U3036/A (AOI221_X1)                      0.05      0.01       0.52 r
+  U3036/ZN (AOI221_X1)                     0.02      0.02       0.54 f
+  n3155 (net)                    1                   0.00       0.54 f
+  U1609/A1 (NOR2_X1)                       0.02      0.01       0.55 f
+  U1609/ZN (NOR2_X1)                       0.03      0.04       0.59 r
+  n1515 (net)                    2                   0.00       0.59 r
+  U3101/B1 (OAI21_X1)                      0.03      0.02       0.61 r
+  U3101/ZN (OAI21_X1)                      0.01      0.02       0.63 f
+  n3226 (net)                    1                   0.00       0.63 f
+  U1366/A1 (NOR3_X1)                       0.01      0.01       0.64 f
+  U1366/ZN (NOR3_X1)                       0.03      0.04       0.68 r
+  n3231 (net)                    1                   0.00       0.68 r
+  U904/A1 (AND3_X2)                        0.03      0.01       0.69 r
+  U904/ZN (AND3_X2)                        0.01      0.05       0.75 r
+  n1535 (net)                    3                   0.00       0.75 r
+  U3247/A1 (NAND2_X1)                      0.01      0.02       0.76 r
+  U3247/ZN (NAND2_X1)                      0.02      0.03       0.79 f
+  n3431 (net)                    4                   0.00       0.79 f
+  U3275/A1 (NAND4_X1)                      0.02      0.02       0.81 f
+  U3275/ZN (NAND4_X1)                      0.02      0.03       0.84 r
+  n3441 (net)                    1                   0.00       0.84 r
+  U1655/A (XNOR2_X1)                       0.02      0.02       0.85 r
+  U1655/ZN (XNOR2_X1)                      0.02      0.04       0.90 r
+  n3442 (net)                    1                   0.00       0.90 r
+  U3276/A1 (NOR2_X1)                       0.02      0.02       0.91 r
+  U3276/ZN (NOR2_X1)                       0.01      0.01       0.92 f
+  my_HWA_44/N20 (net)            1                   0.00       0.92 f
+  my_HWA_44/out_reg[8]/D (DFF_X1)          0.01      0.01       0.93 f
+  data arrival time                                             0.93
 
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   clock uncertainty                                 -0.10      -0.10
-  my_HWA_22/out_reg[2]/CK (DFF_X1)                   0.00      -0.10 r
-  library setup time                                -0.03      -0.13
-  data required time                                           -0.13
-  ---------------------------------------------------------------------
-  data required time                                           -0.13
-  data arrival time                                            -0.97
-  ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -1.10
-
-
-  Startpoint: vdc/count_reg[8]
-              (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: my_HWA3/out_reg[5]
-            (rising edge-triggered flip-flop clocked by clock)
-  Path Group: clock
-  Path Type: max
-
-  Des/Clust/Port     Wire Load Model       Library
-  ------------------------------------------------
-  HWA_total          5K_hvratio_1_1        NangateOpenCellLibrary
-
-  Point                        Fanout     Trans      Incr       Path
-  ---------------------------------------------------------------------
-  clock clock (rise edge)                            0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  vdc/count_reg[8]/CK (DFF_X1)             0.00      0.00 #     0.00 r
-  vdc/count_reg[8]/QN (DFF_X1)             0.02      0.08       0.08 r
-  net60798 (net)                 4                   0.00       0.08 r
-  U1666/A (BUF_X1)                         0.02      0.01       0.09 r
-  U1666/Z (BUF_X1)                         0.06      0.08       0.17 r
-  net60772 (net)                11                   0.00       0.17 r
-  U2007/A1 (OR2_X1)                        0.06      0.01       0.19 r
-  U2007/ZN (OR2_X1)                        0.01      0.04       0.23 r
-  n2884 (net)                    2                   0.00       0.23 r
-  U2880/A2 (NAND3_X1)                      0.01      0.02       0.24 r
-  U2880/ZN (NAND3_X1)                      0.02      0.03       0.27 f
-  n2882 (net)                    2                   0.00       0.27 f
-  U2024/A1 (NAND3_X1)                      0.02      0.02       0.29 f
-  U2024/ZN (NAND3_X1)                      0.02      0.03       0.32 r
-  n2890 (net)                    2                   0.00       0.32 r
-  U2884/B2 (OAI221_X1)                     0.02      0.02       0.33 r
-  U2884/ZN (OAI221_X1)                     0.02      0.04       0.37 f
-  n2897 (net)                    1                   0.00       0.37 f
-  U2888/B1 (OAI21_X1)                      0.02      0.01       0.38 f
-  U2888/ZN (OAI21_X1)                      0.02      0.03       0.41 r
-  n2899 (net)                    1                   0.00       0.41 r
-  U667/A1 (NAND2_X1)                       0.02      0.01       0.43 r
-  U667/ZN (NAND2_X1)                       0.01      0.02       0.44 f
-  n2903 (net)                    1                   0.00       0.44 f
-  U2889/A (OAI211_X1)                      0.01      0.01       0.46 f
-  U2889/ZN (OAI211_X1)                     0.04      0.03       0.49 r
-  n2941 (net)                    3                   0.00       0.49 r
-  U1301/A (INV_X1)                         0.04      0.02       0.51 r
-  U1301/ZN (INV_X1)                        0.01      0.01       0.52 f
-  n1629 (net)                    1                   0.00       0.52 f
-  U2980/A1 (NAND3_X1)                      0.01      0.01       0.53 f
-  U2980/ZN (NAND3_X1)                      0.01      0.02       0.55 r
-  n3020 (net)                    1                   0.00       0.55 r
-  U2981/A1 (NAND3_X1)                      0.01      0.01       0.56 r
-  U2981/ZN (NAND3_X1)                      0.01      0.02       0.58 f
-  n3024 (net)                    1                   0.00       0.58 f
-  U2982/B (AOI211_X1)                      0.01      0.01       0.60 f
-  U2982/ZN (AOI211_X1)                     0.04      0.06       0.66 r
-  n3025 (net)                    1                   0.00       0.66 r
-  U1600/A3 (AND3_X1)                       0.04      0.01       0.67 r
-  U1600/ZN (AND3_X1)                       0.02      0.06       0.72 r
-  n1807 (net)                    3                   0.00       0.72 r
-  U721/A1 (AND3_X1)                        0.02      0.01       0.74 r
-  U721/ZN (AND3_X1)                        0.01      0.04       0.78 r
-  n634 (net)                     1                   0.00       0.78 r
-  U1932/A2 (NAND2_X1)                      0.01      0.01       0.79 r
-  U1932/ZN (NAND2_X1)                      0.02      0.02       0.82 f
-  n2012 (net)                    3                   0.00       0.82 f
-  U2990/A3 (NAND3_X1)                      0.02      0.02       0.84 f
-  U2990/ZN (NAND3_X1)                      0.02      0.03       0.86 r
-  n3033 (net)                    1                   0.00       0.86 r
-  U1551/A (XNOR2_X1)                       0.02      0.02       0.88 r
-  U1551/ZN (XNOR2_X1)                      0.02      0.04       0.92 r
-  n3034 (net)                    1                   0.00       0.92 r
-  U2991/A1 (NOR2_X1)                       0.02      0.02       0.94 r
-  U2991/ZN (NOR2_X1)                       0.01      0.01       0.95 f
-  my_HWA3/N14 (net)              1                   0.00       0.95 f
-  my_HWA3/out_reg[5]/D (DFF_X1)            0.01      0.01       0.96 f
-  data arrival time                                             0.96
-
-  clock clock (rise edge)                            0.00       0.00
-  clock network delay (ideal)                        0.00       0.00
-  clock uncertainty                                 -0.10      -0.10
-  my_HWA3/out_reg[5]/CK (DFF_X1)                     0.00      -0.10 r
+  my_HWA_44/out_reg[8]/CK (DFF_X1)                   0.00      -0.10 r
   library setup time                                -0.04      -0.14
   data required time                                           -0.14
   ---------------------------------------------------------------------
   data required time                                           -0.14
-  data arrival time                                            -0.96
+  data arrival time                                            -0.93
   ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -1.10
+  slack (VIOLATED)                                             -1.07
+
+
+  Startpoint: vdc/count_reg[10]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: my_HWA_44/out_reg[2]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HWA_total          5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                        Fanout     Trans      Incr       Path
+  ---------------------------------------------------------------------
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  vdc/count_reg[10]/CK (DFF_X1)            0.00      0.00       0.00 r
+  vdc/count_reg[10]/Q (DFF_X1)             0.04      0.11       0.11 r
+  R_y[1] (net)                   7                   0.00       0.11 r
+  U2389/A1 (NAND2_X1)                      0.04      0.02       0.14 r
+  U2389/ZN (NAND2_X1)                      0.02      0.03       0.16 f
+  n2422 (net)                    2                   0.00       0.16 f
+  U2390/A1 (NAND2_X1)                      0.02      0.02       0.18 f
+  U2390/ZN (NAND2_X1)                      0.02      0.03       0.21 r
+  n3256 (net)                    4                   0.00       0.21 r
+  U1629/A (CLKBUF_X3)                      0.02      0.02       0.23 r
+  U1629/Z (CLKBUF_X3)                      0.02      0.05       0.27 r
+  n1575 (net)                    6                   0.00       0.27 r
+  U871/A1 (AND2_X2)                        0.02      0.02       0.29 r
+  U871/ZN (AND2_X2)                        0.01      0.04       0.33 r
+  n1533 (net)                    3                   0.00       0.33 r
+  U1481/A (INV_X1)                         0.01      0.02       0.35 r
+  U1481/ZN (INV_X1)                        0.01      0.01       0.36 f
+  n3139 (net)                    1                   0.00       0.36 f
+  U3033/A1 (NAND3_X1)                      0.01      0.01       0.37 f
+  U3033/ZN (NAND3_X1)                      0.01      0.02       0.39 r
+  n3142 (net)                    1                   0.00       0.39 r
+  U3034/A1 (NAND2_X1)                      0.01      0.01       0.40 r
+  U3034/ZN (NAND2_X1)                      0.01      0.01       0.42 f
+  n3143 (net)                    1                   0.00       0.42 f
+  U3035/A (AOI221_X1)                      0.01      0.01       0.43 f
+  U3035/ZN (AOI221_X1)                     0.05      0.08       0.50 r
+  n3145 (net)                    1                   0.00       0.50 r
+  U3036/A (AOI221_X1)                      0.05      0.01       0.52 r
+  U3036/ZN (AOI221_X1)                     0.02      0.02       0.54 f
+  n3155 (net)                    1                   0.00       0.54 f
+  U1609/A1 (NOR2_X1)                       0.02      0.01       0.55 f
+  U1609/ZN (NOR2_X1)                       0.03      0.04       0.59 r
+  n1515 (net)                    2                   0.00       0.59 r
+  U3101/B1 (OAI21_X1)                      0.03      0.02       0.61 r
+  U3101/ZN (OAI21_X1)                      0.01      0.02       0.63 f
+  n3226 (net)                    1                   0.00       0.63 f
+  U1366/A1 (NOR3_X1)                       0.01      0.01       0.64 f
+  U1366/ZN (NOR3_X1)                       0.03      0.04       0.68 r
+  n3231 (net)                    1                   0.00       0.68 r
+  U904/A1 (AND3_X2)                        0.03      0.01       0.69 r
+  U904/ZN (AND3_X2)                        0.01      0.05       0.75 r
+  n1535 (net)                    3                   0.00       0.75 r
+  U3248/A1 (NAND2_X1)                      0.01      0.02       0.76 r
+  U3248/ZN (NAND2_X1)                      0.02      0.03       0.79 f
+  n3440 (net)                    3                   0.00       0.79 f
+  U3253/A1 (NAND4_X1)                      0.02      0.02       0.81 f
+  U3253/ZN (NAND4_X1)                      0.02      0.02       0.83 r
+  n3414 (net)                    1                   0.00       0.83 r
+  U1657/A (XNOR2_X1)                       0.02      0.02       0.85 r
+  U1657/ZN (XNOR2_X1)                      0.02      0.04       0.89 r
+  n1538 (net)                    1                   0.00       0.89 r
+  U1656/A1 (AND2_X1)                       0.02      0.01       0.90 r
+  U1656/ZN (AND2_X1)                       0.01      0.03       0.93 r
+  my_HWA_44/N14 (net)            1                   0.00       0.93 r
+  my_HWA_44/out_reg[2]/D (DFF_X1)          0.01      0.01       0.94 r
+  data arrival time                                             0.94
+
+  clock clock (rise edge)                            0.00       0.00
+  clock network delay (ideal)                        0.00       0.00
+  clock uncertainty                                 -0.10      -0.10
+  my_HWA_44/out_reg[2]/CK (DFF_X1)                   0.00      -0.10 r
+  library setup time                                -0.03      -0.13
+  data required time                                           -0.13
+  ---------------------------------------------------------------------
+  data required time                                           -0.13
+  data arrival time                                            -0.94
+  ---------------------------------------------------------------------
+  slack (VIOLATED)                                             -1.07
 
 
   Startpoint: start (input port clocked by clock)
-  Endpoint: my_HWA3/out_reg[2]
+  Endpoint: my_HWA1/out_reg[2]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: input_grp
   Path Type: max
@@ -331,38 +319,50 @@ Wire Load Model Mode: top
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   input external delay                               0.10       0.10 f
-  start (in)                               0.01      0.01       0.11 f
-  start (net)                    3                   0.00       0.11 f
-  U1098/A (INV_X1)                         0.01      0.02       0.13 f
-  U1098/ZN (INV_X1)                        0.01      0.02       0.15 r
-  net58880 (net)                 2                   0.00       0.15 r
-  U1097/A1 (NAND2_X1)                      0.01      0.02       0.16 r
-  U1097/ZN (NAND2_X1)                      0.02      0.03       0.19 f
-  net61282 (net)                 4                   0.00       0.19 f
-  U1102/A (CLKBUF_X3)                      0.02      0.02       0.20 f
-  U1102/Z (CLKBUF_X3)                      0.02      0.06       0.26 f
-  net60850 (net)                12                   0.00       0.26 f
-  U2979/A1 (NOR2_X1)                       0.02      0.02       0.28 f
-  U2979/ZN (NOR2_X1)                       0.02      0.03       0.31 r
-  my_HWA3/N11 (net)              1                   0.00       0.31 r
-  my_HWA3/out_reg[2]/D (DFF_X1)            0.02      0.01       0.32 r
-  data arrival time                                             0.32
+  start (in)                               0.01      0.02       0.12 f
+  start (net)                    4                   0.00       0.12 f
+  U1551/A (INV_X1)                         0.01      0.02       0.13 f
+  U1551/ZN (INV_X1)                        0.05      0.07       0.20 r
+  n1919 (net)                   13                   0.00       0.20 r
+  U1442/A2 (AND2_X2)                       0.05      0.03       0.23 r
+  U1442/ZN (AND2_X2)                       0.03      0.07       0.30 r
+  n1372 (net)                   11                   0.00       0.30 r
+  U1386/A (INV_X2)                         0.03      0.04       0.33 r
+  U1386/ZN (INV_X2)                        0.02      0.03       0.37 f
+  n1601 (net)                   11                   0.00       0.37 f
+  U1945/A (OAI21_X1)                       0.02      0.02       0.39 f
+  U1945/ZN (OAI21_X1)                      0.03      0.03       0.42 r
+  n2265 (net)                    2                   0.00       0.42 r
+  U1660/A (INV_X1)                         0.03      0.02       0.44 r
+  U1660/ZN (INV_X1)                        0.01      0.02       0.45 f
+  n1540 (net)                    2                   0.00       0.45 f
+  U1693/A (OAI21_X2)                       0.01      0.03       0.48 f
+  U1693/ZN (OAI21_X2)                      0.06      0.04       0.52 r
+  n1987 (net)                    9                   0.00       0.52 r
+  U1961/A (OAI221_X1)                      0.06      0.03       0.55 r
+  U1961/ZN (OAI221_X1)                     0.02      0.05       0.60 f
+  n1940 (net)                    1                   0.00       0.60 f
+  U1962/A (AOI211_X1)                      0.02      0.01       0.61 f
+  U1962/ZN (AOI211_X1)                     0.04      0.07       0.68 r
+  my_HWA1/N11 (net)              1                   0.00       0.68 r
+  my_HWA1/out_reg[2]/D (DFF_X1)            0.04      0.01       0.69 r
+  data arrival time                                             0.69
 
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   clock uncertainty                                 -0.10      -0.10
-  my_HWA3/out_reg[2]/CK (DFF_X1)                     0.00      -0.10 r
-  library setup time                                -0.03      -0.13
-  data required time                                           -0.13
+  my_HWA1/out_reg[2]/CK (DFF_X1)                     0.00      -0.10 r
+  library setup time                                -0.04      -0.14
+  data required time                                           -0.14
   ---------------------------------------------------------------------
-  data required time                                           -0.13
-  data arrival time                                            -0.32
+  data required time                                           -0.14
+  data arrival time                                            -0.69
   ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -0.45
+  slack (VIOLATED)                                             -0.83
 
 
   Startpoint: start (input port clocked by clock)
-  Endpoint: my_HWA2/out_reg[5]
+  Endpoint: my_HWA1/out_reg[11]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: input_grp
   Path Type: max
@@ -376,39 +376,51 @@ Wire Load Model Mode: top
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   input external delay                               0.10       0.10 f
-  start (in)                               0.01      0.01       0.11 f
-  start (net)                    3                   0.00       0.11 f
-  U1098/A (INV_X1)                         0.01      0.02       0.13 f
-  U1098/ZN (INV_X1)                        0.01      0.02       0.15 r
-  net58880 (net)                 2                   0.00       0.15 r
-  U1097/A1 (NAND2_X1)                      0.01      0.02       0.16 r
-  U1097/ZN (NAND2_X1)                      0.02      0.03       0.19 f
-  net61282 (net)                 4                   0.00       0.19 f
-  U1102/A (CLKBUF_X3)                      0.02      0.02       0.20 f
-  U1102/Z (CLKBUF_X3)                      0.02      0.06       0.26 f
-  net60850 (net)                12                   0.00       0.26 f
-  U2518/A1 (NOR2_X1)                       0.02      0.02       0.28 f
-  U2518/ZN (NOR2_X1)                       0.02      0.03       0.31 r
-  my_HWA2/N14 (net)              1                   0.00       0.31 r
-  my_HWA2/out_reg[5]/D (DFF_X1)            0.02      0.01       0.32 r
-  data arrival time                                             0.32
+  start (in)                               0.01      0.02       0.12 f
+  start (net)                    4                   0.00       0.12 f
+  U1551/A (INV_X1)                         0.01      0.02       0.13 f
+  U1551/ZN (INV_X1)                        0.05      0.07       0.20 r
+  n1919 (net)                   13                   0.00       0.20 r
+  U1442/A2 (AND2_X2)                       0.05      0.03       0.23 r
+  U1442/ZN (AND2_X2)                       0.03      0.07       0.30 r
+  n1372 (net)                   11                   0.00       0.30 r
+  U1386/A (INV_X2)                         0.03      0.04       0.33 r
+  U1386/ZN (INV_X2)                        0.02      0.03       0.37 f
+  n1601 (net)                   11                   0.00       0.37 f
+  U1945/A (OAI21_X1)                       0.02      0.02       0.39 f
+  U1945/ZN (OAI21_X1)                      0.03      0.03       0.42 r
+  n2265 (net)                    2                   0.00       0.42 r
+  U1660/A (INV_X1)                         0.03      0.02       0.44 r
+  U1660/ZN (INV_X1)                        0.01      0.02       0.45 f
+  n1540 (net)                    2                   0.00       0.45 f
+  U1693/A (OAI21_X2)                       0.01      0.03       0.48 f
+  U1693/ZN (OAI21_X2)                      0.06      0.04       0.52 r
+  n1987 (net)                    9                   0.00       0.52 r
+  U2000/A (OAI21_X1)                       0.06      0.03       0.55 r
+  U2000/ZN (OAI21_X1)                      0.02      0.03       0.58 f
+  n1988 (net)                    1                   0.00       0.58 f
+  U2001/A (AOI221_X1)                      0.02      0.01       0.59 f
+  U2001/ZN (AOI221_X1)                     0.04      0.07       0.66 r
+  my_HWA1/N20 (net)              1                   0.00       0.66 r
+  my_HWA1/out_reg[11]/D (DFF_X1)           0.04      0.01       0.67 r
+  data arrival time                                             0.67
 
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   clock uncertainty                                 -0.10      -0.10
-  my_HWA2/out_reg[5]/CK (DFF_X1)                     0.00      -0.10 r
-  library setup time                                -0.03      -0.13
-  data required time                                           -0.13
+  my_HWA1/out_reg[11]/CK (DFF_X1)                    0.00      -0.10 r
+  library setup time                                -0.04      -0.14
+  data required time                                           -0.14
   ---------------------------------------------------------------------
-  data required time                                           -0.13
-  data arrival time                                            -0.32
+  data required time                                           -0.14
+  data arrival time                                            -0.67
   ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -0.45
+  slack (VIOLATED)                                             -0.81
 
 
-  Startpoint: my_HWA1/out_reg[1]
+  Startpoint: my_HWA_44/out_reg[7]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: out[1] (output port clocked by clock)
+  Endpoint: out[40] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -418,11 +430,11 @@ Wire Load Model Mode: top
 
   Point                        Fanout     Trans      Incr       Path
   ---------------------------------------------------------------------
-  my_HWA1/out_reg[1]/CK (DFF_X1)           0.00      0.00 #     0.00 r
-  my_HWA1/out_reg[1]/Q (DFF_X1)            0.15      0.23       0.23 r
-  out[1] (net)                   3                   0.00       0.23 r
-  out[1] (out)                             0.15      0.00       0.24 r
-  data arrival time                                             0.24
+  my_HWA_44/out_reg[7]/CK (DFF_X2)         0.00      0.00       0.00 r
+  my_HWA_44/out_reg[7]/Q (DFF_X2)          0.02      0.12       0.12 r
+  out[40] (net)                  6                   0.00       0.12 r
+  out[40] (out)                            0.02      0.00       0.13 r
+  data arrival time                                             0.13
 
   max_delay                                          0.00       0.00
   clock uncertainty                                 -0.10      -0.10
@@ -430,14 +442,14 @@ Wire Load Model Mode: top
   data required time                                           -0.20
   ---------------------------------------------------------------------
   data required time                                           -0.20
-  data arrival time                                            -0.24
+  data arrival time                                            -0.13
   ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -0.44
+  slack (VIOLATED)                                             -0.33
 
 
-  Startpoint: my_HWA_33/out_reg[3]
+  Startpoint: my_HWA_44/out_reg[3]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: out[29] (output port clocked by clock)
+  Endpoint: out[36] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -447,11 +459,11 @@ Wire Load Model Mode: top
 
   Point                        Fanout     Trans      Incr       Path
   ---------------------------------------------------------------------
-  my_HWA_33/out_reg[3]/CK (DFF_X1)         0.00      0.00 #     0.00 r
-  my_HWA_33/out_reg[3]/Q (DFF_X1)          0.02      0.10       0.10 r
-  out[29] (net)                  3                   0.00       0.10 r
-  out[29] (out)                            0.02      0.00       0.10 r
-  data arrival time                                             0.10
+  my_HWA_44/out_reg[3]/CK (DFF_X2)         0.00      0.00       0.00 r
+  my_HWA_44/out_reg[3]/Q (DFF_X2)          0.02      0.12       0.12 r
+  out[36] (net)                  6                   0.00       0.12 r
+  out[36] (out)                            0.02      0.00       0.13 r
+  data arrival time                                             0.13
 
   max_delay                                          0.00       0.00
   clock uncertainty                                 -0.10      -0.10
@@ -459,9 +471,9 @@ Wire Load Model Mode: top
   data required time                                           -0.20
   ---------------------------------------------------------------------
   data required time                                           -0.20
-  data arrival time                                            -0.10
+  data arrival time                                            -0.13
   ---------------------------------------------------------------------
-  slack (VIOLATED)                                             -0.30
+  slack (VIOLATED)                                             -0.33
 
 
 1
@@ -473,13 +485,13 @@ Report : constraint
         -max_delay
 Design : HWA_total
 Version: O-2018.06
-Date   : Sat Dec 26 16:14:31 2020
+Date   : Tue Dec 29 16:21:59 2020
 ****************************************
 
 
-  Startpoint: vdc/count_reg[8]
+  Startpoint: vdc/count_reg[10]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: my_HWA_22/out_reg[2]
+  Endpoint: my_HWA_44/out_reg[8]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: clock
   Path Type: max
@@ -492,45 +504,43 @@ Date   : Sat Dec 26 16:14:31 2020
   -----------------------------------------------------------
   clock clock (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  vdc/count_reg[8]/CK (DFF_X1)             0.00 #     0.00 r
-  vdc/count_reg[8]/QN (DFF_X1)             0.08       0.08 r
-  U1646/Z (BUF_X1)                         0.05       0.13 r
-  U2060/ZN (INV_X1)                        0.05       0.17 f
-  U3089/ZN (OAI22_X1)                      0.07       0.24 r
-  U1286/ZN (AND2_X1)                       0.06       0.30 r
-  U3091/ZN (OAI221_X1)                     0.04       0.35 f
-  U3092/ZN (AOI221_X1)                     0.09       0.44 r
-  U3102/ZN (OAI21_X1)                      0.04       0.47 f
-  U3103/ZN (OAI211_X1)                     0.04       0.52 r
-  U3190/ZN (INV_X1)                        0.03       0.54 f
-  U3191/ZN (OAI22_X1)                      0.05       0.60 r
-  U1677/ZN (INV_X1)                        0.02       0.62 f
-  U1678/ZN (AND3_X1)                       0.04       0.66 f
-  U3234/ZN (NAND4_X1)                      0.03       0.69 r
-  U3235/ZN (OR2_X1)                        0.04       0.73 r
-  U3236/ZN (NAND2_X1)                      0.04       0.77 f
-  U1675/ZN (NAND2_X1)                      0.05       0.81 r
-  U3239/ZN (NAND3_X1)                      0.04       0.86 f
-  U1653/ZN (XNOR2_X1)                      0.06       0.91 f
-  U3240/ZN (NOR2_X1)                       0.04       0.96 r
-  my_HWA_22/out_reg[2]/D (DFF_X1)          0.01       0.97 r
-  data arrival time                                   0.97
+  vdc/count_reg[10]/CK (DFF_X1)            0.00       0.00 r
+  vdc/count_reg[10]/Q (DFF_X1)             0.11       0.11 r
+  U2389/ZN (NAND2_X1)                      0.05       0.16 f
+  U2390/ZN (NAND2_X1)                      0.05       0.21 r
+  U1629/Z (CLKBUF_X3)                      0.06       0.27 r
+  U871/ZN (AND2_X2)                        0.06       0.33 r
+  U1481/ZN (INV_X1)                        0.03       0.36 f
+  U3033/ZN (NAND3_X1)                      0.03       0.39 r
+  U3034/ZN (NAND2_X1)                      0.03       0.42 f
+  U3035/ZN (AOI221_X1)                     0.09       0.50 r
+  U3036/ZN (AOI221_X1)                     0.04       0.54 f
+  U1609/ZN (NOR2_X1)                       0.05       0.59 r
+  U3101/ZN (OAI21_X1)                      0.04       0.63 f
+  U1366/ZN (NOR3_X1)                       0.05       0.68 r
+  U904/ZN (AND3_X2)                        0.07       0.75 r
+  U3247/ZN (NAND2_X1)                      0.05       0.79 f
+  U3275/ZN (NAND4_X1)                      0.04       0.84 r
+  U1655/ZN (XNOR2_X1)                      0.06       0.90 r
+  U3276/ZN (NOR2_X1)                       0.03       0.92 f
+  my_HWA_44/out_reg[8]/D (DFF_X1)          0.01       0.93 f
+  data arrival time                                   0.93
 
   clock clock (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                       -0.10      -0.10
-  my_HWA_22/out_reg[2]/CK (DFF_X1)         0.00      -0.10 r
-  library setup time                      -0.03      -0.13
-  data required time                                 -0.13
+  my_HWA_44/out_reg[8]/CK (DFF_X1)         0.00      -0.10 r
+  library setup time                      -0.04      -0.14
+  data required time                                 -0.14
   -----------------------------------------------------------
-  data required time                                 -0.13
-  data arrival time                                  -0.97
+  data required time                                 -0.14
+  data arrival time                                  -0.93
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -1.10
+  slack (VIOLATED)                                   -1.07
 
 
   Startpoint: start (input port clocked by clock)
-  Endpoint: my_HWA2/out_reg[5]
+  Endpoint: my_HWA1/out_reg[2]
             (rising edge-triggered flip-flop clocked by clock)
   Path Group: input_grp
   Path Type: max
@@ -544,30 +554,34 @@ Date   : Sat Dec 26 16:14:31 2020
   clock clock (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.10       0.10 f
-  start (in)                               0.01       0.11 f
-  U1098/ZN (INV_X1)                        0.04       0.15 r
-  U1097/ZN (NAND2_X1)                      0.04       0.19 f
-  U1102/Z (CLKBUF_X3)                      0.07       0.26 f
-  U2518/ZN (NOR2_X1)                       0.05       0.31 r
-  my_HWA2/out_reg[5]/D (DFF_X1)            0.01       0.32 r
-  data arrival time                                   0.32
+  start (in)                               0.02       0.12 f
+  U1551/ZN (INV_X1)                        0.08       0.20 r
+  U1442/ZN (AND2_X2)                       0.10       0.30 r
+  U1386/ZN (INV_X2)                        0.07       0.37 f
+  U1945/ZN (OAI21_X1)                      0.05       0.42 r
+  U1660/ZN (INV_X1)                        0.04       0.45 f
+  U1693/ZN (OAI21_X2)                      0.07       0.52 r
+  U1961/ZN (OAI221_X1)                     0.07       0.60 f
+  U1962/ZN (AOI211_X1)                     0.09       0.68 r
+  my_HWA1/out_reg[2]/D (DFF_X1)            0.01       0.69 r
+  data arrival time                                   0.69
 
   clock clock (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.00       0.00
   clock uncertainty                       -0.10      -0.10
-  my_HWA2/out_reg[5]/CK (DFF_X1)           0.00      -0.10 r
-  library setup time                      -0.03      -0.13
-  data required time                                 -0.13
+  my_HWA1/out_reg[2]/CK (DFF_X1)           0.00      -0.10 r
+  library setup time                      -0.04      -0.14
+  data required time                                 -0.14
   -----------------------------------------------------------
-  data required time                                 -0.13
-  data arrival time                                  -0.32
+  data required time                                 -0.14
+  data arrival time                                  -0.69
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.45
+  slack (VIOLATED)                                   -0.83
 
 
-  Startpoint: my_HWA1/out_reg[1]
+  Startpoint: my_HWA_44/out_reg[7]
               (rising edge-triggered flip-flop clocked by clock)
-  Endpoint: out[1] (output port clocked by clock)
+  Endpoint: out[40] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -577,10 +591,10 @@ Date   : Sat Dec 26 16:14:31 2020
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  my_HWA1/out_reg[1]/CK (DFF_X1)           0.00 #     0.00 r
-  my_HWA1/out_reg[1]/Q (DFF_X1)            0.23       0.23 r
-  out[1] (out)                             0.00       0.24 r
-  data arrival time                                   0.24
+  my_HWA_44/out_reg[7]/CK (DFF_X2)         0.00       0.00 r
+  my_HWA_44/out_reg[7]/Q (DFF_X2)          0.12       0.12 r
+  out[40] (out)                            0.00       0.13 r
+  data arrival time                                   0.13
 
   max_delay                                0.00       0.00
   clock uncertainty                       -0.10      -0.10
@@ -588,20 +602,19 @@ Date   : Sat Dec 26 16:14:31 2020
   data required time                                 -0.20
   -----------------------------------------------------------
   data required time                                 -0.20
-  data arrival time                                  -0.24
+  data arrival time                                  -0.13
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.44
+  slack (VIOLATED)                                   -0.33
 
 
 1
 Information: Updating graph... (UID-83)
-Warning: Design 'HWA_total' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
  
 ****************************************
 Report : reference
 Design : HWA_total
 Version: O-2018.06
-Date   : Sat Dec 26 16:14:33 2020
+Date   : Tue Dec 29 16:22:01 2020
 ****************************************
 
 Attributes:
@@ -617,52 +630,55 @@ Attributes:
 
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
-AND2_X1            NangateOpenCellLibrary     1.064000     242   257.488003
+AND2_X1            NangateOpenCellLibrary     1.064000     180   191.520002
 AND2_X2            NangateOpenCellLibrary     1.330000       8    10.640000
-AND3_X1            NangateOpenCellLibrary     1.330000      60    79.800003
-AND3_X2            NangateOpenCellLibrary     1.596000       2     3.192000
-AND4_X1            NangateOpenCellLibrary     1.596000      13    20.747999
-AOI21_X1           NangateOpenCellLibrary     1.064000      99   105.336001
-AOI22_X1           NangateOpenCellLibrary     1.330000     114   151.620005
-AOI211_X1          NangateOpenCellLibrary     1.330000      86   114.380004
-AOI211_X4          NangateOpenCellLibrary     2.926000       2     5.852000
-AOI221_X1          NangateOpenCellLibrary     1.596000      67   106.931997
+AND3_X1            NangateOpenCellLibrary     1.330000      39    51.870002
+AND3_X2            NangateOpenCellLibrary     1.596000       4     6.384000
+AND4_X1            NangateOpenCellLibrary     1.596000      10    15.960000
+AND4_X2            NangateOpenCellLibrary     1.862000       1     1.862000
+AOI21_X1           NangateOpenCellLibrary     1.064000      60    63.840001
+AOI22_X1           NangateOpenCellLibrary     1.330000      56    74.480002
+AOI211_X1          NangateOpenCellLibrary     1.330000      38    50.540002
+AOI211_X4          NangateOpenCellLibrary     2.926000       1     2.926000
+AOI221_X1          NangateOpenCellLibrary     1.596000      39    62.243998
 AOI221_X4          NangateOpenCellLibrary     3.458000       1     3.458000
-AOI222_X1          NangateOpenCellLibrary     2.128000       2     4.256000
-BUF_X1             NangateOpenCellLibrary     0.798000     215   171.569995
-BUF_X2             NangateOpenCellLibrary     1.064000      32    34.048000
-CLKBUF_X1          NangateOpenCellLibrary     0.798000      68    54.263999
-CLKBUF_X2          NangateOpenCellLibrary     1.064000       1     1.064000
-CLKBUF_X3          NangateOpenCellLibrary     1.330000      28    37.240001
-DFF_X1             NangateOpenCellLibrary     4.522000    3967 17938.773349 n
-DFF_X2             NangateOpenCellLibrary     5.054000       3    15.162000 n
-HWA_total_DW01_inc_1             52.135999       1     52.135999  h
-INV_X1             NangateOpenCellLibrary     0.532000     838   445.816004
-INV_X2             NangateOpenCellLibrary     0.798000      12     9.576000
+AOI222_X1          NangateOpenCellLibrary     2.128000      10    21.280000
+BUF_X1             NangateOpenCellLibrary     0.798000      75    59.849998
+BUF_X2             NangateOpenCellLibrary     1.064000      60    63.840001
+BUF_X4             NangateOpenCellLibrary     1.862000       7    13.034000
+CLKBUF_X1          NangateOpenCellLibrary     0.798000      55    43.889999
+CLKBUF_X3          NangateOpenCellLibrary     1.330000      24    31.920001
+DFF_X1             NangateOpenCellLibrary     4.522000    2741 12394.801550 n
+DFF_X2             NangateOpenCellLibrary     5.054000       5    25.270000 n
+HWA_total_DW01_inc_1             56.391999       1     56.391999  h
+INV_X1             NangateOpenCellLibrary     0.532000     441   234.612002
+INV_X2             NangateOpenCellLibrary     0.798000      17    13.566000
 INV_X4             NangateOpenCellLibrary     1.330000       1     1.330000
-INV_X32            NangateOpenCellLibrary     8.778000       3    26.334000
-MUX2_X1            NangateOpenCellLibrary     1.862000       2     3.724000
-NAND2_X1           NangateOpenCellLibrary     0.798000     562   448.475988
-NAND3_X1           NangateOpenCellLibrary     1.064000     269   286.216003
-NAND4_X1           NangateOpenCellLibrary     1.330000      68    90.440003
-NOR2_X1            NangateOpenCellLibrary     0.798000     238   189.923995
-NOR2_X2            NangateOpenCellLibrary     1.330000       1     1.330000
-NOR3_X1            NangateOpenCellLibrary     1.064000      77    81.928001
-NOR4_X1            NangateOpenCellLibrary     1.330000      22    29.260001
-OAI21_X1           NangateOpenCellLibrary     1.064000     157   167.048002
-OAI22_X1           NangateOpenCellLibrary     1.330000     126   167.580005
-OAI33_X1           NangateOpenCellLibrary     1.862000      38    70.756000
-OAI211_X1          NangateOpenCellLibrary     1.330000     160   212.800007
-OAI221_X1          NangateOpenCellLibrary     1.596000      53    84.587998
-OAI222_X1          NangateOpenCellLibrary     2.128000      12    25.536000
-OR2_X1             NangateOpenCellLibrary     1.064000     100   106.400001
+INV_X32            NangateOpenCellLibrary     8.778000       1     8.778000
+MUX2_X1            NangateOpenCellLibrary     1.862000       1     1.862000
+NAND2_X1           NangateOpenCellLibrary     0.798000     291   232.217994
+NAND3_X1           NangateOpenCellLibrary     1.064000     143   152.152002
+NAND4_X1           NangateOpenCellLibrary     1.330000      60    79.800003
+NOR2_X1            NangateOpenCellLibrary     0.798000     126   100.547997
+NOR3_X1            NangateOpenCellLibrary     1.064000      80    85.120001
+NOR3_X2            NangateOpenCellLibrary     1.862000       1     1.862000
+NOR4_X1            NangateOpenCellLibrary     1.330000      23    30.590001
+OAI21_X1           NangateOpenCellLibrary     1.064000     130   138.320001
+OAI21_X2           NangateOpenCellLibrary     1.862000       2     3.724000
+OAI22_X1           NangateOpenCellLibrary     1.330000      78   103.740003
+OAI33_X1           NangateOpenCellLibrary     1.862000      21    39.102000
+OAI211_X1          NangateOpenCellLibrary     1.330000      82   109.060004
+OAI211_X2          NangateOpenCellLibrary     2.394000       1     2.394000
+OAI221_X1          NangateOpenCellLibrary     1.596000      58    92.567997
+OAI221_X4          NangateOpenCellLibrary     3.458000       1     3.458000
+OAI222_X1          NangateOpenCellLibrary     2.128000      36    76.608001
+OR2_X1             NangateOpenCellLibrary     1.064000     155   164.920002
 OR2_X2             NangateOpenCellLibrary     1.330000       2     2.660000
-OR3_X1             NangateOpenCellLibrary     1.330000      14    18.620001
-OR3_X2             NangateOpenCellLibrary     1.596000       2     3.192000
-SDFF_X1            NangateOpenCellLibrary     6.118000       3    18.354000 n
-SDFF_X2            NangateOpenCellLibrary     6.384000       3    19.151999 n
-XNOR2_X1           NangateOpenCellLibrary     1.596000      94   150.023996
-XOR2_X1            NangateOpenCellLibrary     1.596000      28    44.687999
+OR3_X1             NangateOpenCellLibrary     1.330000      12    15.960001
+OR4_X1             NangateOpenCellLibrary     1.596000       2     3.192000
+OR4_X2             NangateOpenCellLibrary     1.862000       1     1.862000
+XNOR2_X1           NangateOpenCellLibrary     1.596000      56    89.375998
+XOR2_X1            NangateOpenCellLibrary     1.596000       2     3.192000
 -----------------------------------------------------------------------------
-Total 46 references                                 21873.711356
+Total 49 references                                 15038.575559
 1

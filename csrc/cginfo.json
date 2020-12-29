@@ -1,21 +1,824 @@
 {
-    "CompileProcesses": [
-        "cgproc.26239.json"
+    "stat": {
+        "peak_mem_kb": 264276,
+        "nMops": 65654,
+        "ru_self_cgstart": {
+            "ru_nvcsw": 896,
+            "ru_utime_sec": 1.2871839999999999,
+            "ru_stime_sec": 0.195303,
+            "ru_maxrss_kb": 88076,
+            "ru_minflt": 35370,
+            "ru_majflt": 0,
+            "ru_nivcsw": 366
+        },
+        "cpu_cycles_cgstart": 26968483163924156,
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 20,
+            "ru_utime_sec": 0.013058999999999999,
+            "ru_stime_sec": 0.021315000000000001,
+            "ru_maxrss_kb": 37012,
+            "ru_minflt": 6913,
+            "ru_majflt": 0,
+            "ru_nivcsw": 8
+        },
+        "nQuads": 17354,
+        "cpu_cycles_end": 26968485568302252,
+        "CodeGen(%)": 30.932958528743264,
+        "totalObjSize": 2933412,
+        "ru_self_end": {
+            "ru_nvcsw": 1948,
+            "ru_utime_sec": 1.868568,
+            "ru_stime_sec": 0.44422499999999998,
+            "ru_maxrss_kb": 92360,
+            "ru_minflt": 41284,
+            "ru_majflt": 0,
+            "ru_nivcsw": 482
+        },
+        "ru_childs_end": {
+            "ru_nvcsw": 22,
+            "ru_utime_sec": 0.014012999999999999,
+            "ru_stime_sec": 0.024176,
+            "ru_maxrss_kb": 37012,
+            "ru_minflt": 7507,
+            "ru_majflt": 0,
+            "ru_nivcsw": 10
+        },
+        "cpu_cycles_total": 6771302066,
+        "Frontend(%)": 69.067041471256744,
+        "outputSizePerQuad": 169.03376743113981,
+        "mopSpeed": 112742.08449388495,
+        "mop/quad": 3.7832200069148323,
+        "quadSpeed": 29800.562559887887,
+        "realTime": 2.8641121387481689
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "testbench",
+        "testbench",
+        "BC_FIR_1",
+        "BC_FIR_1",
+        "in_ctrl",
+        "in_ctrl",
+        "BC_FIR",
+        "BC_FIR",
+        "in_ctrl_1_1",
+        "in_ctrl_1_1",
+        "in_ctrl_2_1",
+        "in_ctrl_2_1",
+        "in_ctrl_4_1",
+        "in_ctrl_4_1",
+        "in_ctrl_1_0",
+        "in_ctrl_1_0",
+        "in_ctrl_2_0",
+        "in_ctrl_2_0",
+        "in_ctrl_4_0",
+        "in_ctrl_4_0",
+        "AND2_X1",
+        "AND2_X1",
+        "AND2_X2",
+        "AND2_X2",
+        "AND2_X4",
+        "AND2_X4",
+        "AND3_X1",
+        "AND3_X1",
+        "AND3_X2",
+        "AND3_X2",
+        "AND3_X4",
+        "AND3_X4",
+        "AND4_X1",
+        "AND4_X1",
+        "AND4_X2",
+        "AND4_X2",
+        "AND4_X4",
+        "AND4_X4",
+        "ANTENNA_X1",
+        "ANTENNA_X1",
+        "AOI211_X1",
+        "AOI211_X1",
+        "AOI211_X2",
+        "AOI211_X2",
+        "AOI211_X4",
+        "AOI211_X4",
+        "AOI21_X1",
+        "AOI21_X1",
+        "AOI21_X2",
+        "AOI21_X2",
+        "AOI21_X4",
+        "AOI21_X4",
+        "AOI221_X1",
+        "AOI221_X1",
+        "AOI221_X2",
+        "AOI221_X2",
+        "AOI221_X4",
+        "AOI221_X4",
+        "AOI222_X1",
+        "AOI222_X1",
+        "AOI222_X2",
+        "AOI222_X2",
+        "AOI222_X4",
+        "AOI222_X4",
+        "AOI22_X1",
+        "AOI22_X1",
+        "AOI22_X2",
+        "AOI22_X2",
+        "AOI22_X4",
+        "AOI22_X4",
+        "BUF_X1",
+        "BUF_X1",
+        "BUF_X16",
+        "BUF_X16",
+        "BUF_X2",
+        "BUF_X2",
+        "BUF_X32",
+        "BUF_X32",
+        "BUF_X4",
+        "BUF_X4",
+        "BUF_X8",
+        "BUF_X8",
+        "CLKBUF_X1",
+        "CLKBUF_X1",
+        "CLKBUF_X2",
+        "CLKBUF_X2",
+        "CLKBUF_X3",
+        "CLKBUF_X3",
+        "CLKGATETST_X1",
+        "CLKGATETST_X1",
+        "CLKGATETST_X2",
+        "CLKGATETST_X2",
+        "CLKGATETST_X4",
+        "CLKGATETST_X4",
+        "CLKGATETST_X8",
+        "CLKGATETST_X8",
+        "CLKGATE_X1",
+        "CLKGATE_X1",
+        "CLKGATE_X2",
+        "CLKGATE_X2",
+        "CLKGATE_X4",
+        "CLKGATE_X4",
+        "CLKGATE_X8",
+        "CLKGATE_X8",
+        "DFFRS_X1",
+        "DFFRS_X1",
+        "DFFRS_X2",
+        "DFFRS_X2",
+        "DFFR_X1",
+        "DFFR_X1",
+        "DFFR_X2",
+        "DFFR_X2",
+        "DFFS_X1",
+        "DFFS_X1",
+        "DFFS_X2",
+        "DFFS_X2",
+        "DFF_X1",
+        "DFF_X1",
+        "DFF_X2",
+        "DFF_X2",
+        "DLH_X1",
+        "DLH_X1",
+        "DLH_X2",
+        "DLH_X2",
+        "DLL_X1",
+        "DLL_X1",
+        "DLL_X2",
+        "DLL_X2",
+        "FA_X1",
+        "FA_X1",
+        "FILLCELL_X1",
+        "FILLCELL_X1",
+        "FILLCELL_X2",
+        "FILLCELL_X2",
+        "FILLCELL_X4",
+        "FILLCELL_X4",
+        "FILLCELL_X8",
+        "FILLCELL_X8",
+        "FILLCELL_X16",
+        "FILLCELL_X16",
+        "FILLCELL_X32",
+        "FILLCELL_X32",
+        "HA_X1",
+        "HA_X1",
+        "INV_X1",
+        "INV_X1",
+        "INV_X16",
+        "INV_X16",
+        "INV_X2",
+        "INV_X2",
+        "INV_X32",
+        "INV_X32",
+        "INV_X4",
+        "INV_X4",
+        "INV_X8",
+        "INV_X8",
+        "LOGIC0_X1",
+        "LOGIC0_X1",
+        "LOGIC1_X1",
+        "LOGIC1_X1",
+        "MUX2_X1",
+        "MUX2_X1",
+        "MUX2_X2",
+        "MUX2_X2",
+        "NAND2_X1",
+        "NAND2_X1",
+        "NAND2_X2",
+        "NAND2_X2",
+        "NAND2_X4",
+        "NAND2_X4",
+        "NAND3_X1",
+        "NAND3_X1",
+        "NAND3_X2",
+        "NAND3_X2",
+        "NAND3_X4",
+        "NAND3_X4",
+        "NAND4_X1",
+        "NAND4_X1",
+        "NAND4_X2",
+        "NAND4_X2",
+        "NAND4_X4",
+        "NAND4_X4",
+        "NOR2_X1",
+        "NOR2_X1",
+        "NOR2_X2",
+        "NOR2_X2",
+        "NOR2_X4",
+        "NOR2_X4",
+        "NOR3_X1",
+        "NOR3_X1",
+        "NOR3_X2",
+        "NOR3_X2",
+        "NOR3_X4",
+        "NOR3_X4",
+        "NOR4_X1",
+        "NOR4_X1",
+        "NOR4_X2",
+        "NOR4_X2",
+        "NOR4_X4",
+        "NOR4_X4",
+        "OAI211_X1",
+        "OAI211_X1",
+        "OAI211_X2",
+        "OAI211_X2",
+        "OAI211_X4",
+        "OAI211_X4",
+        "OAI21_X1",
+        "OAI21_X1",
+        "OAI21_X2",
+        "OAI21_X2",
+        "OAI21_X4",
+        "OAI21_X4",
+        "OAI221_X1",
+        "OAI221_X1",
+        "OAI221_X2",
+        "OAI221_X2",
+        "OAI221_X4",
+        "OAI221_X4",
+        "OAI222_X1",
+        "OAI222_X1",
+        "OAI222_X2",
+        "OAI222_X2",
+        "OAI222_X4",
+        "OAI222_X4",
+        "OAI22_X1",
+        "OAI22_X1",
+        "OAI22_X2",
+        "OAI22_X2",
+        "OAI22_X4",
+        "OAI22_X4",
+        "OAI33_X1",
+        "OAI33_X1",
+        "OR2_X1",
+        "OR2_X1",
+        "OR2_X2",
+        "OR2_X2",
+        "OR2_X4",
+        "OR2_X4",
+        "OR3_X1",
+        "OR3_X1",
+        "OR3_X2",
+        "OR3_X2",
+        "OR3_X4",
+        "OR3_X4",
+        "OR4_X1",
+        "OR4_X1",
+        "OR4_X2",
+        "OR4_X2",
+        "OR4_X4",
+        "OR4_X4",
+        "SDFFRS_X1",
+        "SDFFRS_X1",
+        "SDFFRS_X2",
+        "SDFFRS_X2",
+        "SDFFR_X1",
+        "SDFFR_X1",
+        "SDFFR_X2",
+        "SDFFR_X2",
+        "SDFFS_X1",
+        "SDFFS_X1",
+        "SDFFS_X2",
+        "SDFFS_X2",
+        "SDFF_X1",
+        "SDFF_X1",
+        "SDFF_X2",
+        "SDFF_X2",
+        "TBUF_X1",
+        "TBUF_X1",
+        "TBUF_X16",
+        "TBUF_X16",
+        "TBUF_X2",
+        "TBUF_X2",
+        "TBUF_X4",
+        "TBUF_X4",
+        "TBUF_X8",
+        "TBUF_X8",
+        "TINV_X1",
+        "TINV_X1",
+        "TLAT_X1",
+        "TLAT_X1",
+        "XNOR2_X1",
+        "XNOR2_X1",
+        "XNOR2_X2",
+        "XNOR2_X2",
+        "XOR2_X1",
+        "XOR2_X1",
+        "XOR2_X2",
+        "XOR2_X2"
     ],
-    "cycles_program_begin": 22376707707480430,
-    "CurCompileUdps": {},
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 98578,
-        "text": 0,
-        "archive": "archive.6/_26239_archive_1.a"
+    "cycles_program_begin": 26968478797000186,
+    "perf": [
+        [
+            0.17222404479980469,
+            0.038912000000000002,
+            0.034921000000000001,
+            228504,
+            229304,
+            1609277190.392252,
+            26968479115616116,
+            "doParsingAndDesignResolution",
+            "entry"
+        ],
+        [
+            0.57829809188842773,
+            0.29527199999999998,
+            0.082019999999999996,
+            239020,
+            239668,
+            1609277190.798326,
+            26968480089049030,
+            "doParsingAndDesignResolution",
+            "exit"
+        ],
+        [
+            0.58252501487731934,
+            0.29527199999999998,
+            0.083767999999999995,
+            239020,
+            239668,
+            1609277190.8025529,
+            26968480099162176,
+            "doPostDesignResolutionToVir2Vcs",
+            "entry"
+        ],
+        [
+            0.72695708274841309,
+            0.41274699999999998,
+            0.086777000000000007,
+            239540,
+            239668,
+            1609277190.946985,
+            26968480445399108,
+            "doUptoVir2VcsNoSepCleanup",
+            "entry"
+        ],
+        [
+            1.7618069648742676,
+            1.236534,
+            0.188915,
+            251920,
+            264276,
+            1609277191.9818349,
+            26968482926204012,
+            "doUptoVir2VcsNoSepCleanup",
+            "exit"
+        ],
+        [
+            1.7619240283966064,
+            1.2366360000000001,
+            0.18892999999999999,
+            251920,
+            264276,
+            1609277191.981952,
+            26968482926425574,
+            "doRadify_vir2vcsAll",
+            "entry"
+        ],
+        [
+            1.8122341632843018,
+            1.280111,
+            0.191106,
+            253576,
+            264276,
+            1609277192.0322621,
+            26968483047062928,
+            "doRadify_vir2vcsAll",
+            "exit"
+        ],
+        [
+            1.8122940063476562,
+            1.2801640000000001,
+            0.19111400000000001,
+            253576,
+            264276,
+            1609277192.0323219,
+            26968483047164814,
+            "doPostDesignResolutionToVir2Vcs",
+            "exit"
+        ],
+        [
+            1.8123350143432617,
+            1.2802,
+            0.19111900000000001,
+            253576,
+            264276,
+            1609277192.0323629,
+            26968483047258086,
+            "doGAToPass2",
+            "entry"
+        ],
+        [
+            1.8609299659729004,
+            1.287094,
+            0.19528999999999999,
+            250460,
+            264276,
+            1609277192.0809579,
+            26968483163797104,
+            "DoPass2",
+            "entry"
+        ],
+        [
+            2.7292251586914062,
+            1.8572679999999999,
+            0.34955599999999998,
+            252224,
+            264276,
+            1609277192.9492531,
+            26968485245494038,
+            "DoPass2",
+            "exit"
+        ]
+    ],
+    "MlibObjs": {},
+    "CompileStrategy": "fullobj",
+    "CompileProcesses": [
+        "cgproc.692.json"
+    ],
+    "PrevCompiledModules": {
+        "seq_SDFFR_X1": {
+            "seq_SDFFR_X1": {
+                "bytes": 0,
+                "mod": "seq_SDFFR_X1",
+                "mode": 4,
+                "out": "objs/udps/rkFjN.o"
+            }
+        },
+        "seq_DFFS_X1": {
+            "seq_DFFS_X1": {
+                "bytes": 0,
+                "mod": "seq_DFFS_X1",
+                "mode": 4,
+                "out": "objs/udps/u1p1q.o"
+            }
+        },
+        "seq_DFF_X1": {
+            "seq_DFF_X1": {
+                "bytes": 0,
+                "mod": "seq_DFF_X1",
+                "mode": 4,
+                "out": "objs/udps/dnrsM.o"
+            }
+        },
+        "seq_CLKGATE_X4": {
+            "seq_CLKGATE_X4": {
+                "bytes": 0,
+                "mod": "seq_CLKGATE_X4",
+                "mode": 4,
+                "out": "objs/udps/yiFgW.o"
+            }
+        },
+        "seq_CLKGATE_X8": {
+            "seq_CLKGATE_X8": {
+                "bytes": 0,
+                "mod": "seq_CLKGATE_X8",
+                "mode": 4,
+                "out": "objs/udps/gEIcq.o"
+            }
+        },
+        "seq_SDFF_X2": {
+            "seq_SDFF_X2": {
+                "bytes": 0,
+                "mod": "seq_SDFF_X2",
+                "mode": 4,
+                "out": "objs/udps/ybMuj.o"
+            }
+        },
+        "seq_SDFFRS_X1": {
+            "seq_SDFFRS_X1": {
+                "bytes": 0,
+                "mod": "seq_SDFFRS_X1",
+                "mode": 4,
+                "out": "objs/udps/CI3nG.o"
+            }
+        },
+        "seq_DFF_X2": {
+            "seq_DFF_X2": {
+                "bytes": 0,
+                "mod": "seq_DFF_X2",
+                "mode": 4,
+                "out": "objs/udps/GUwfU.o"
+            }
+        },
+        "seq_CLKGATETST_X8": {
+            "seq_CLKGATETST_X8": {
+                "bytes": 0,
+                "mod": "seq_CLKGATETST_X8",
+                "mode": 4,
+                "out": "objs/udps/b1HMI.o"
+            }
+        },
+        "seq_DLL_X1": {
+            "seq_DLL_X1": {
+                "bytes": 0,
+                "mod": "seq_DLL_X1",
+                "mode": 4,
+                "out": "objs/udps/TxnM0.o"
+            }
+        },
+        "BC_FIR_1": {
+            "TbtRK_d": {
+                "checksum": 0,
+                "bytes": 12262,
+                "archive": "archive.2/_692_archive_1.a",
+                "mod": "BC_FIR_1",
+                "out": "TbtRK_d.o",
+                "mode": 4
+            }
+        },
+        "seq_CLKGATETST_X1": {
+            "seq_CLKGATETST_X1": {
+                "bytes": 0,
+                "mod": "seq_CLKGATETST_X1",
+                "mode": 4,
+                "out": "objs/udps/T7p0B.o"
+            }
+        },
+        "seq_SDFFS_X1": {
+            "seq_SDFFS_X1": {
+                "bytes": 0,
+                "mod": "seq_SDFFS_X1",
+                "mode": 4,
+                "out": "objs/udps/FU5wF.o"
+            }
+        },
+        "seq_CLKGATE_X2": {
+            "seq_CLKGATE_X2": {
+                "bytes": 0,
+                "mod": "seq_CLKGATE_X2",
+                "mode": 4,
+                "out": "objs/udps/TtP1m.o"
+            }
+        },
+        "seq_SDFF_X1": {
+            "seq_SDFF_X1": {
+                "bytes": 0,
+                "mod": "seq_SDFF_X1",
+                "mode": 4,
+                "out": "objs/udps/U3y5c.o"
+            }
+        },
+        "seq_DFFRS_X1": {
+            "seq_DFFRS_X1": {
+                "bytes": 0,
+                "mod": "seq_DFFRS_X1",
+                "mode": 4,
+                "out": "objs/udps/m9nzD.o"
+            }
+        },
+        "seq_DFFRS_X2": {
+            "seq_DFFRS_X2": {
+                "bytes": 0,
+                "mod": "seq_DFFRS_X2",
+                "mode": 4,
+                "out": "objs/udps/BKdDj.o"
+            }
+        },
+        "seq_SDFFRS_X2": {
+            "seq_SDFFRS_X2": {
+                "bytes": 0,
+                "mod": "seq_SDFFRS_X2",
+                "mode": 4,
+                "out": "objs/udps/eAL5P.o"
+            }
+        },
+        "seq_DFFR_X1": {
+            "seq_DFFR_X1": {
+                "bytes": 0,
+                "mod": "seq_DFFR_X1",
+                "mode": 4,
+                "out": "objs/udps/fTq4m.o"
+            }
+        },
+        "seq_CLKGATE_X1": {
+            "seq_CLKGATE_X1": {
+                "bytes": 0,
+                "mod": "seq_CLKGATE_X1",
+                "mode": 4,
+                "out": "objs/udps/r1svH.o"
+            }
+        },
+        "seq_SDFFR_X2": {
+            "seq_SDFFR_X2": {
+                "bytes": 0,
+                "mod": "seq_SDFFR_X2",
+                "mode": 4,
+                "out": "objs/udps/IAPS0.o"
+            }
+        },
+        "ng_xbuf": {
+            "ng_xbuf": {
+                "bytes": 0,
+                "mod": "ng_xbuf",
+                "mode": 4,
+                "out": "objs/udps/Fdess.o"
+            }
+        },
+        "seq_TLAT_X1": {
+            "seq_TLAT_X1": {
+                "bytes": 0,
+                "mod": "seq_TLAT_X1",
+                "mode": 4,
+                "out": "objs/udps/L3597.o"
+            }
+        },
+        "seq_SDFFS_X2": {
+            "seq_SDFFS_X2": {
+                "bytes": 0,
+                "mod": "seq_SDFFS_X2",
+                "mode": 4,
+                "out": "objs/udps/YUnBu.o"
+            }
+        },
+        "seq_CLKGATETST_X2": {
+            "seq_CLKGATETST_X2": {
+                "bytes": 0,
+                "mod": "seq_CLKGATETST_X2",
+                "mode": 4,
+                "out": "objs/udps/LUUB2.o"
+            }
+        },
+        "seq_CLKGATETST_X4": {
+            "seq_CLKGATETST_X4": {
+                "bytes": 0,
+                "mod": "seq_CLKGATETST_X4",
+                "mode": 4,
+                "out": "objs/udps/xbI2P.o"
+            }
+        },
+        "seq_DLL_X2": {
+            "seq_DLL_X2": {
+                "bytes": 0,
+                "mod": "seq_DLL_X2",
+                "mode": 4,
+                "out": "objs/udps/raLFp.o"
+            }
+        },
+        "seq_DLH_X1": {
+            "seq_DLH_X1": {
+                "bytes": 0,
+                "mod": "seq_DLH_X1",
+                "mode": 4,
+                "out": "objs/udps/H7wg2.o"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "checksum": 0,
+                "bytes": 33820,
+                "archive": "archive.2/_prev_archive_1.a",
+                "mod": "std",
+                "mode": 4,
+                "out": "reYIK_d.o"
+            }
+        },
+        "testbench": {
+            "iAVhC_d": {
+                "checksum": 0,
+                "bytes": 74956,
+                "archive": "archive.2/_692_archive_1.a",
+                "mod": "testbench",
+                "out": "iAVhC_d.o",
+                "mode": 4
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "checksum": 0,
+                "bytes": 9856,
+                "mod": "...MASTER...",
+                "out": "objs/amcQw_d.o",
+                "mode": 4
+            }
+        },
+        "seq_DFFS_X2": {
+            "seq_DFFS_X2": {
+                "bytes": 0,
+                "mod": "seq_DFFS_X2",
+                "mode": 4,
+                "out": "objs/udps/Ka3iY.o"
+            }
+        },
+        "seq_DLH_X2": {
+            "seq_DLH_X2": {
+                "bytes": 0,
+                "mod": "seq_DLH_X2",
+                "mode": 4,
+                "out": "objs/udps/zPvv6.o"
+            }
+        },
+        "seq_DFFR_X2": {
+            "seq_DFFR_X2": {
+                "bytes": 0,
+                "mod": "seq_DFFR_X2",
+                "mode": 4,
+                "out": "objs/udps/nC9PF.o"
+            }
+        }
+    },
+    "Misc": {
+        "vcs_version": "N-2017.12-SP2-1_Full64",
+        "archive_dir": "archive.2",
+        "vcs_build_date": "Build Date = Jul 14 2018 20:29:59",
+        "cwd": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn",
+        "default_output_dir": "csrc",
+        "master_pid": 692,
+        "csrc": "csrc",
+        "VCS_HOME": "/usr/caen/vcs-2017.12-SP2-1",
+        "csrc_abs": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/csrc",
+        "daidir": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/syn_simv.daidir",
+        "daidir_abs": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/syn_simv.daidir"
+    },
+    "rlimit": {
+        "data": -1,
+        "stack": -1
     },
     "NameTable": {
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
+        "in_ctrl": [
+            "in_ctrl",
+            "Byytr",
             "module",
-            228
+            168
+        ],
+        "SDFFRS_X1": [
+            "SDFFRS_X1",
+            "ddY8m",
+            "module",
+            44
+        ],
+        "AOI211_X4": [
+            "AOI211_X4",
+            "jB3aN",
+            "module",
+            148
+        ],
+        "in_ctrl_1_0": [
+            "in_ctrl_1_0",
+            "dY8Ps",
+            "module",
+            163
+        ],
+        "OAI222_X1": [
+            "OAI222_X1",
+            "dtRWy",
+            "module",
+            60
+        ],
+        "in_ctrl_2_0": [
+            "in_ctrl_2_0",
+            "dFs0n",
+            "module",
+            162
+        ],
+        "BUF_X2": [
+            "BUF_X2",
+            "TLjwp",
+            "module",
+            132
+        ],
+        "OAI21_X2": [
+            "OAI21_X2",
+            "uZHeu",
+            "module",
+            65
         ],
         "std": [
             "std",
@@ -23,538 +826,1052 @@
             "module",
             1
         ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module",
+            138
+        ],
+        "NOR2_X1": [
+            "NOR2_X1",
+            "niDbq",
+            "module",
+            78
+        ],
+        "OR3_X4": [
+            "OR3_X4",
+            "s2CPt",
+            "module",
+            48
+        ],
         "testbench": [
             "testbench",
             "iAVhC",
             "module",
             2
         ],
+        "OR4_X1": [
+            "OR4_X1",
+            "A8PEV",
+            "module",
+            47
+        ],
         "BC_FIR_1": [
             "BC_FIR_1",
             "TbtRK",
             "module",
-            91
+            169
+        ],
+        "OAI33_X1": [
+            "OAI33_X1",
+            "pgTyV",
+            "module",
+            54
+        ],
+        "DLL_X1": [
+            "DLL_X1",
+            "nWs6r",
+            "module",
+            107
+        ],
+        "in_ctrl_2_1": [
+            "in_ctrl_2_1",
+            "smT0C",
+            "module",
+            165
+        ],
+        "AOI222_X2": [
+            "AOI222_X2",
+            "udwkC",
+            "module",
+            140
+        ],
+        "CLKGATETST_X2": [
+            "CLKGATETST_X2",
+            "wzsrA",
+            "module",
+            124
+        ],
+        "in_ctrl_4_1": [
+            "in_ctrl_4_1",
+            "e1Veb",
+            "module",
+            164
+        ],
+        "NOR2_X2": [
+            "NOR2_X2",
+            "rTDQE",
+            "module",
+            77
         ],
         "BC_FIR": [
             "BC_FIR",
             "Lz0T7",
             "module",
-            92
+            167
         ],
-        "in_ctrl_0000": [
-            "in_ctrl_0000",
-            "iMSTb",
+        "HA_X1": [
+            "HA_X1",
+            "zwwDY",
             "module",
-            90
+            98
         ],
-        "in_ctrl_2_0000": [
-            "in_ctrl_2_0000",
-            "aTrsQ",
+        "AND2_X1": [
+            "AND2_X1",
+            "VuJYN",
             "module",
-            88
+            160
         ],
-        "in_ctrl_1_0000": [
-            "in_ctrl_1_0000",
-            "PrIZE",
+        "AOI211_X2": [
+            "AOI211_X2",
+            "QvzHi",
+            "module",
+            149
+        ],
+        "OAI21_X1": [
+            "OAI21_X1",
+            "weLWf",
+            "module",
+            66
+        ],
+        "AOI222_X4": [
+            "AOI222_X4",
+            "kefIA",
+            "module",
+            139
+        ],
+        "in_ctrl_1_1": [
+            "in_ctrl_1_1",
+            "znVLs",
+            "module",
+            166
+        ],
+        "BUF_X16": [
+            "BUF_X16",
+            "qzUmi",
+            "module",
+            133
+        ],
+        "in_ctrl_4_0": [
+            "in_ctrl_4_0",
+            "Y7EPx",
+            "module",
+            161
+        ],
+        "OR2_X1": [
+            "OR2_X1",
+            "ZF22v",
+            "module",
+            53
+        ],
+        "seq_DFFRS_X2": [
+            "seq_DFFRS_X2",
+            "BKdDj",
+            "udp",
+            16
+        ],
+        "BUF_X4": [
+            "BUF_X4",
+            "cde7v",
+            "module",
+            130
+        ],
+        "OAI221_X2": [
+            "OAI221_X2",
+            "g3eWu",
+            "module",
+            62
+        ],
+        "AND3_X2": [
+            "AND3_X2",
+            "RT7H6",
+            "module",
+            156
+        ],
+        "AND3_X1": [
+            "AND3_X1",
+            "NvMsv",
+            "module",
+            157
+        ],
+        "DFFRS_X1": [
+            "DFFRS_X1",
+            "SSGi3",
+            "module",
+            117
+        ],
+        "BUF_X32": [
+            "BUF_X32",
+            "hGQer",
+            "module",
+            131
+        ],
+        "seq_DFFR_X1": [
+            "seq_DFFR_X1",
+            "fTq4m",
+            "udp",
+            15
+        ],
+        "AND2_X2": [
+            "AND2_X2",
+            "VVSsb",
+            "module",
+            159
+        ],
+        "seq_CLKGATE_X1": [
+            "seq_CLKGATE_X1",
+            "r1svH",
+            "udp",
+            21
+        ],
+        "CLKBUF_X3": [
+            "CLKBUF_X3",
+            "I3ZTt",
+            "module",
+            126
+        ],
+        "AND2_X4": [
+            "AND2_X4",
+            "Eiryw",
+            "module",
+            158
+        ],
+        "AND3_X4": [
+            "AND3_X4",
+            "gFIu9",
+            "module",
+            155
+        ],
+        "AOI21_X4": [
+            "AOI21_X4",
+            "B0TgR",
+            "module",
+            145
+        ],
+        "seq_SDFF_X1": [
+            "seq_SDFF_X1",
+            "U3y5c",
+            "udp",
+            182
+        ],
+        "DFFR_X2": [
+            "DFFR_X2",
+            "mhVxc",
+            "module",
+            114
+        ],
+        "seq_DFFRS_X1": [
+            "seq_DFFRS_X1",
+            "m9nzD",
+            "udp",
+            17
+        ],
+        "OAI22_X1": [
+            "OAI22_X1",
+            "DehPx",
+            "module",
+            57
+        ],
+        "OR4_X2": [
+            "OR4_X2",
+            "fPKez",
+            "module",
+            46
+        ],
+        "AND4_X1": [
+            "AND4_X1",
+            "RbQQf",
+            "module",
+            154
+        ],
+        "OAI22_X2": [
+            "OAI22_X2",
+            "Q6HRz",
+            "module",
+            56
+        ],
+        "TBUF_X2": [
+            "TBUF_X2",
+            "vgF7x",
+            "module",
+            34
+        ],
+        "AOI21_X2": [
+            "AOI21_X2",
+            "IgkTU",
+            "module",
+            146
+        ],
+        "FILLCELL_X2": [
+            "FILLCELL_X2",
+            "ssIN6",
+            "module",
+            103
+        ],
+        "NAND3_X1": [
+            "NAND3_X1",
+            "dTgYn",
+            "module",
+            84
+        ],
+        "AND4_X2": [
+            "AND4_X2",
+            "LExWD",
+            "module",
+            153
+        ],
+        "AND4_X4": [
+            "AND4_X4",
+            "VBcxJ",
+            "module",
+            152
+        ],
+        "DFF_X2": [
+            "DFF_X2",
+            "cAgAp",
+            "module",
+            110
+        ],
+        "ANTENNA_X1": [
+            "ANTENNA_X1",
+            "VeZ0b",
+            "module",
+            151
+        ],
+        "seq_SDFF_X2": [
+            "seq_SDFF_X2",
+            "ybMuj",
+            "udp",
+            183
+        ],
+        "AOI211_X1": [
+            "AOI211_X1",
+            "NGk7a",
+            "module",
+            150
+        ],
+        "NAND4_X2": [
+            "NAND4_X2",
+            "EccY1",
+            "module",
+            80
+        ],
+        "seq_CLKGATETST_X2": [
+            "seq_CLKGATETST_X2",
+            "LUUB2",
+            "udp",
+            24
+        ],
+        "DFFS_X1": [
+            "DFFS_X1",
+            "uJYV5",
+            "module",
+            113
+        ],
+        "AOI21_X1": [
+            "AOI21_X1",
+            "vC1RA",
+            "module",
+            147
+        ],
+        "OAI22_X4": [
+            "OAI22_X4",
+            "jZfsW",
+            "module",
+            55
+        ],
+        "BUF_X1": [
+            "BUF_X1",
+            "YsdDm",
+            "module",
+            134
+        ],
+        "DFFS_X2": [
+            "DFFS_X2",
+            "dGZ4W",
+            "module",
+            112
+        ],
+        "AOI221_X1": [
+            "AOI221_X1",
+            "Yb0mY",
+            "module",
+            144
+        ],
+        "AOI221_X2": [
+            "AOI221_X2",
+            "Pb859",
+            "module",
+            143
+        ],
+        "MUX2_X1": [
+            "MUX2_X1",
+            "cZsd2",
             "module",
             89
         ],
-        "in_ctrl_4_0000": [
-            "in_ctrl_4_0000",
-            "xAL3J",
+        "DLH_X1": [
+            "DLH_X1",
+            "iFUMs",
+            "module",
+            109
+        ],
+        "AOI221_X4": [
+            "AOI221_X4",
+            "wqBMw",
+            "module",
+            142
+        ],
+        "INV_X16": [
+            "INV_X16",
+            "iBmLA",
+            "module",
+            96
+        ],
+        "AOI222_X1": [
+            "AOI222_X1",
+            "wZ8FS",
+            "module",
+            141
+        ],
+        "AOI22_X1": [
+            "AOI22_X1",
+            "Mqjch",
+            "module",
+            137
+        ],
+        "seq_DFFR_X2": [
+            "seq_DFFR_X2",
+            "nC9PF",
+            "udp",
+            14
+        ],
+        "AOI22_X2": [
+            "AOI22_X2",
+            "xV7Kr",
+            "module",
+            136
+        ],
+        "INV_X1": [
+            "INV_X1",
+            "tIkV7",
+            "module",
+            97
+        ],
+        "seq_DFF_X2": [
+            "seq_DFF_X2",
+            "GUwfU",
+            "udp",
+            10
+        ],
+        "INV_X4": [
+            "INV_X4",
+            "ELdYL",
+            "module",
+            93
+        ],
+        "seq_CLKGATETST_X8": [
+            "seq_CLKGATETST_X8",
+            "b1HMI",
+            "udp",
+            22
+        ],
+        "DFF_X1": [
+            "DFF_X1",
+            "ZcSdx",
+            "module",
+            111
+        ],
+        "AOI22_X4": [
+            "AOI22_X4",
+            "Icm5k",
+            "module",
+            135
+        ],
+        "BUF_X8": [
+            "BUF_X8",
+            "k9gcS",
+            "module",
+            129
+        ],
+        "CLKBUF_X1": [
+            "CLKBUF_X1",
+            "Qr2gM",
+            "module",
+            128
+        ],
+        "OAI211_X2": [
+            "OAI211_X2",
+            "I24KV",
+            "module",
+            68
+        ],
+        "ng_xbuf": [
+            "ng_xbuf",
+            "Fdess",
+            "udp",
+            185
+        ],
+        "seq_SDFFR_X2": [
+            "seq_SDFFR_X2",
+            "IAPS0",
+            "udp",
+            179
+        ],
+        "DFFRS_X2": [
+            "DFFRS_X2",
+            "fvFmf",
+            "module",
+            116
+        ],
+        "CLKGATETST_X8": [
+            "CLKGATETST_X8",
+            "S62Mq",
+            "module",
+            122
+        ],
+        "CLKBUF_X2": [
+            "CLKBUF_X2",
+            "JgbB5",
+            "module",
+            127
+        ],
+        "CLKGATETST_X1": [
+            "CLKGATETST_X1",
+            "CeNfr",
+            "module",
+            125
+        ],
+        "CLKGATETST_X4": [
+            "CLKGATETST_X4",
+            "sic1n",
+            "module",
+            123
+        ],
+        "CLKGATE_X1": [
+            "CLKGATE_X1",
+            "ruEQL",
+            "module",
+            121
+        ],
+        "CLKGATE_X2": [
+            "CLKGATE_X2",
+            "fnBbx",
+            "module",
+            120
+        ],
+        "CLKGATE_X4": [
+            "CLKGATE_X4",
+            "uGv75",
+            "module",
+            119
+        ],
+        "CLKGATE_X8": [
+            "CLKGATE_X8",
+            "Sq8aN",
+            "module",
+            118
+        ],
+        "DFFR_X1": [
+            "DFFR_X1",
+            "Nb9JU",
+            "module",
+            115
+        ],
+        "OR4_X4": [
+            "OR4_X4",
+            "qmtDU",
+            "module",
+            45
+        ],
+        "DLH_X2": [
+            "DLH_X2",
+            "Hsw7H",
+            "module",
+            108
+        ],
+        "DLL_X2": [
+            "DLL_X2",
+            "vdU38",
+            "module",
+            106
+        ],
+        "OAI21_X4": [
+            "OAI21_X4",
+            "KrDLa",
+            "module",
+            64
+        ],
+        "FA_X1": [
+            "FA_X1",
+            "zGtw9",
+            "module",
+            105
+        ],
+        "INV_X32": [
+            "INV_X32",
+            "ZkZdd",
+            "module",
+            94
+        ],
+        "NOR2_X4": [
+            "NOR2_X4",
+            "YvK8c",
+            "module",
+            76
+        ],
+        "FILLCELL_X1": [
+            "FILLCELL_X1",
+            "CwsTS",
+            "module",
+            104
+        ],
+        "FILLCELL_X4": [
+            "FILLCELL_X4",
+            "vVW6n",
+            "module",
+            102
+        ],
+        "FILLCELL_X8": [
+            "FILLCELL_X8",
+            "SuPF3",
+            "module",
+            101
+        ],
+        "FILLCELL_X16": [
+            "FILLCELL_X16",
+            "LCAAh",
+            "module",
+            100
+        ],
+        "seq_DFFS_X2": [
+            "seq_DFFS_X2",
+            "Ka3iY",
+            "udp",
+            12
+        ],
+        "FILLCELL_X32": [
+            "FILLCELL_X32",
+            "vPpGz",
+            "module",
+            99
+        ],
+        "INV_X2": [
+            "INV_X2",
+            "cshRd",
+            "module",
+            95
+        ],
+        "OR2_X4": [
+            "OR2_X4",
+            "Pu28T",
+            "module",
+            51
+        ],
+        "INV_X8": [
+            "INV_X8",
+            "pktRs",
+            "module",
+            92
+        ],
+        "LOGIC0_X1": [
+            "LOGIC0_X1",
+            "KN8uu",
+            "module",
+            91
+        ],
+        "LOGIC1_X1": [
+            "LOGIC1_X1",
+            "e8u6Y",
+            "module",
+            90
+        ],
+        "NOR4_X4": [
+            "NOR4_X4",
+            "Z4r7T",
+            "module",
+            70
+        ],
+        "MUX2_X2": [
+            "MUX2_X2",
+            "jYJuY",
+            "module",
+            88
+        ],
+        "NAND2_X1": [
+            "NAND2_X1",
+            "Q9D3j",
             "module",
             87
+        ],
+        "seq_DFFS_X1": [
+            "seq_DFFS_X1",
+            "u1p1q",
+            "udp",
+            13
+        ],
+        "NAND4_X1": [
+            "NAND4_X1",
+            "KHv0i",
+            "module",
+            81
+        ],
+        "NAND2_X2": [
+            "NAND2_X2",
+            "TzpYC",
+            "module",
+            86
+        ],
+        "NAND2_X4": [
+            "NAND2_X4",
+            "P9zuS",
+            "module",
+            85
+        ],
+        "OR3_X1": [
+            "OR3_X1",
+            "BUyxF",
+            "module",
+            50
+        ],
+        "seq_CLKGATE_X8": [
+            "seq_CLKGATE_X8",
+            "gEIcq",
+            "udp",
+            18
+        ],
+        "NAND3_X2": [
+            "NAND3_X2",
+            "HA9Wn",
+            "module",
+            83
+        ],
+        "TBUF_X16": [
+            "TBUF_X16",
+            "qF5ME",
+            "module",
+            35
+        ],
+        "NAND3_X4": [
+            "NAND3_X4",
+            "Eaaji",
+            "module",
+            82
+        ],
+        "NAND4_X4": [
+            "NAND4_X4",
+            "xZHvS",
+            "module",
+            79
+        ],
+        "TBUF_X8": [
+            "TBUF_X8",
+            "bkaG6",
+            "module",
+            32
+        ],
+        "NOR3_X1": [
+            "NOR3_X1",
+            "c6YDM",
+            "module",
+            75
+        ],
+        "NOR3_X2": [
+            "NOR3_X2",
+            "punbe",
+            "module",
+            74
+        ],
+        "NOR3_X4": [
+            "NOR3_X4",
+            "mgFs0",
+            "module",
+            73
+        ],
+        "NOR4_X1": [
+            "NOR4_X1",
+            "Y0MNu",
+            "module",
+            72
+        ],
+        "NOR4_X2": [
+            "NOR4_X2",
+            "g03ix",
+            "module",
+            71
+        ],
+        "OAI211_X1": [
+            "OAI211_X1",
+            "vIxGc",
+            "module",
+            69
+        ],
+        "OAI211_X4": [
+            "OAI211_X4",
+            "n9Etm",
+            "module",
+            67
+        ],
+        "OAI222_X2": [
+            "OAI222_X2",
+            "D5MnY",
+            "module",
+            59
+        ],
+        "OAI221_X1": [
+            "OAI221_X1",
+            "fmibn",
+            "module",
+            63
+        ],
+        "OAI221_X4": [
+            "OAI221_X4",
+            "gP3sR",
+            "module",
+            61
+        ],
+        "OAI222_X4": [
+            "OAI222_X4",
+            "AzGjc",
+            "module",
+            58
+        ],
+        "SDFF_X1": [
+            "SDFF_X1",
+            "tJUIM",
+            "module",
+            38
+        ],
+        "OR2_X2": [
+            "OR2_X2",
+            "Epweh",
+            "module",
+            52
+        ],
+        "OR3_X2": [
+            "OR3_X2",
+            "FbEzy",
+            "module",
+            49
+        ],
+        "SDFFRS_X2": [
+            "SDFFRS_X2",
+            "zdFeF",
+            "module",
+            43
+        ],
+        "SDFFR_X1": [
+            "SDFFR_X1",
+            "GqCTZ",
+            "module",
+            42
+        ],
+        "seq_SDFFRS_X2": [
+            "seq_SDFFRS_X2",
+            "eAL5P",
+            "udp",
+            4
+        ],
+        "SDFFR_X2": [
+            "SDFFR_X2",
+            "c3Zwn",
+            "module",
+            41
+        ],
+        "SDFFS_X1": [
+            "SDFFS_X1",
+            "zSUFm",
+            "module",
+            40
+        ],
+        "SDFFS_X2": [
+            "SDFFS_X2",
+            "MBt7m",
+            "module",
+            39
+        ],
+        "SDFF_X2": [
+            "SDFF_X2",
+            "a3GK2",
+            "module",
+            37
+        ],
+        "TBUF_X1": [
+            "TBUF_X1",
+            "U1sed",
+            "module",
+            36
+        ],
+        "TBUF_X4": [
+            "TBUF_X4",
+            "D3dFE",
+            "module",
+            33
+        ],
+        "TINV_X1": [
+            "TINV_X1",
+            "HZCKI",
+            "module",
+            31
+        ],
+        "TLAT_X1": [
+            "TLAT_X1",
+            "JTmUg",
+            "module",
+            30
+        ],
+        "XNOR2_X1": [
+            "XNOR2_X1",
+            "piG48",
+            "module",
+            29
+        ],
+        "XNOR2_X2": [
+            "XNOR2_X2",
+            "deStb",
+            "module",
+            28
+        ],
+        "XOR2_X1": [
+            "XOR2_X1",
+            "tnN2P",
+            "module",
+            27
+        ],
+        "XOR2_X2": [
+            "XOR2_X2",
+            "Mu1AT",
+            "module",
+            26
+        ],
+        "seq_CLKGATETST_X1": [
+            "seq_CLKGATETST_X1",
+            "T7p0B",
+            "udp",
+            25
+        ],
+        "seq_CLKGATETST_X4": [
+            "seq_CLKGATETST_X4",
+            "xbI2P",
+            "udp",
+            23
+        ],
+        "seq_CLKGATE_X2": [
+            "seq_CLKGATE_X2",
+            "TtP1m",
+            "udp",
+            20
+        ],
+        "seq_DFF_X1": [
+            "seq_DFF_X1",
+            "dnrsM",
+            "udp",
+            11
+        ],
+        "seq_CLKGATE_X4": [
+            "seq_CLKGATE_X4",
+            "yiFgW",
+            "udp",
+            19
+        ],
+        "seq_DLH_X1": [
+            "seq_DLH_X1",
+            "H7wg2",
+            "udp",
+            9
+        ],
+        "seq_DLH_X2": [
+            "seq_DLH_X2",
+            "zPvv6",
+            "udp",
+            8
+        ],
+        "seq_DLL_X1": [
+            "seq_DLL_X1",
+            "TxnM0",
+            "udp",
+            7
+        ],
+        "seq_DLL_X2": [
+            "seq_DLL_X2",
+            "raLFp",
+            "udp",
+            6
+        ],
+        "seq_SDFFRS_X1": [
+            "seq_SDFFRS_X1",
+            "CI3nG",
+            "udp",
+            5
+        ],
+        "seq_SDFFR_X1": [
+            "seq_SDFFR_X1",
+            "rkFjN",
+            "udp",
+            3
+        ],
+        "seq_SDFFS_X1": [
+            "seq_SDFFS_X1",
+            "FU5wF",
+            "udp",
+            180
+        ],
+        "seq_SDFFS_X2": [
+            "seq_SDFFS_X2",
+            "YUnBu",
+            "udp",
+            181
+        ],
+        "seq_TLAT_X1": [
+            "seq_TLAT_X1",
+            "L3597",
+            "udp",
+            184
         ]
     },
-    "perf": [
-        [
-            0.16018104553222656,
-            0.043303000000000001,
-            0.044333999999999998,
-            228504,
-            229304,
-            1609084965.827477,
-            22376708006955850,
-            "doParsingAndDesignResolution",
-            "entry"
-        ],
-        [
-            0.17778897285461426,
-            0.057356999999999998,
-            0.047114999999999997,
-            230304,
-            230952,
-            1609084965.8450849,
-            22376708045618266,
-            "doParsingAndDesignResolution",
-            "exit"
-        ],
-        [
-            0.18264317512512207,
-            0.058167000000000003,
-            0.048982999999999999,
-            230304,
-            230952,
-            1609084965.8499391,
-            22376708056273840,
-            "doPostDesignResolutionToVir2Vcs",
-            "entry"
-        ],
-        [
-            0.22930407524108887,
-            0.069487999999999994,
-            0.05416,
-            235344,
-            235348,
-            1609084965.8966,
-            22376708158665644,
-            "doUptoVir2VcsNoSepCleanup",
-            "entry"
-        ],
-        [
-            0.58681607246398926,
-            0.13052800000000001,
-            0.074875999999999998,
-            245876,
-            245896,
-            1609084966.254112,
-            22376708943369714,
-            "doUptoVir2VcsNoSepCleanup",
-            "exit"
-        ],
-        [
-            0.58697605133056641,
-            0.130631,
-            0.074935000000000002,
-            245876,
-            245896,
-            1609084966.254272,
-            22376708943670024,
-            "doRadify_vir2vcsAll",
-            "entry"
-        ],
-        [
-            0.69812798500061035,
-            0.151749,
-            0.079438999999999996,
-            245876,
-            245896,
-            1609084966.3654239,
-            22376709187668972,
-            "doRadify_vir2vcsAll",
-            "exit"
-        ],
-        [
-            0.69819903373718262,
-            0.15179699999999999,
-            0.079464000000000007,
-            245876,
-            245896,
-            1609084966.365495,
-            22376709187774730,
-            "doPostDesignResolutionToVir2Vcs",
-            "exit"
-        ],
-        [
-            0.69824504852294922,
-            0.15182699999999999,
-            0.079479999999999995,
-            245876,
-            245896,
-            1609084966.365541,
-            22376709187872684,
-            "doGAToPass2",
-            "entry"
-        ],
-        [
-            0.8466651439666748,
-            0.152725,
-            0.085526000000000005,
-            244320,
-            245896,
-            1609084966.5139611,
-            22376709513711468,
-            "DoPass2",
-            "entry"
-        ],
-        [
-            1.3383071422576904,
-            0.29023199999999999,
-            0.11831700000000001,
-            246304,
-            246332,
-            1609084967.0056031,
-            22376710592818502,
-            "DoPass2",
-            "exit"
-        ]
-    ],
-    "cpu_cycles_pass2_start": 22376709513758782,
-    "MlibObjs": {},
-    "stat": {
-        "realTime": 1.3867170810699463,
-        "ru_self_cgstart": {
-            "ru_nivcsw": 7,
-            "ru_utime_sec": 0.152725,
-            "ru_majflt": 5,
-            "ru_stime_sec": 0.085667999999999994,
-            "ru_minflt": 26686,
-            "ru_maxrss_kb": 73984,
-            "ru_nvcsw": 321
-        },
-        "Frontend(%)": 54.624050555209145,
-        "ru_childs_cgstart": {
-            "ru_nivcsw": 7,
-            "ru_utime_sec": 0.016348999999999999,
-            "ru_majflt": 0,
-            "ru_stime_sec": 0.02478,
-            "ru_minflt": 6346,
-            "ru_maxrss_kb": 23964,
-            "ru_nvcsw": 40
-        },
-        "quadSpeed": 54717.370718196646,
-        "nQuads": 7685,
-        "cpu_cycles_cgstart": 22376709513860810,
-        "nMops": 38989,
-        "totalObjSize": 394950,
-        "ru_self_end": {
-            "ru_nivcsw": 45,
-            "ru_utime_sec": 0.29236099999999998,
-            "ru_majflt": 12,
-            "ru_stime_sec": 0.13408300000000001,
-            "ru_minflt": 30857,
-            "ru_maxrss_kb": 83212,
-            "ru_nvcsw": 535
-        },
-        "outputSizePerQuad": 51.392322706571242,
-        "cpu_cycles_end": 22376710698690856,
-        "peak_mem_kb": 246332,
-        "ru_childs_end": {
-            "ru_nivcsw": 9,
-            "ru_utime_sec": 0.017162,
-            "ru_majflt": 0,
-            "ru_stime_sec": 0.028032000000000001,
-            "ru_minflt": 6940,
-            "ru_maxrss_kb": 24376,
-            "ru_nvcsw": 42
-        },
-        "cpu_cycles_total": 2991210426,
-        "mopSpeed": 277602.5461199439,
-        "CodeGen(%)": 45.375949444790848,
-        "mop/quad": 5.0733897202342222
+    "cpu_cycles_pass2_start": 26968483163815572,
+    "CurCompileUdps": {
+        "seq_DFFS_X2": "objs/udps/Ka3iY.o",
+        "seq_DLL_X1": "objs/udps/TxnM0.o",
+        "seq_CLKGATETST_X1": "objs/udps/T7p0B.o",
+        "seq_CLKGATETST_X8": "objs/udps/b1HMI.o",
+        "seq_DFF_X2": "objs/udps/GUwfU.o",
+        "seq_SDFFS_X2": "objs/udps/YUnBu.o",
+        "seq_CLKGATETST_X2": "objs/udps/LUUB2.o",
+        "seq_CLKGATETST_X4": "objs/udps/xbI2P.o",
+        "seq_CLKGATE_X1": "objs/udps/r1svH.o",
+        "seq_DFFR_X1": "objs/udps/fTq4m.o",
+        "seq_SDFF_X1": "objs/udps/U3y5c.o",
+        "seq_DFFRS_X1": "objs/udps/m9nzD.o",
+        "seq_SDFFS_X1": "objs/udps/FU5wF.o",
+        "seq_CLKGATE_X2": "objs/udps/TtP1m.o",
+        "seq_SDFF_X2": "objs/udps/ybMuj.o",
+        "seq_CLKGATE_X8": "objs/udps/gEIcq.o",
+        "seq_SDFFR_X1": "objs/udps/rkFjN.o",
+        "seq_CLKGATE_X4": "objs/udps/yiFgW.o",
+        "seq_DFFS_X1": "objs/udps/u1p1q.o",
+        "seq_DFF_X1": "objs/udps/dnrsM.o",
+        "seq_SDFFRS_X2": "objs/udps/eAL5P.o",
+        "seq_DFFRS_X2": "objs/udps/BKdDj.o",
+        "seq_DFFR_X2": "objs/udps/nC9PF.o",
+        "seq_DLH_X1": "objs/udps/H7wg2.o",
+        "seq_DLH_X2": "objs/udps/zPvv6.o",
+        "seq_DLL_X2": "objs/udps/raLFp.o",
+        "seq_SDFFRS_X1": "objs/udps/CI3nG.o",
+        "ng_xbuf": "objs/udps/Fdess.o",
+        "seq_TLAT_X1": "objs/udps/L3597.o",
+        "seq_SDFFR_X2": "objs/udps/IAPS0.o"
     },
+    "incremental": "on",
     "LVLData": [
         "SIM"
     ],
-    "PrevCompiledModules": {
-        "seq_CLKGATE_X1": {
-            "seq_CLKGATE_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATE_X1",
-                "out": "objs/udps/r1svH.o"
-            }
-        },
-        "seq_DFF_X2": {
-            "seq_DFF_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFF_X2",
-                "out": "objs/udps/GUwfU.o"
-            }
-        },
-        "seq_SDFFRS_X2": {
-            "seq_SDFFRS_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFRS_X2",
-                "out": "objs/udps/eAL5P.o"
-            }
-        },
-        "seq_DFF_X1": {
-            "seq_DFF_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFF_X1",
-                "out": "objs/udps/dnrsM.o"
-            }
-        },
-        "seq_DFFR_X1": {
-            "seq_DFFR_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFR_X1",
-                "out": "objs/udps/fTq4m.o"
-            }
-        },
-        "seq_SDFF_X1": {
-            "seq_SDFF_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFF_X1",
-                "out": "objs/udps/U3y5c.o"
-            }
-        },
-        "seq_CLKGATE_X4": {
-            "seq_CLKGATE_X4": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATE_X4",
-                "out": "objs/udps/yiFgW.o"
-            }
-        },
-        "seq_SDFF_X2": {
-            "seq_SDFF_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFF_X2",
-                "out": "objs/udps/ybMuj.o"
-            }
-        },
-        "seq_SDFFRS_X1": {
-            "seq_SDFFRS_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFRS_X1",
-                "out": "objs/udps/CI3nG.o"
-            }
-        },
-        "seq_SDFFR_X1": {
-            "seq_SDFFR_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFR_X1",
-                "out": "objs/udps/rkFjN.o"
-            }
-        },
-        "seq_CLKGATETST_X4": {
-            "seq_CLKGATETST_X4": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATETST_X4",
-                "out": "objs/udps/xbI2P.o"
-            }
-        },
-        "seq_SDFFR_X2": {
-            "seq_SDFFR_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFR_X2",
-                "out": "objs/udps/IAPS0.o"
-            }
-        },
-        "seq_DLL_X2": {
-            "seq_DLL_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DLL_X2",
-                "out": "objs/udps/raLFp.o"
-            }
-        },
-        "seq_CLKGATETST_X2": {
-            "seq_CLKGATETST_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATETST_X2",
-                "out": "objs/udps/LUUB2.o"
-            }
-        },
-        "seq_CLKGATETST_X1": {
-            "seq_CLKGATETST_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATETST_X1",
-                "out": "objs/udps/T7p0B.o"
-            }
-        },
-        "seq_CLKGATE_X8": {
-            "seq_CLKGATE_X8": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATE_X8",
-                "out": "objs/udps/gEIcq.o"
-            }
-        },
-        "seq_DLH_X2": {
-            "seq_DLH_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DLH_X2",
-                "out": "objs/udps/zPvv6.o"
-            }
-        },
-        "seq_DLL_X1": {
-            "seq_DLL_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DLL_X1",
-                "out": "objs/udps/TxnM0.o"
-            }
-        },
-        "seq_SDFFS_X2": {
-            "seq_SDFFS_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFS_X2",
-                "out": "objs/udps/YUnBu.o"
-            }
-        },
-        "seq_CLKGATE_X2": {
-            "seq_CLKGATE_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATE_X2",
-                "out": "objs/udps/TtP1m.o"
-            }
-        },
-        "seq_CLKGATETST_X8": {
-            "seq_CLKGATETST_X8": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_CLKGATETST_X8",
-                "out": "objs/udps/b1HMI.o"
-            }
-        },
-        "std": {
-            "reYIK_d": {
-                "checksum": 0,
-                "bytes": 33820,
-                "mode": 4,
-                "mod": "std",
-                "archive": "archive.6/_prev_archive_1.a",
-                "out": "reYIK_d.o"
-            }
-        },
-        "seq_DFFS_X2": {
-            "seq_DFFS_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFS_X2",
-                "out": "objs/udps/Ka3iY.o"
-            }
-        },
-        "seq_TLAT_X1": {
-            "seq_TLAT_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_TLAT_X1",
-                "out": "objs/udps/L3597.o"
-            }
-        },
-        "seq_DFFR_X2": {
-            "seq_DFFR_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFR_X2",
-                "out": "objs/udps/nC9PF.o"
-            }
-        },
-        "testbench": {
-            "iAVhC_d": {
-                "checksum": 0,
-                "bytes": 1381714,
-                "mode": 4,
-                "mod": "testbench",
-                "out": "iAVhC_d.o",
-                "archive": "archive.6/_26239_archive_1.a"
-            }
-        },
-        "seq_DFFS_X1": {
-            "seq_DFFS_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFS_X1",
-                "out": "objs/udps/u1p1q.o"
-            }
-        },
-        "seq_DFFRS_X1": {
-            "seq_DFFRS_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFRS_X1",
-                "out": "objs/udps/m9nzD.o"
-            }
-        },
-        "...MASTER...": {
-            "amcQw_d": {
-                "checksum": 0,
-                "bytes": 24116,
-                "mode": 4,
-                "mod": "...MASTER...",
-                "out": "objs/amcQw_d.o"
-            }
-        },
-        "seq_DFFRS_X2": {
-            "seq_DFFRS_X2": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DFFRS_X2",
-                "out": "objs/udps/BKdDj.o"
-            }
-        },
-        "seq_DLH_X1": {
-            "seq_DLH_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_DLH_X1",
-                "out": "objs/udps/H7wg2.o"
-            }
-        },
-        "seq_SDFFS_X1": {
-            "seq_SDFFS_X1": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "seq_SDFFS_X1",
-                "out": "objs/udps/FU5wF.o"
-            }
-        },
-        "ng_xbuf": {
-            "ng_xbuf": {
-                "bytes": 0,
-                "mode": 4,
-                "mod": "ng_xbuf",
-                "out": "objs/udps/Fdess.o"
-            }
-        }
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "text": 0,
+        "bytes": 109632,
+        "archive": "archive.2/_692_archive_1.a"
     },
-    "Misc": {
-        "vcs_version": "N-2017.12-SP2-1_Full64",
-        "vcs_build_date": "Build Date = Jul 14 2018 20:29:59",
-        "cwd": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn",
-        "master_pid": 26239,
-        "VCS_HOME": "/usr/caen/vcs-2017.12-SP2-1",
-        "csrc_abs": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/csrc",
-        "csrc": "csrc",
-        "daidir": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/simv.daidir",
-        "daidir_abs": "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/simv.daidir",
-        "default_output_dir": "csrc",
-        "archive_dir": "archive.6"
-    },
-    "CompileStrategy": "fullobj",
-    "incremental": "on",
-    "CurCompileModules": [
-        "...MASTER...",
-        "...MASTER...",
-        "std",
-        "testbench",
-        "testbench",
-        "BC_FIR",
-        "BC_FIR",
-        "BC_FIR_1",
-        "BC_FIR_1",
-        "in_ctrl_0000",
-        "in_ctrl_0000",
-        "in_ctrl_1_0000",
-        "in_ctrl_1_0000",
-        "in_ctrl_2_0000",
-        "in_ctrl_2_0000",
-        "in_ctrl_4_0000",
-        "in_ctrl_4_0000"
-    ],
     "PEModules": [],
-    "rlimit": {
-        "stack": -1,
-        "data": -1
-    },
     "CompileStatus": "Successful"
 }
