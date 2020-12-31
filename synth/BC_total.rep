@@ -4,7 +4,7 @@ Information: Updating design information... (UID-85)
 Report : design
 Design : BC_total
 Version: O-2018.06
-Date   : Tue Dec 29 16:26:27 2020
+Date   : Wed Dec 30 21:26:40 2020
 ****************************************
 
 Design allows ideal nets on clock nets.
@@ -91,29 +91,29 @@ Design Parameters:
 Report : area
 Design : BC_total
 Version: O-2018.06
-Date   : Tue Dec 29 16:26:27 2020
+Date   : Wed Dec 30 21:26:40 2020
 ****************************************
 
 Library(s) Used:
 
     NangateOpenCellLibrary (File: /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.db)
 
-Number of ports:                         2745
-Number of nets:                         10339
-Number of cells:                         7708
-Number of combinational cells:           2702
-Number of sequential cells:              4998
+Number of ports:                         5732
+Number of nets:                         14585
+Number of cells:                         9366
+Number of combinational cells:           4204
+Number of sequential cells:              5076
 Number of macros/black boxes:               0
-Number of buf/inv:                       1614
-Number of references:                      19
+Number of buf/inv:                       1610
+Number of references:                      24
 
-Combinational area:               2701.762016
-Buf/Inv area:                     1090.067987
+Combinational area:               6697.880028
+Buf/Inv area:                     1086.343987
 Noncombinational area:           22510.515183
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                 25212.277200
+Total cell area:                 29208.395211
 Total area:                 undefined
 1
  
@@ -127,13 +127,13 @@ Report : timing
         -transition_time
 Design : BC_total
 Version: O-2018.06
-Date   : Tue Dec 29 16:26:27 2020
+Date   : Wed Dec 30 21:26:40 2020
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
 Wire Load Model Mode: top
 
-  Startpoint: counter_reg[1]
+  Startpoint: counter_reg[0]
               (rising edge-triggered flip-flop clocked by clock)
   Endpoint: counter_reg[1]
             (rising edge-triggered flip-flop clocked by clock)
@@ -148,26 +148,20 @@ Wire Load Model Mode: top
   ---------------------------------------------------------------------
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
-  counter_reg[1]/CK (DFF_X1)               0.00      0.00       0.00 r
-  counter_reg[1]/Q (DFF_X1)                0.01      0.09       0.09 f
-  counter[1] (net)               6                   0.00       0.09 f
-  U1966/A2 (NOR2_X1)                       0.01      0.02       0.11 f
-  U1966/ZN (NOR2_X1)                       0.02      0.04       0.15 r
-  n1559 (net)                    2                   0.00       0.15 r
-  U1913/A (BUF_X1)                         0.02      0.01       0.16 r
-  U1913/Z (BUF_X1)                         0.02      0.04       0.20 r
-  n1578 (net)                    3                   0.00       0.20 r
-  U1875/A (BUF_X2)                         0.02      0.02       0.22 r
-  U1875/Z (BUF_X2)                         0.09      0.12       0.34 r
-  n1584 (net)                   28                   0.00       0.34 r
-  U1844/A1 (NOR2_X1)                       0.09      0.04       0.38 r
-  U1844/ZN (NOR2_X1)                       0.02      0.02       0.40 f
-  n1252 (net)                    2                   0.00       0.40 f
-  U1968/A2 (NOR2_X1)                       0.02      0.02       0.41 f
-  U1968/ZN (NOR2_X1)                       0.02      0.03       0.45 r
-  N10 (net)                      1                   0.00       0.45 r
-  counter_reg[1]/D (DFF_X1)                0.02      0.01       0.46 r
-  data arrival time                                             0.46
+  counter_reg[0]/CK (DFF_X1)               0.00      0.00       0.00 r
+  counter_reg[0]/Q (DFF_X1)                0.02      0.10       0.10 r
+  counter[0] (net)               4                   0.00       0.10 r
+  U3344/A1 (AND2_X2)                       0.02      0.02       0.12 r
+  U3344/ZN (AND2_X2)                       0.05      0.09       0.21 r
+  n1562 (net)                   17                   0.00       0.21 r
+  U3456/A1 (NOR2_X1)                       0.05      0.03       0.24 r
+  U3456/ZN (NOR2_X1)                       0.02      0.02       0.26 f
+  n1252 (net)                    2                   0.00       0.26 f
+  U3408/A2 (NOR2_X1)                       0.02      0.02       0.27 f
+  U3408/ZN (NOR2_X1)                       0.02      0.03       0.30 r
+  N10 (net)                      1                   0.00       0.30 r
+  counter_reg[1]/D (DFF_X1)                0.02      0.01       0.31 r
+  data arrival time                                             0.31
 
   clock clock (rise edge)                            3.00       3.00
   clock network delay (ideal)                        0.00       3.00
@@ -177,9 +171,9 @@ Wire Load Model Mode: top
   data required time                                            2.87
   ---------------------------------------------------------------------
   data required time                                            2.87
-  data arrival time                                            -0.46
+  data arrival time                                            -0.31
   ---------------------------------------------------------------------
-  slack (MET)                                                   2.41
+  slack (MET)                                                   2.55
 
 
   Startpoint: counter_reg[0]
@@ -198,25 +192,25 @@ Wire Load Model Mode: top
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
   counter_reg[0]/CK (DFF_X1)               0.00      0.00       0.00 r
-  counter_reg[0]/Q (DFF_X1)                0.01      0.09       0.09 f
-  counter[0] (net)               3                   0.00       0.09 f
-  U1967/A2 (NOR2_X1)                       0.01      0.02       0.10 f
-  U1967/ZN (NOR2_X1)                       0.02      0.03       0.13 r
-  N9 (net)                       1                   0.00       0.13 r
-  counter_reg[0]/D (DFF_X1)                0.02      0.01       0.14 r
+  counter_reg[0]/Q (DFF_X1)                0.02      0.10       0.10 r
+  counter[0] (net)               4                   0.00       0.10 r
+  U3391/A2 (NOR2_X1)                       0.02      0.02       0.12 r
+  U3391/ZN (NOR2_X1)                       0.01      0.01       0.13 f
+  N9 (net)                       1                   0.00       0.13 f
+  counter_reg[0]/D (DFF_X1)                0.01      0.01       0.14 f
   data arrival time                                             0.14
 
   clock clock (rise edge)                            3.00       3.00
   clock network delay (ideal)                        0.00       3.00
   clock uncertainty                                 -0.10       2.90
   counter_reg[0]/CK (DFF_X1)                         0.00       2.90 r
-  library setup time                                -0.03       2.87
-  data required time                                            2.87
+  library setup time                                -0.04       2.86
+  data required time                                            2.86
   ---------------------------------------------------------------------
-  data required time                                            2.87
+  data required time                                            2.86
   data arrival time                                            -0.14
   ---------------------------------------------------------------------
-  slack (MET)                                                   2.73
+  slack (MET)                                                   2.72
 
 
   Startpoint: reset (input port clocked by clock)
@@ -236,8 +230,8 @@ Wire Load Model Mode: top
   input external delay                               0.10       0.10 r
   reset (in)                               0.02      0.01       0.11 r
   reset (net)                    2                   0.00       0.11 r
-  U1968/A1 (NOR2_X1)                       0.02      0.02       0.13 r
-  U1968/ZN (NOR2_X1)                       0.01      0.01       0.14 f
+  U3408/A1 (NOR2_X1)                       0.02      0.02       0.13 r
+  U3408/ZN (NOR2_X1)                       0.01      0.01       0.14 f
   N10 (net)                      1                   0.00       0.14 f
   counter_reg[1]/D (DFF_X1)                0.01      0.01       0.15 f
   data arrival time                                             0.15
@@ -269,30 +263,31 @@ Wire Load Model Mode: top
   ---------------------------------------------------------------------
   clock clock (rise edge)                            0.00       0.00
   clock network delay (ideal)                        0.00       0.00
-  input external delay                               0.10       0.10 f
-  reset (in)                               0.01      0.01       0.11 f
-  reset (net)                    2                   0.00       0.11 f
-  U1967/A1 (NOR2_X1)                       0.01      0.01       0.12 f
-  U1967/ZN (NOR2_X1)                       0.02      0.02       0.14 r
-  N9 (net)                       1                   0.00       0.14 r
-  counter_reg[0]/D (DFF_X1)                0.02      0.01       0.15 r
+  input external delay                               0.10       0.10 r
+  reset (in)                               0.02      0.01       0.11 r
+  reset (net)                    2                   0.00       0.11 r
+  U3391/A1 (NOR2_X1)                       0.02      0.02       0.13 r
+  U3391/ZN (NOR2_X1)                       0.01      0.01       0.14 f
+  N9 (net)                       1                   0.00       0.14 f
+  counter_reg[0]/D (DFF_X1)                0.01      0.01       0.15 f
   data arrival time                                             0.15
 
   clock clock (rise edge)                            3.00       3.00
   clock network delay (ideal)                        0.00       3.00
   clock uncertainty                                 -0.10       2.90
   counter_reg[0]/CK (DFF_X1)                         0.00       2.90 r
-  library setup time                                -0.03       2.87
-  data required time                                            2.87
+  library setup time                                -0.04       2.86
+  data required time                                            2.86
   ---------------------------------------------------------------------
-  data required time                                            2.87
+  data required time                                            2.86
   data arrival time                                            -0.15
   ---------------------------------------------------------------------
   slack (MET)                                                   2.71
 
 
-  Startpoint: my_BC_FIR_44/out[1] (internal pin)
-  Endpoint: out[25] (output port clocked by clock)
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: out[23] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -300,26 +295,137 @@ Wire Load Model Mode: top
   ------------------------------------------------
   BC_total           5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout     Trans      Incr       Path
-  ---------------------------------------------------------------------
-  my_BC_FIR_44/out[1] (BC_FIR_1)           0.00      0.00       0.00 r
-  out[25] (net)                  3                   0.00       0.00 r
-  out[25] (out)                            0.00      0.00       0.00 r
-  data arrival time                                             0.00
+  Point                                       Fanout     Trans      Incr       Path
+  ------------------------------------------------------------------------------------
+  counter_reg[0]/CK (DFF_X1)                              0.00      0.00       0.00 r
+  counter_reg[0]/Q (DFF_X1)                               0.01      0.09       0.09 f
+  counter[0] (net)                              4                   0.00       0.09 f
+  U3463/A2 (AND2_X1)                                      0.01      0.01       0.10 f
+  U3463/ZN (AND2_X1)                                      0.01      0.03       0.14 f
+  N24 (net)                                     2                   0.00       0.14 f
+  U1942/A (BUF_X1)                                        0.01      0.01       0.15 f
+  U1942/Z (BUF_X1)                                        0.01      0.03       0.18 f
+  n1733 (net)                                   3                   0.00       0.18 f
+  U1875/A (BUF_X1)                                        0.01      0.01       0.19 f
+  U1875/Z (BUF_X1)                                        0.01      0.03       0.22 f
+  n1732 (net)                                   2                   0.00       0.22 f
+  U1845/A (BUF_X1)                                        0.01      0.01       0.23 f
+  U1845/Z (BUF_X1)                                        0.03      0.06       0.28 f
+  n1751 (net)                                  11                   0.00       0.28 f
+  U3385/A2 (OR2_X1)                                       0.03      0.01       0.30 f
+  U3385/ZN (OR2_X1)                                       0.01      0.06       0.36 f
+  n940 (net)                                    2                   0.00       0.36 f
+  U3345/A (BUF_X1)                                        0.01      0.01       0.37 f
+  U3345/Z (BUF_X1)                                        0.01      0.03       0.40 f
+  n1700 (net)                                   2                   0.00       0.40 f
+  U1811/A (BUF_X1)                                        0.01      0.01       0.41 f
+  U1811/Z (BUF_X1)                                        0.01      0.03       0.43 f
+  n1694 (net)                                   2                   0.00       0.43 f
+  U1722/A (BUF_X1)                                        0.01      0.01       0.44 f
+  U1722/Z (BUF_X1)                                        0.06      0.09       0.54 f
+  n1714 (net)                                  22                   0.00       0.54 f
+  U3415/A2 (AOI22_X1)                                     0.06      0.03       0.57 f
+  U3415/ZN (AOI22_X1)                                     0.03      0.06       0.63 r
+  n1090 (net)                                   1                   0.00       0.63 r
+  U1908/A (INV_X1)                                        0.03      0.01       0.64 r
+  U1908/ZN (INV_X1)                                       0.01      0.02       0.66 f
+  n474 (net)                                    1                   0.00       0.66 f
+  my_BC_FIR_22/in[28][1] (BC_FIR_1_1)                               0.00       0.66 f
+  my_BC_FIR_22/in[28][1] (net)                                      0.00       0.66 f
+  my_BC_FIR_22/add_29/B[1] (BC_FIR_1_1_DW01_add_23)                 0.00       0.66 f
+  my_BC_FIR_22/add_29/B[1] (net)                                    0.00       0.66 f
+  my_BC_FIR_22/add_29/U1_1/B (FA_X1)                      0.01      0.03       0.68 f
+  my_BC_FIR_22/add_29/U1_1/CO (FA_X1)                     0.02      0.08       0.77 f
+  my_BC_FIR_22/add_29/carry[2] (net)            1                   0.00       0.77 f
+  my_BC_FIR_22/add_29/U1_2/CI (FA_X1)                     0.02      0.02       0.79 f
+  my_BC_FIR_22/add_29/U1_2/CO (FA_X1)                     0.02      0.07       0.86 f
+  my_BC_FIR_22/add_29/carry[3] (net)            1                   0.00       0.86 f
+  my_BC_FIR_22/add_29/U1_3/CI (FA_X1)                     0.02      0.02       0.88 f
+  my_BC_FIR_22/add_29/U1_3/CO (FA_X1)                     0.02      0.07       0.95 f
+  my_BC_FIR_22/add_29/carry[4] (net)            1                   0.00       0.95 f
+  my_BC_FIR_22/add_29/U1_4/CI (FA_X1)                     0.02      0.02       0.97 f
+  my_BC_FIR_22/add_29/U1_4/CO (FA_X1)                     0.02      0.07       1.04 f
+  my_BC_FIR_22/add_29/carry[5] (net)            1                   0.00       1.04 f
+  my_BC_FIR_22/add_29/U1_5/CI (FA_X1)                     0.02      0.02       1.06 f
+  my_BC_FIR_22/add_29/U1_5/CO (FA_X1)                     0.02      0.07       1.14 f
+  my_BC_FIR_22/add_29/carry[6] (net)            1                   0.00       1.14 f
+  my_BC_FIR_22/add_29/U1_6/CI (FA_X1)                     0.02      0.02       1.16 f
+  my_BC_FIR_22/add_29/U1_6/S (FA_X1)                      0.03      0.13       1.29 r
+  my_BC_FIR_22/add_29/SUM[6] (net)              3                   0.00       1.29 r
+  my_BC_FIR_22/add_29/SUM[6] (BC_FIR_1_1_DW01_add_23)               0.00       1.29 r
+  my_BC_FIR_22/N94 (net)                                            0.00       1.29 r
+  my_BC_FIR_22/mult_29/B[6] (BC_FIR_1_1_DW02_mult_4)                0.00       1.29 r
+  my_BC_FIR_22/mult_29/ab[5][6] (net)                               0.00       1.29 r
+  my_BC_FIR_22/mult_29/U33/B (XOR2_X1)                    0.03      0.03       1.31 r
+  my_BC_FIR_22/mult_29/U33/Z (XOR2_X1)                    0.04      0.07       1.38 r
+  my_BC_FIR_22/mult_29/n32 (net)                2                   0.00       1.38 r
+  my_BC_FIR_22/mult_29/U4/B (XOR2_X1)                     0.04      0.02       1.40 r
+  my_BC_FIR_22/mult_29/U4/Z (XOR2_X1)                     0.03      0.06       1.47 r
+  my_BC_FIR_22/mult_29/n5 (net)                 1                   0.00       1.47 r
+  my_BC_FIR_22/mult_29/S2_3_3/CI (FA_X1)                  0.03      0.02       1.49 r
+  my_BC_FIR_22/mult_29/S2_3_3/S (FA_X1)                   0.02      0.10       1.59 f
+  my_BC_FIR_22/mult_29/SUMB[3][3] (net)         2                   0.00       1.59 f
+  my_BC_FIR_22/mult_29/U9/B (XOR2_X1)                     0.02      0.02       1.61 f
+  my_BC_FIR_22/mult_29/U9/Z (XOR2_X1)                     0.01      0.06       1.67 f
+  my_BC_FIR_22/mult_29/n10 (net)                1                   0.00       1.67 f
+  my_BC_FIR_22/mult_29/S4_1/CI (FA_X1)                    0.01      0.02       1.69 f
+  my_BC_FIR_22/mult_29/S4_1/S (FA_X1)                     0.02      0.12       1.82 r
+  my_BC_FIR_22/mult_29/SUMB[5][1] (net)         2                   0.00       1.82 r
+  my_BC_FIR_22/mult_29/U12/B (XOR2_X1)                    0.02      0.02       1.84 r
+  my_BC_FIR_22/mult_29/U12/Z (XOR2_X1)                    0.03      0.06       1.90 r
+  my_BC_FIR_22/mult_29/PRODUCT[6] (net)         1                   0.00       1.90 r
+  my_BC_FIR_22/mult_29/PRODUCT[6] (BC_FIR_1_1_DW02_mult_4)          0.00       1.90 r
+  my_BC_FIR_22/N102 (net)                                           0.00       1.90 r
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/B[6] (BC_FIR_1_1_DW01_add_7)     0.00     1.90 r
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/B[6] (net)              0.00       1.90 r
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/U1_6/B (FA_X1)     0.03     0.03     1.93 r
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.10     2.03 f
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.03 f
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/SUM[6] (BC_FIR_1_1_DW01_add_7)     0.00     2.03 f
+  my_BC_FIR_22/N38 (net)                                            0.00       2.03 f
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/B[6] (BC_FIR_1_1_DW01_add_5)     0.00     2.03 f
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/B[6] (net)              0.00       2.03 f
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/U1_6/B (FA_X1)     0.02     0.03     2.06 f
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.13     2.19 r
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.19 r
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/SUM[6] (BC_FIR_1_1_DW01_add_5)     0.00     2.19 r
+  my_BC_FIR_22/N134 (net)                                           0.00       2.19 r
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/B[6] (BC_FIR_1_1_DW01_add_4)     0.00     2.19 r
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/B[6] (net)              0.00       2.19 r
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/U1_6/B (FA_X1)     0.02     0.03     2.21 r
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.10     2.31 f
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.31 f
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/SUM[6] (BC_FIR_1_1_DW01_add_4)     0.00     2.31 f
+  my_BC_FIR_22/N86 (net)                                            0.00       2.31 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/A[6] (BC_FIR_1_1_DW01_add_0)     0.00     2.31 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/A[6] (net)              0.00       2.31 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_6/A (FA_X1)     0.02     0.03     2.34 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_6/CO (FA_X1)     0.02     0.08     2.42 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/carry[7] (net)     1     0.00      2.42 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_7/CI (FA_X1)     0.02     0.02     2.44 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_7/S (FA_X1)     0.01     0.11     2.55 r
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/SUM[7] (net)     2      0.00       2.55 r
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/SUM[7] (BC_FIR_1_1_DW01_add_0)     0.00     2.55 r
+  my_BC_FIR_22/out[7] (net)                                         0.00       2.55 r
+  my_BC_FIR_22/out[7] (BC_FIR_1_1)                                  0.00       2.55 r
+  out[23] (net)                                                     0.00       2.55 r
+  out[23] (out)                                           0.01      0.00       2.56 r
+  data arrival time                                                            2.56
 
-  max_delay                                          3.00       3.00
-  clock uncertainty                                 -0.10       2.90
-  output external delay                             -0.10       2.80
-  data required time                                            2.80
-  ---------------------------------------------------------------------
-  data required time                                            2.80
-  data arrival time                                             0.00
-  ---------------------------------------------------------------------
-  slack (MET)                                                   2.80
+  max_delay                                                         3.00       3.00
+  clock uncertainty                                                -0.10       2.90
+  output external delay                                            -0.10       2.80
+  data required time                                                           2.80
+  ------------------------------------------------------------------------------------
+  data required time                                                           2.80
+  data arrival time                                                           -2.56
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.24
 
 
-  Startpoint: my_BC_FIR_44/out[0] (internal pin)
-  Endpoint: out[24] (output port clocked by clock)
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: out[31] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -327,22 +433,132 @@ Wire Load Model Mode: top
   ------------------------------------------------
   BC_total           5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                        Fanout     Trans      Incr       Path
-  ---------------------------------------------------------------------
-  my_BC_FIR_44/out[0] (BC_FIR_1)           0.00      0.00       0.00 r
-  out[24] (net)                  3                   0.00       0.00 r
-  out[24] (out)                            0.00      0.00       0.00 r
-  data arrival time                                             0.00
+  Point                                       Fanout     Trans      Incr       Path
+  ------------------------------------------------------------------------------------
+  counter_reg[0]/CK (DFF_X1)                              0.00      0.00       0.00 r
+  counter_reg[0]/Q (DFF_X1)                               0.01      0.09       0.09 f
+  counter[0] (net)                              4                   0.00       0.09 f
+  U3344/A1 (AND2_X2)                                      0.01      0.02       0.11 f
+  U3344/ZN (AND2_X2)                                      0.02      0.05       0.16 f
+  n1562 (net)                                  17                   0.00       0.16 f
+  U3456/A1 (NOR2_X1)                                      0.02      0.03       0.19 f
+  U3456/ZN (NOR2_X1)                                      0.03      0.05       0.23 r
+  n1252 (net)                                   2                   0.00       0.23 r
+  U3417/A (INV_X1)                                        0.03      0.02       0.25 r
+  U3417/ZN (INV_X1)                                       0.01      0.01       0.26 f
+  n1752 (net)                                   2                   0.00       0.26 f
+  U1847/A (BUF_X1)                                        0.01      0.01       0.27 f
+  U1847/Z (BUF_X1)                                        0.01      0.03       0.30 f
+  n1574 (net)                                   3                   0.00       0.30 f
+  U1817/A (BUF_X1)                                        0.01      0.01       0.32 f
+  U1817/Z (BUF_X1)                                        0.01      0.03       0.35 f
+  n1569 (net)                                   3                   0.00       0.35 f
+  U3370/A (BUF_X1)                                        0.01      0.01       0.36 f
+  U3370/Z (BUF_X1)                                        0.01      0.03       0.38 f
+  n1634 (net)                                   1                   0.00       0.38 f
+  U1794/A (BUF_X1)                                        0.01      0.01       0.39 f
+  U1794/Z (BUF_X1)                                        0.03      0.06       0.45 f
+  n1601 (net)                                  12                   0.00       0.45 f
+  U3461/B2 (AOI222_X1)                                    0.03      0.02       0.47 f
+  U3461/ZN (AOI222_X1)                                    0.05      0.10       0.57 r
+  n930 (net)                                    1                   0.00       0.57 r
+  U3460/A (INV_X1)                                        0.05      0.01       0.58 r
+  U3460/ZN (INV_X1)                                       0.02      0.02       0.60 f
+  n304 (net)                                    2                   0.00       0.60 f
+  my_BC_FIR_44/in[10][0] (BC_FIR_1_0)                               0.00       0.60 f
+  my_BC_FIR_44/in[10][0] (net)                                      0.00       0.60 f
+  my_BC_FIR_44/add_29/A[0] (BC_FIR_1_0_DW01_add_23)                 0.00       0.60 f
+  my_BC_FIR_44/add_29/A[0] (net)                                    0.00       0.60 f
+  my_BC_FIR_44/add_29/U1/A2 (AND2_X1)                     0.02      0.01       0.61 f
+  my_BC_FIR_44/add_29/U1/ZN (AND2_X1)                     0.01      0.04       0.65 f
+  my_BC_FIR_44/add_29/n1 (net)                  1                   0.00       0.65 f
+  my_BC_FIR_44/add_29/U1_1/CI (FA_X1)                     0.01      0.02       0.67 f
+  my_BC_FIR_44/add_29/U1_1/CO (FA_X1)                     0.02      0.07       0.74 f
+  my_BC_FIR_44/add_29/carry[2] (net)            1                   0.00       0.74 f
+  my_BC_FIR_44/add_29/U1_2/CI (FA_X1)                     0.02      0.02       0.76 f
+  my_BC_FIR_44/add_29/U1_2/CO (FA_X1)                     0.02      0.07       0.83 f
+  my_BC_FIR_44/add_29/carry[3] (net)            1                   0.00       0.83 f
+  my_BC_FIR_44/add_29/U1_3/CI (FA_X1)                     0.02      0.02       0.85 f
+  my_BC_FIR_44/add_29/U1_3/CO (FA_X1)                     0.02      0.07       0.92 f
+  my_BC_FIR_44/add_29/carry[4] (net)            1                   0.00       0.92 f
+  my_BC_FIR_44/add_29/U1_4/CI (FA_X1)                     0.02      0.02       0.94 f
+  my_BC_FIR_44/add_29/U1_4/CO (FA_X1)                     0.02      0.07       1.02 f
+  my_BC_FIR_44/add_29/carry[5] (net)            1                   0.00       1.02 f
+  my_BC_FIR_44/add_29/U1_5/CI (FA_X1)                     0.02      0.02       1.04 f
+  my_BC_FIR_44/add_29/U1_5/CO (FA_X1)                     0.02      0.07       1.11 f
+  my_BC_FIR_44/add_29/carry[6] (net)            1                   0.00       1.11 f
+  my_BC_FIR_44/add_29/U1_6/CI (FA_X1)                     0.02      0.02       1.13 f
+  my_BC_FIR_44/add_29/U1_6/S (FA_X1)                      0.03      0.13       1.26 r
+  my_BC_FIR_44/add_29/SUM[6] (net)              3                   0.00       1.26 r
+  my_BC_FIR_44/add_29/SUM[6] (BC_FIR_1_0_DW01_add_23)               0.00       1.26 r
+  my_BC_FIR_44/N94 (net)                                            0.00       1.26 r
+  my_BC_FIR_44/mult_29/B[6] (BC_FIR_1_0_DW02_mult_4)                0.00       1.26 r
+  my_BC_FIR_44/mult_29/ab[5][6] (net)                               0.00       1.26 r
+  my_BC_FIR_44/mult_29/U33/B (XOR2_X1)                    0.03      0.03       1.29 r
+  my_BC_FIR_44/mult_29/U33/Z (XOR2_X1)                    0.04      0.07       1.35 r
+  my_BC_FIR_44/mult_29/n31 (net)                2                   0.00       1.35 r
+  my_BC_FIR_44/mult_29/U5/B (XOR2_X1)                     0.04      0.02       1.38 r
+  my_BC_FIR_44/mult_29/U5/Z (XOR2_X1)                     0.03      0.06       1.44 r
+  my_BC_FIR_44/mult_29/n6 (net)                 1                   0.00       1.44 r
+  my_BC_FIR_44/mult_29/S2_3_3/CI (FA_X1)                  0.03      0.02       1.46 r
+  my_BC_FIR_44/mult_29/S2_3_3/S (FA_X1)                   0.02      0.10       1.56 f
+  my_BC_FIR_44/mult_29/SUMB[3][3] (net)         2                   0.00       1.56 f
+  my_BC_FIR_44/mult_29/U10/B (XOR2_X1)                    0.02      0.02       1.59 f
+  my_BC_FIR_44/mult_29/U10/Z (XOR2_X1)                    0.01      0.06       1.65 f
+  my_BC_FIR_44/mult_29/n11 (net)                1                   0.00       1.65 f
+  my_BC_FIR_44/mult_29/S4_1/CI (FA_X1)                    0.01      0.02       1.67 f
+  my_BC_FIR_44/mult_29/S4_1/S (FA_X1)                     0.02      0.12       1.79 r
+  my_BC_FIR_44/mult_29/SUMB[5][1] (net)         2                   0.00       1.79 r
+  my_BC_FIR_44/mult_29/U13/B (XOR2_X1)                    0.02      0.02       1.81 r
+  my_BC_FIR_44/mult_29/U13/Z (XOR2_X1)                    0.03      0.06       1.87 r
+  my_BC_FIR_44/mult_29/PRODUCT[6] (net)         1                   0.00       1.87 r
+  my_BC_FIR_44/mult_29/PRODUCT[6] (BC_FIR_1_0_DW02_mult_4)          0.00       1.87 r
+  my_BC_FIR_44/N102 (net)                                           0.00       1.87 r
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/B[6] (BC_FIR_1_0_DW01_add_7)     0.00     1.87 r
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/B[6] (net)              0.00       1.87 r
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/U1_6/B (FA_X1)     0.03     0.03     1.90 r
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.10     2.01 f
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.01 f
+  my_BC_FIR_44/add_7_root_add_0_root_add_34/SUM[6] (BC_FIR_1_0_DW01_add_7)     0.00     2.01 f
+  my_BC_FIR_44/N38 (net)                                            0.00       2.01 f
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/B[6] (BC_FIR_1_0_DW01_add_5)     0.00     2.01 f
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/B[6] (net)              0.00       2.01 f
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/U1_6/B (FA_X1)     0.02     0.03     2.03 f
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.13     2.16 r
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.16 r
+  my_BC_FIR_44/add_5_root_add_0_root_add_34/SUM[6] (BC_FIR_1_0_DW01_add_5)     0.00     2.16 r
+  my_BC_FIR_44/N134 (net)                                           0.00       2.16 r
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/B[6] (BC_FIR_1_0_DW01_add_4)     0.00     2.16 r
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/B[6] (net)              0.00       2.16 r
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/U1_6/B (FA_X1)     0.02     0.03     2.19 r
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/U1_6/S (FA_X1)     0.02     0.10     2.29 f
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/SUM[6] (net)     1      0.00       2.29 f
+  my_BC_FIR_44/add_2_root_add_0_root_add_34/SUM[6] (BC_FIR_1_0_DW01_add_4)     0.00     2.29 f
+  my_BC_FIR_44/N86 (net)                                            0.00       2.29 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/A[6] (BC_FIR_1_0_DW01_add_0)     0.00     2.29 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/A[6] (net)              0.00       2.29 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/U1_6/A (FA_X1)     0.02     0.03     2.31 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/U1_6/CO (FA_X1)     0.02     0.08     2.39 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/carry[7] (net)     1     0.00      2.39 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/U1_7/CI (FA_X1)     0.02     0.02     2.41 f
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/U1_7/S (FA_X1)     0.02     0.12     2.53 r
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/SUM[7] (net)     3      0.00       2.53 r
+  my_BC_FIR_44/add_0_root_add_0_root_add_34/SUM[7] (BC_FIR_1_0_DW01_add_0)     0.00     2.53 r
+  my_BC_FIR_44/out[7] (net)                                         0.00       2.53 r
+  my_BC_FIR_44/out[7] (BC_FIR_1_0)                                  0.00       2.53 r
+  out[31] (net)                                                     0.00       2.53 r
+  out[31] (out)                                           0.02      0.00       2.54 r
+  data arrival time                                                            2.54
 
-  max_delay                                          3.00       3.00
-  clock uncertainty                                 -0.10       2.90
-  output external delay                             -0.10       2.80
-  data required time                                            2.80
-  ---------------------------------------------------------------------
-  data required time                                            2.80
-  data arrival time                                             0.00
-  ---------------------------------------------------------------------
-  slack (MET)                                                   2.80
+  max_delay                                                         3.00       3.00
+  clock uncertainty                                                -0.10       2.90
+  output external delay                                            -0.10       2.80
+  data required time                                                           2.80
+  ------------------------------------------------------------------------------------
+  data required time                                                           2.80
+  data arrival time                                                           -2.54
+  ------------------------------------------------------------------------------------
+  slack (MET)                                                                  0.26
 
 
 1
@@ -353,11 +569,11 @@ Report : constraint
         -max_delay
 Design : BC_total
 Version: O-2018.06
-Date   : Tue Dec 29 16:26:27 2020
+Date   : Wed Dec 30 21:26:40 2020
 ****************************************
 
 
-  Startpoint: counter_reg[1]
+  Startpoint: counter_reg[0]
               (rising edge-triggered flip-flop clocked by clock)
   Endpoint: counter_reg[1]
             (rising edge-triggered flip-flop clocked by clock)
@@ -372,15 +588,13 @@ Date   : Tue Dec 29 16:26:27 2020
   -----------------------------------------------------------
   clock clock (rise edge)                  0.00       0.00
   clock network delay (ideal)              0.00       0.00
-  counter_reg[1]/CK (DFF_X1)               0.00       0.00 r
-  counter_reg[1]/Q (DFF_X1)                0.09       0.09 f
-  U1966/ZN (NOR2_X1)                       0.06       0.15 r
-  U1913/Z (BUF_X1)                         0.05       0.20 r
-  U1875/Z (BUF_X2)                         0.14       0.34 r
-  U1844/ZN (NOR2_X1)                       0.06       0.40 f
-  U1968/ZN (NOR2_X1)                       0.05       0.45 r
-  counter_reg[1]/D (DFF_X1)                0.01       0.46 r
-  data arrival time                                   0.46
+  counter_reg[0]/CK (DFF_X1)               0.00       0.00 r
+  counter_reg[0]/Q (DFF_X1)                0.10       0.10 r
+  U3344/ZN (AND2_X2)                       0.11       0.21 r
+  U3456/ZN (NOR2_X1)                       0.05       0.26 f
+  U3408/ZN (NOR2_X1)                       0.05       0.30 r
+  counter_reg[1]/D (DFF_X1)                0.01       0.31 r
+  data arrival time                                   0.31
 
   clock clock (rise edge)                  3.00       3.00
   clock network delay (ideal)              0.00       3.00
@@ -390,9 +604,9 @@ Date   : Tue Dec 29 16:26:27 2020
   data required time                                  2.87
   -----------------------------------------------------------
   data required time                                  2.87
-  data arrival time                                  -0.46
+  data arrival time                                  -0.31
   -----------------------------------------------------------
-  slack (MET)                                         2.41
+  slack (MET)                                         2.55
 
 
   Startpoint: reset (input port clocked by clock)
@@ -411,7 +625,7 @@ Date   : Tue Dec 29 16:26:27 2020
   clock network delay (ideal)              0.00       0.00
   input external delay                     0.10       0.10 r
   reset (in)                               0.01       0.11 r
-  U1968/ZN (NOR2_X1)                       0.03       0.14 f
+  U3408/ZN (NOR2_X1)                       0.03       0.14 f
   counter_reg[1]/D (DFF_X1)                0.01       0.15 f
   data arrival time                                   0.15
 
@@ -428,8 +642,9 @@ Date   : Tue Dec 29 16:26:27 2020
   slack (MET)                                         2.71
 
 
-  Startpoint: my_BC_FIR_44/out[0] (internal pin)
-  Endpoint: out[24] (output port clocked by clock)
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: out[23] (output port clocked by clock)
   Path Group: output_grp
   Path Type: max
 
@@ -437,21 +652,49 @@ Date   : Tue Dec 29 16:26:27 2020
   ------------------------------------------------
   BC_total           5K_hvratio_1_1        NangateOpenCellLibrary
 
-  Point                                    Incr       Path
-  -----------------------------------------------------------
-  my_BC_FIR_44/out[0] (BC_FIR_1)           0.00       0.00 r
-  out[24] (out)                            0.00       0.00 r
-  data arrival time                                   0.00
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  counter_reg[0]/CK (DFF_X1)                              0.00       0.00 r
+  counter_reg[0]/Q (DFF_X1)                               0.09       0.09 f
+  U3463/ZN (AND2_X1)                                      0.05       0.14 f
+  U1942/Z (BUF_X1)                                        0.04       0.18 f
+  U1875/Z (BUF_X1)                                        0.04       0.22 f
+  U1845/Z (BUF_X1)                                        0.07       0.28 f
+  U3385/ZN (OR2_X1)                                       0.07       0.36 f
+  U3345/Z (BUF_X1)                                        0.04       0.40 f
+  U1811/Z (BUF_X1)                                        0.04       0.43 f
+  U1722/Z (BUF_X1)                                        0.10       0.54 f
+  U3415/ZN (AOI22_X1)                                     0.09       0.63 r
+  U1908/ZN (INV_X1)                                       0.03       0.66 f
+  my_BC_FIR_22/add_29/U1_1/CO (FA_X1)                     0.11       0.77 f
+  my_BC_FIR_22/add_29/U1_2/CO (FA_X1)                     0.09       0.86 f
+  my_BC_FIR_22/add_29/U1_3/CO (FA_X1)                     0.09       0.95 f
+  my_BC_FIR_22/add_29/U1_4/CO (FA_X1)                     0.09       1.04 f
+  my_BC_FIR_22/add_29/U1_5/CO (FA_X1)                     0.09       1.14 f
+  my_BC_FIR_22/add_29/U1_6/S (FA_X1)                      0.15       1.29 r
+  my_BC_FIR_22/mult_29/U33/Z (XOR2_X1)                    0.09       1.38 r
+  my_BC_FIR_22/mult_29/U4/Z (XOR2_X1)                     0.09       1.47 r
+  my_BC_FIR_22/mult_29/S2_3_3/S (FA_X1)                   0.12       1.59 f
+  my_BC_FIR_22/mult_29/U9/Z (XOR2_X1)                     0.08       1.67 f
+  my_BC_FIR_22/mult_29/S4_1/S (FA_X1)                     0.14       1.82 r
+  my_BC_FIR_22/mult_29/U12/Z (XOR2_X1)                    0.09       1.90 r
+  my_BC_FIR_22/add_7_root_add_0_root_add_34/U1_6/S (FA_X1)     0.13     2.03 f
+  my_BC_FIR_22/add_5_root_add_0_root_add_34/U1_6/S (FA_X1)     0.16     2.19 r
+  my_BC_FIR_22/add_2_root_add_0_root_add_34/U1_6/S (FA_X1)     0.13     2.31 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_6/CO (FA_X1)     0.11     2.42 f
+  my_BC_FIR_22/add_0_root_add_0_root_add_34/U1_7/S (FA_X1)     0.13     2.55 r
+  out[23] (out)                                           0.00       2.56 r
+  data arrival time                                                  2.56
 
-  max_delay                                3.00       3.00
-  clock uncertainty                       -0.10       2.90
-  output external delay                   -0.10       2.80
-  data required time                                  2.80
-  -----------------------------------------------------------
-  data required time                                  2.80
-  data arrival time                                   0.00
-  -----------------------------------------------------------
-  slack (MET)                                         2.80
+  max_delay                                               3.00       3.00
+  clock uncertainty                                      -0.10       2.90
+  output external delay                                  -0.10       2.80
+  data required time                                                 2.80
+  --------------------------------------------------------------------------
+  data required time                                                 2.80
+  data arrival time                                                 -2.56
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.24
 
 
 1
@@ -461,7 +704,7 @@ Information: Updating graph... (UID-83)
 Report : reference
 Design : BC_total
 Version: O-2018.06
-Date   : Tue Dec 29 16:26:29 2020
+Date   : Wed Dec 30 21:26:43 2020
 ****************************************
 
 Attributes:
@@ -478,16 +721,21 @@ Attributes:
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
 AND2_X1            NangateOpenCellLibrary     1.064000       2     2.128000
+AND2_X2            NangateOpenCellLibrary     1.330000       1     1.330000
 AOI22_X1           NangateOpenCellLibrary     1.330000     616   819.280026
-AOI222_X1          NangateOpenCellLibrary     2.128000     312   663.936007
-BC_FIR                            4.256000       1      4.256000  h
-BC_FIR_1                          0.000000       3      0.000000  b
-BUF_X1             NangateOpenCellLibrary     0.798000     158   126.083997
-BUF_X2             NangateOpenCellLibrary     1.064000      33    35.112000
+AOI222_X1          NangateOpenCellLibrary     2.128000     311   661.808007
+BC_FIR                          608.076001       1    608.076001  h
+BC_FIR_1_0                     1114.540004       1   1114.540004  h
+BC_FIR_1_1                     1142.470003       1   1142.470003  h
+BC_FIR_1_2                     1142.470003       1   1142.470003  h
+BUF_X1             NangateOpenCellLibrary     0.798000     150   119.699997
+BUF_X2             NangateOpenCellLibrary     1.064000      32    34.048000
+CLKBUF_X1          NangateOpenCellLibrary     0.798000       4     3.192000
 DFF_X1             NangateOpenCellLibrary     4.522000       2     9.044000 n
-INV_X1             NangateOpenCellLibrary     0.532000     633   336.756003
-NAND2_X1           NangateOpenCellLibrary     0.798000     152   121.295997
-NOR2_X1            NangateOpenCellLibrary     0.798000       5     3.990000
+INV_X1             NangateOpenCellLibrary     0.532000     624   331.968003
+NAND2_X1           NangateOpenCellLibrary     0.798000     155   123.689997
+NAND3_X1           NangateOpenCellLibrary     1.064000       1     1.064000
+NOR2_X1            NangateOpenCellLibrary     0.798000       4     3.192000
 OR2_X1             NangateOpenCellLibrary     1.064000       1     1.064000
 in_ctrl                        2946.215898       1   2946.215898  h, n
 in_ctrl_1_0                    1439.591948       1   1439.591948  h, n
@@ -497,5 +745,5 @@ in_ctrl_2_1                    2876.789896       1   2876.789896  h, n
 in_ctrl_4_0                    5755.175792       1   5755.175792  h, n
 in_ctrl_4_1                    5755.175792       1   5755.175792  h, n
 -----------------------------------------------------------------------------
-Total 19 references                                 25212.277200
+Total 24 references                                 29208.395211
 1

@@ -84,17 +84,17 @@ VISFLAGS = -lncurses
 #####
 
 
-#TESTBENCH = SC_fb/HWA_total_test.v
-TESTBENCH = BC_fb/BC_total_test.v
+TESTBENCH = SC_fb/HWA_total_test.v
+#TESTBENCH = BC_fb/BC_total_test.v
 
 HEADERS = 
 
-#SIMFILES = SC_fb/HWA_total.v in_Ctrl/in_ctrl.v SC_fb/HWA_opt.v SC_fb/HWA_1_opt.v VDC/VDC.v
+SIMFILES = SC_fb/HWA_total.v in_Ctrl/in_ctrl.v SC_fb/HWA_opt.v SC_fb/HWA_1_opt.v VDC/VDC.v
 #SIMFILES = fb_matlab/fir.v 
-SIMFILES = BC_fb/BC_total.v BC_fb/BC_FIR.v BC_fb/BC_FIR_1.v in_Ctrl/in_ctrl.v
+#SIMFILES = BC_fb/BC_total.v BC_fb/BC_FIR.v BC_fb/BC_FIR_1.v in_Ctrl/in_ctrl.v
 		
-#SYNFILES = synth/HWA_total.vg
-SYNFILES = synth/BC_total.vg
+SYNFILES = synth/HWA_total.vg
+#SYNFILES = synth/BC_total.vg
 #SYNFILES = fir.vg
 
 export CLOCK_NET_NAME = clock

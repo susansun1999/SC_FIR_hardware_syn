@@ -8,7 +8,7 @@
 module VDC(
     input                   start,
     input                   clock,
-    output logic [`n-1: 0]  out_re,// in reverse order
+    output logic [`n-3: 0]  out_re,// in reverse order
     output logic [`n-1: 0]  out // in original order
 );
 
@@ -19,8 +19,8 @@ assign next_count = count + 1;
 genvar gi;
 // generate and endgenerate is optional
 // generate (optional)
-for (gi=0; gi<`n; gi=gi+1) begin : genbit
-    assign out_re[gi] = count[`n-1-gi];
+for (gi=0; gi<`n-2; gi=gi+1) begin : genbit
+    assign out_re[gi] = count[`n-3-gi];
 end
 
 assign out = count;
@@ -33,5 +33,14 @@ always_ff @(posedge clock) begin
         count <= next_count;
     end
 end
+
+endmodule
+
+module comp(
+    input[`n-3:0] a,
+    input[`n-3:0] b,
+    output logic      res
+);
+    assign res = a > b;
 
 endmodule

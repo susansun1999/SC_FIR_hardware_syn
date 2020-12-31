@@ -112,7 +112,7 @@ if {  $dc_shell_status != [list] } {
   set MAX_FANOUT $MAX_FANOUT
   set MAX_TRANSITION $MAX_TRANSITION
   uniquify
-  ungroup -all -flatten
+#  ungroup -all -flatten
   redirect $chk_file { check_design }
   compile -map_effort medium
   write -hier -format verilog -output $netlist_file $design_name

@@ -192,7 +192,7 @@ genvar gi;
 // generate and endgenerate is optional
 // generate (optional)
 for (gi=0; gi<`opt_length; gi=gi+1) begin : genbit
-    if(gi == 0 || gi == 2 || gi == 4 || gi == 6 || gi == 8 || gi ==9) begin
+    if(gi == 0 || gi == 2 || gi == 4 || gi == 6 || gi == 8 || gi == 9) begin
         assign SN_in[gi] = ((~sel_bits[`n-2] & in[gi]) | (sel_bits[`n-2] & in[`order - gi])) > R_y;
         if(gi == 2 || gi == 6) begin
             assign xored_in[gi] = ~SN_in[gi];
