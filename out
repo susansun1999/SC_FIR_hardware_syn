@@ -1,3 +1,4 @@
+cd synth && dc_shell-t -f ./total_scale.tcl | tee synth.out 
 
                            Design Compiler Graphical 
                                  DC Ultra (TM)
@@ -44,6 +45,7 @@ suppress_message {"VER-130"}
 analyze -f sverilog [list "../matlab_bc/fir3/total_scale.v" "../matlab_bc/fir3/mult_out.v" "../matlab_bc/fir4/input_ctrl_4.v" "../matlab_bc/fir3/input_ctrl_2.v" "../matlab_bc/fir3/input_ctrl.v" "../matlab_bc/total_cas.v" "../matlab_bc/input_ctrl_cas.v" "../matlab_bc/fir1.v" "../matlab_bc/fir2/fir2.v" "../matlab_bc/fir3/fir3.v" "../matlab_bc/fir4/fir4.v"]
 Running PRESTO HDLC
 Compiling source file ../matlab_bc/fir3/total_scale.v
+Warning:  ../matlab_bc/fir3/total_scale.v:135: the undeclared symbol 'count' assumed to have the default net type, which is 'wire'. (VER-936)
 Compiling source file ../matlab_bc/fir3/mult_out.v
 Compiling source file ../matlab_bc/fir4/input_ctrl_4.v
 Compiling source file ../matlab_bc/fir3/input_ctrl_2.v
@@ -65,16 +67,16 @@ Loading db file '/usr/caen/synopsys-synth-2018.06/libraries/syn/standard.sldb'
   Loading link library 'gtech'
 Running PRESTO HDLC
 
-Statistics for case statements in always block at line 57 in file
+Statistics for case statements in always block at line 58 in file
 	'../matlab_bc/fir3/total_scale.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            58            |     no/auto      |
+|            59            |     no/auto      |
 ===============================================
 
 Inferred memory devices in process
-	in routine total_scale line 43 in file
+	in routine total_scale line 44 in file
 		'../matlab_bc/fir3/total_scale.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
@@ -83,22 +85,23 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-	in routine total_scale line 57 in file
+	in routine total_scale line 58 in file
 		'../matlab_bc/fir3/total_scale.v'.
-===========================================================================
-|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
-===========================================================================
-| scale_filter_in_reg | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
-|  tapsum_mcand_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_1_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_2_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_3_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_4_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_5_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_6_reg  | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
-| tapsum_mcand_7_reg  | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
-===========================================================================
-Warning:  ../matlab_bc/fir3/total_scale.v:57: Netlist for always_comb block contains a latch. (ELAB-974)
+=============================================================================
+|     Register Name     | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================
+| scale_2_filter_in_reg | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+| scale_1_filter_in_reg | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+|   tapsum_mcand_reg    | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_1_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_2_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_3_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_4_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_5_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_6_reg   | Latch |   9   |  Y  | N  | N  | N  | -  | -  | -  |
+|  tapsum_mcand_7_reg   | Latch |   8   |  Y  | N  | N  | N  | -  | -  | -  |
+=============================================================================
+Warning:  ../matlab_bc/fir3/total_scale.v:58: Netlist for always_comb block contains a latch. (ELAB-974)
 Presto compilation completed successfully.
 Elaborated 1 design.
 Current design is now 'total_scale'.
@@ -389,10 +392,8 @@ Current design is 'total_scale'.
   NangateOpenCellLibrary (library) /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/NangateOpenCellLibrary.db
 
 Current design is 'total_scale'.
-Information: Uniquified 3 instances of design 'input_ctrl'. (OPT-1056)
-Information: Uniquified 2 instances of design 'input_ctrl_2'. (OPT-1056)
 Information: Updating graph... (UID-83)
-Warning: Design 'total_scale' contains 14 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Warning: Design 'total_scale' contains 11 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 Information: Evaluating DesignWare library utilization. (UISN-27)
 
 ============================================================================
@@ -1173,8 +1174,12 @@ Information: Updating design information... (UID-85)
   Processing 'total_scale_DW01_add_54'
   Processing 'total_scale_DW01_add_55'
   Processing 'total_scale_DW01_add_56'
+  Processing 'total_scale_DW01_sub_2'
+  Processing 'total_scale_DW02_mult_0'
   Processing 'total_scale_DW01_add_57'
+  Processing 'total_scale_DW02_mult_1'
   Processing 'total_scale_DW01_add_58'
+  Processing 'total_scale_DW02_mult_2'
   Processing 'total_scale_DW01_add_59'
   Processing 'total_scale_DW01_add_60'
   Processing 'total_scale_DW01_add_61'
@@ -1183,37 +1188,12 @@ Information: Updating design information... (UID-85)
   Processing 'total_scale_DW01_add_64'
   Processing 'total_scale_DW01_add_65'
   Processing 'total_scale_DW01_add_66'
-  Processing 'total_scale_DW01_add_67'
-  Processing 'total_scale_DW01_add_68'
-  Processing 'total_scale_DW01_add_69'
-  Processing 'total_scale_DW01_add_70'
-  Processing 'total_scale_DW01_add_71'
-  Processing 'total_scale_DW01_add_72'
-  Processing 'total_scale_DW01_add_73'
-  Processing 'total_scale_DW01_add_74'
-  Processing 'total_scale_DW01_add_75'
-  Processing 'total_scale_DW01_add_76'
-  Processing 'total_scale_DW01_add_77'
-  Processing 'total_scale_DW01_sub_2'
-  Processing 'total_scale_DW02_mult_0'
-  Processing 'total_scale_DW01_add_78'
-  Processing 'total_scale_DW02_mult_1'
-  Processing 'total_scale_DW01_add_79'
-  Processing 'total_scale_DW02_mult_2'
-  Processing 'total_scale_DW01_add_80'
-  Processing 'total_scale_DW01_add_81'
-  Processing 'total_scale_DW01_add_82'
-  Processing 'total_scale_DW01_add_83'
-  Processing 'total_scale_DW01_add_84'
-  Processing 'total_scale_DW01_add_85'
-  Processing 'total_scale_DW01_add_86'
-  Processing 'total_scale_DW01_add_87'
   Processing 'total_scale_DW02_mult_3'
-  Processing 'total_scale_DW01_add_88'
+  Processing 'total_scale_DW01_add_67'
   Processing 'total_scale_DW02_mult_4'
-  Processing 'total_scale_DW01_add_89'
+  Processing 'total_scale_DW01_add_68'
   Processing 'total_scale_DW02_mult_5'
-  Processing 'total_scale_DW01_add_90'
+  Processing 'total_scale_DW01_add_69'
 
   Beginning Mapping Optimizations  (Medium effort)
   -------------------------------
@@ -1470,24 +1450,24 @@ Information: The register 'my_total_cas/my_fir3/delay_pipeline_reg[23][22]' will
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:31   68012.5      5.19       5.2   10625.6                                0.00  
-    0:00:31   68012.5      5.19       5.2   10625.6                                0.00  
-    0:00:38   69695.7      0.00       0.0     171.6                                0.00  
-    0:00:38   69695.7      0.00       0.0     171.6                                0.00  
-    0:00:38   69695.7      0.00       0.0     171.6                                0.00  
-    0:00:38   69695.7      0.00       0.0     171.6                                0.00  
-    0:00:38   69695.7      0.00       0.0     171.6                                0.00  
-    0:00:45   59529.5      0.00       0.0     159.9                                0.00  
-    0:00:45   59527.9      0.00       0.0     159.9                                0.00  
-    0:00:46   59527.9      0.00       0.0     159.9                                0.00  
-    0:00:46   59527.9      0.00       0.0     159.9                                0.00  
-    0:00:46   59527.9      0.00       0.0     159.9                                0.00  
-    0:00:46   59527.9      0.00       0.0     159.9                                0.00  
-    0:00:46   59538.8      0.00       0.0      23.3                                0.00  
-    0:00:46   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
+    0:00:23   58530.9      5.86       6.0    6823.1                                0.00  
+    0:00:23   58530.9      5.86       6.0    6823.1                                0.00  
+    0:00:29   59942.3      0.00       0.0     171.6                                0.00  
+    0:00:29   59942.3      0.00       0.0     171.6                                0.00  
+    0:00:29   59942.3      0.00       0.0     171.6                                0.00  
+    0:00:29   59942.3      0.00       0.0     171.6                                0.00  
+    0:00:29   59942.3      0.00       0.0     171.6                                0.00  
+    0:00:35   51322.6      0.00       0.0     159.9                                0.00  
+    0:00:35   51321.0      0.00       0.0     159.9                                0.00  
+    0:00:36   51321.0      0.00       0.0     159.9                                0.00  
+    0:00:36   51321.0      0.00       0.0     159.9                                0.00  
+    0:00:37   51321.0      0.00       0.0     159.9                                0.00  
+    0:00:37   51321.0      0.00       0.0     159.9                                0.00  
+    0:00:37   51331.9      0.00       0.0      23.3                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
 
 
 
@@ -1498,9 +1478,9 @@ Information: The register 'my_total_cas/my_fir3/delay_pipeline_reg[23][22]' will
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:37   51333.5      0.00       0.0       0.0                                0.00  
 
 
   Beginning Critical Range Optimization
@@ -1510,7 +1490,7 @@ Information: The register 'my_total_cas/my_fir3/delay_pipeline_reg[23][22]' will
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:47   59540.4      0.00       0.0       0.0                                0.00  
+    0:00:38   51333.5      0.00       0.0       0.0                                0.00  
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -1520,32 +1500,32 @@ Information: The register 'my_total_cas/my_fir3/delay_pipeline_reg[23][22]' will
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:00:48   59540.4      0.00       0.0       0.0                                0.00  
-    0:00:48   59540.4      0.00       0.0       0.0                                0.00  
-    0:01:11   59491.2      0.00       0.0       0.0                                0.00  
-    0:01:18   59479.2      0.00       0.0       0.0                                0.00  
-    0:01:24   59472.0      0.00       0.0       0.0                                0.00  
-    0:01:31   59470.4      0.00       0.0       0.0                                0.00  
-    0:01:37   59467.8      0.00       0.0       0.0                                0.00  
-    0:01:43   59467.0      0.00       0.0       0.0                                0.00  
-    0:01:50   59466.2      0.00       0.0       0.0                                0.00  
-    0:01:56   59465.6      0.00       0.0       0.0                                0.00  
-    0:02:03   59465.1      0.00       0.0       0.0                                0.00  
-    0:02:09   59463.5      0.00       0.0       0.0                                0.00  
-    0:02:28   59463.0      0.00       0.0       0.0                                0.00  
-    0:02:58   59462.4      0.00       0.0       0.0                                0.00  
-    0:03:00   59461.9      0.00       0.0       0.0                                0.00  
-    0:03:01   59461.4      0.00       0.0       0.0                                0.00  
-    0:03:03   59460.8      0.00       0.0       0.0                                0.00  
-    0:03:05   59460.3      0.00       0.0       0.0                                0.00  
-    0:03:05   59460.3      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.2      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
+    0:00:38   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:38   51333.5      0.00       0.0       0.0                                0.00  
+    0:00:57   51287.7      0.00       0.0       0.0                                0.00  
+    0:01:02   51275.2      0.00       0.0       0.0                                0.00  
+    0:01:06   51271.2      0.00       0.0       0.0                                0.00  
+    0:01:11   51268.6      0.00       0.0       0.0                                0.00  
+    0:01:16   51265.9      0.00       0.0       0.0                                0.00  
+    0:01:21   51264.3      0.00       0.0       0.0                                0.00  
+    0:01:25   51262.5      0.00       0.0       0.0                                0.00  
+    0:01:30   51261.4      0.00       0.0       0.0                                0.00  
+    0:01:34   51260.3      0.00       0.0       0.0                                0.00  
+    0:01:39   51259.3      0.00       0.0       0.0                                0.00  
+    0:01:44   51257.9      0.00       0.0       0.0                                0.00  
+    0:01:58   51256.9      0.00       0.0       0.0                                0.00  
+    0:02:22   51255.8      0.00       0.0       0.0                                0.00  
+    0:02:23   51254.7      0.00       0.0       0.0                                0.00  
+    0:02:24   51253.7      0.00       0.0       0.0                                0.00  
+    0:02:26   51253.1      0.00       0.0       0.0                                0.00  
+    0:02:26   51253.1      0.00       0.0       0.0                                0.00  
+    0:02:26   51252.1      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
 
 
   Beginning Critical Range Optimization
@@ -1555,8 +1535,8 @@ Information: The register 'my_total_cas/my_fir3/delay_pipeline_reg[23][22]' will
    ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
   --------- --------- --------- --------- --------- ------------------------- -----------
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
-    0:03:05   59459.0      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
+    0:02:26   51251.8      0.00       0.0       0.0                                0.00  
 
 
 Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
@@ -1591,69 +1571,48 @@ Removing design 'total_scale_DW01_add_17'
 Removing design 'total_scale_DW01_add_18'
 Removing design 'total_scale_DW01_add_19'
 Removing design 'total_scale_DW01_add_20'
-Removing design 'total_scale_DW01_add_21'
 Removing design 'total_scale_DW01_add_22'
 Removing design 'total_scale_DW01_add_23'
 Removing design 'total_scale_DW01_add_24'
 Removing design 'total_scale_DW01_add_25'
 Removing design 'total_scale_DW01_add_26'
 Removing design 'total_scale_DW01_add_27'
-Removing design 'total_scale_DW01_add_28'
 Removing design 'total_scale_DW01_add_29'
-Removing design 'total_scale_DW01_add_30'
 Removing design 'total_scale_DW01_add_31'
 Removing design 'total_scale_DW01_add_32'
 Removing design 'total_scale_DW01_add_33'
 Removing design 'total_scale_DW01_add_34'
 Removing design 'total_scale_DW01_add_35'
 Removing design 'total_scale_DW01_add_36'
-Removing design 'total_scale_DW01_add_37'
 Removing design 'total_scale_DW01_add_38'
-Removing design 'total_scale_DW01_add_39'
 Removing design 'total_scale_DW01_add_40'
 Removing design 'total_scale_DW01_add_41'
+Removing design 'total_scale_DW01_add_42'
 Removing design 'total_scale_DW01_add_43'
 Removing design 'total_scale_DW01_add_44'
 Removing design 'total_scale_DW01_add_45'
-Removing design 'total_scale_DW01_add_46'
 Removing design 'total_scale_DW01_add_47'
-Removing design 'total_scale_DW01_add_48'
+Removing design 'total_scale_DW01_add_49'
 Removing design 'total_scale_DW01_add_50'
+Removing design 'total_scale_DW01_add_51'
 Removing design 'total_scale_DW01_add_52'
 Removing design 'total_scale_DW01_add_53'
 Removing design 'total_scale_DW01_add_54'
-Removing design 'total_scale_DW01_add_55'
 Removing design 'total_scale_DW01_add_56'
+Removing design 'total_scale_DW02_mult_0'
 Removing design 'total_scale_DW01_add_57'
-Removing design 'total_scale_DW01_add_59'
+Removing design 'total_scale_DW02_mult_1'
+Removing design 'total_scale_DW01_add_58'
+Removing design 'total_scale_DW01_add_60'
 Removing design 'total_scale_DW01_add_61'
 Removing design 'total_scale_DW01_add_62'
 Removing design 'total_scale_DW01_add_63'
-Removing design 'total_scale_DW01_add_64'
 Removing design 'total_scale_DW01_add_65'
 Removing design 'total_scale_DW01_add_66'
-Removing design 'total_scale_DW01_add_68'
-Removing design 'total_scale_DW01_add_70'
-Removing design 'total_scale_DW01_add_71'
-Removing design 'total_scale_DW01_add_72'
-Removing design 'total_scale_DW01_add_73'
-Removing design 'total_scale_DW01_add_74'
-Removing design 'total_scale_DW01_add_75'
-Removing design 'total_scale_DW01_add_77'
-Removing design 'total_scale_DW02_mult_0'
-Removing design 'total_scale_DW01_add_78'
-Removing design 'total_scale_DW02_mult_1'
-Removing design 'total_scale_DW01_add_79'
-Removing design 'total_scale_DW01_add_81'
-Removing design 'total_scale_DW01_add_82'
-Removing design 'total_scale_DW01_add_83'
-Removing design 'total_scale_DW01_add_84'
-Removing design 'total_scale_DW01_add_86'
-Removing design 'total_scale_DW01_add_87'
 Removing design 'total_scale_DW02_mult_3'
-Removing design 'total_scale_DW01_add_88'
+Removing design 'total_scale_DW01_add_67'
 Removing design 'total_scale_DW02_mult_4'
-Removing design 'total_scale_DW01_add_89'
+Removing design 'total_scale_DW01_add_68'
 Removing design 'total_scale_DW02_mult_5'
 Removing library 'NangateOpenCellLibrary'
 Removing library 'gtech'
@@ -1671,7 +1630,7 @@ Compiling source file /afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_s
 Reading with netlist reader (equivalent to -netlist option).
 Verilog netlist reader completed successfully.
 Current design is now '/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/synth/total_scale_DW01_add_0.db:total_scale_DW01_add_0'
-Loaded 86 designs.
+Loaded 65 designs.
 Current design is 'total_scale_DW01_add_0'.
 Current design is 'total_scale'.
 

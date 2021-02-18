@@ -1,23 +1,30 @@
 #/***********************************************************/
-#/*   FILE        : synth.tcl                          */
+#/*   FILE        : defaults.tcl                            */
 #/*   Description : Default Synopsys Design Compiler Script */
 #/*   Usage       : dc_shell -tcl_mode -f default.tcl       */
 #/*   You'll need to minimally set design_name & read files */
 #/***********************************************************/
+#set search_path [ list "./" "/afs/umich.edu/class/eecs470/lib/synopsys/" ]
+set search_path [ list "./" "/afs/umich.edu/user/s/u/sunsusan/Desktop/SC_FIR_hardware_syn/Nangate/" ]
+set target_library "NangateOpenCellLibrary.db"
+set link_library [concat  "*" $target_library]
+
+#/***********************************************************/
+#/* Set some flags to suppress warnings we don't care about */
+set suppress_errors [concat $suppress_errors "UID-401"]
+suppress_message {"VER-130"}
 
 #/***********************************************************/
 #/* The following five lines must be updated for every      */
 #/* new design                                              */
 #/***********************************************************/
-
-read_file -f sverilog [list "in_ctrl.v"]
-set design_name in_ctrl
+analyze -f sverilog [list "../matlab_bc/fir4/casfilt_stage1.v" "../matlab_bc/fir4/casfilt_stage2.v" "../matlab_bc/fir4/casfilt.v" "../matlab_bc/fir4/casfilt_stage3.v" "../matlab_bc/fir4/casfilt_stage4.v"]
+elaborate casfilt
+set design_name casfilt
 set clock_name clock
-set CLK_PERIOD 10
+set CLK_PERIOD 3
 
-
-
-
+[list "../matlab_bc/fir2/casfilt_stage1.v" "../matlab_bc/fir2/casfilt_stage2.v" "../matlab_bc/fir2/casfilt.v"]
 
 #/***********************************************************/
 #/* The rest of this file may be left alone for most small  */
@@ -25,16 +32,13 @@ set CLK_PERIOD 10
 #/* when synthesizing your final project.                   */
 #/***********************************************************/
 set SYN_DIR ./
-set search_path "/afs/umich.edu/class/eecs470/lib/synopsys/"
-set target_library "lec25dscc25_TT.db"
-set link_library [concat  "*" $target_library]
 
 #/***********************************************************/
 #/* Set some flags for optimisation */
 
 set compile_top_all_paths "true"
-set auto_wire_load_selection "false"
-
+set auto_wire_load_selection "true"
+set compile_seqmap_synchronous_extraction "true"
 
 #/***********************************************************/
 #/*  Clk Periods/uncertainty/transition                     */
@@ -66,7 +70,7 @@ set AVG_FANOUT_LOAD 10
 #/*BASIC_INPUT = cb18os120_tsmc_max/nd02d1/A1
 #BASIC_OUTPUT = cb18os120_tsmc_max/nd02d1/ZN*/
 
-set DRIVING_CELL dffacs1
+set DRIVING_CELL DFF_X1
 
 #/* DONT_USE_LIST = {   } */
 
@@ -90,7 +94,7 @@ set dc_shell_status [ set chk_file [format "%s%s"  [format "%s%s"  $SYN_DIR $des
 if {  $dc_shell_status != [list] } {
    current_design $design_name
   link
-  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
+#  set_wire_load_model -name $WIRE_LOAD -lib $LOGICLIB $design_name
   set_wire_load_mode top
   set_fix_multiple_port_nets -outputs -buffer_constants
   create_clock -period $CLK_PERIOD -name $sys_clk [find port $sys_clk]
@@ -110,9 +114,9 @@ if {  $dc_shell_status != [list] } {
   set MAX_FANOUT $MAX_FANOUT
   set MAX_TRANSITION $MAX_TRANSITION
   uniquify
-#  ungroup -all -flatten
+  ungroup -all -flatten
   redirect $chk_file { check_design }
-  compile -map_effort high
+  compile -map_effort medium
   write -hier -format verilog -output $netlist_file $design_name
   write -hier -format ddc -output $ddc_file $design_name
   redirect $rep_file { report_design -nosplit }
@@ -127,5 +131,4 @@ if {  $dc_shell_status != [list] } {
 } else {
    quit
 }
-
 

@@ -84,18 +84,32 @@ VISFLAGS = -lncurses
 #####
 
 
-TESTBENCH = SC_fb/HWA_total_test.v
+#TESTBENCH = SC_fb/HWA_total_test.v
 #TESTBENCH = BC_fb/BC_total_test.v
+#TESTBENCH = matlab_bc/bc_1_test.v
+TESTBENCH = matlab_bc/bc_2_test.v
 
 HEADERS = 
 
-SIMFILES = SC_fb/HWA_total.v in_Ctrl/in_ctrl.v SC_fb/HWA_opt.v SC_fb/HWA_1_opt.v VDC/VDC.v
-#SIMFILES = fb_matlab/fir.v 
+#SIMFILES = SC_fb/HWA_total.v in_Ctrl/in_ctrl.v SC_fb/HWA_opt.v SC_fb/HWA_1_opt.v VDC/VDC.v
+#SIMFILES = matlab_bc/bc_2.v 
+#SIMFILES = matlab_bc/fir4/casfilt_stage1.v matlab_bc/fir4/casfilt_stage2.v matlab_bc/fir4/casfilt.v matlab_bc/fir4/casfilt_stage3.v matlab_bc/fir4/casfilt_stage4.v
+#SIMFILES = matlab_bc/fir3/casfilt_stage1.v matlab_bc/fir3/casfilt_stage2.v matlab_bc/fir3/casfilt.v matlab_bc/fir3/casfilt_stage3.v
+#SIMFILES = matlab_bc/fir2/casfilt_stage1.v matlab_bc/fir2/casfilt_stage2.v matlab_bc/fir2/casfilt.v
+#SIMFILES = matlab_bc/fir1.v
 #SIMFILES = BC_fb/BC_total.v BC_fb/BC_FIR.v BC_fb/BC_FIR_1.v in_Ctrl/in_ctrl.v
-		
-SYNFILES = synth/HWA_total.vg
+#SIMFILES = SC_fb/cemux_n12_q12_M149_d1_s0_g0.v
+#SIMFILES = matlab_bc/total.v matlab_bc/input_ctrl.v matlab_bc/bc_1.v matlab_bc/bc_2.v matlab_bc/bc_3.v matlab_bc/bc_4.v matlab_bc/bc_5.v matlab_bc/bc_6.v matlab_bc/bc_7.v matlab_bc/bc_8.v
+#SIMFILES = matlab_bc/total_cas.v matlab_bc/input_ctrl_cas.v matlab_bc/fir1.v matlab_bc/fir2/fir2.v matlab_bc/fir3/fir3.v matlab_bc/fir4/fir4.v
+SIMFILES = matlab_bc/fir3/total_scale.v matlab_bc/fir3/input_ctrl_2.v matlab_bc/fir3/input_ctrl.v matlab_bc/fir4/input_ctrl_4.v matlab_bc/fir3/mult_out.v matlab_bc/total_cas.v matlab_bc/fir1.v matlab_bc/fir2/fir2.v matlab_bc/fir3/fir3.v matlab_bc/fir4/fir4.v matlab_bc/input_ctrl_cas.v
+
+#SYNFILES = synth/HWA_total.vg
 #SYNFILES = synth/BC_total.vg
-#SYNFILES = fir.vg
+#SYNFILES = synth/bc_1.vg
+#SYNFILES = synth/bc_2.vg
+SYNFILES = synth/total_scale.vg
+#SYNFILES = synth/fir1.vg
+#SYNFILES = synth/filter.vg
 
 export CLOCK_NET_NAME = clock
 export RESET_NET_NAME = reset
@@ -111,9 +125,38 @@ synth/HWA_total.vg:      $(HEADERS) $(SIMFILES) synth/HWA_total_synth.tcl
 synth/BC_total.vg:      $(HEADERS) $(SIMFILES) synth/BC_total_synth.tcl
 	cd synth && dc_shell-t -f ./BC_total_synth.tcl | tee synth.out 
  
-fir.vg:      $(HEADERS) $(SIMFILES) fir_synth.tcl
-	dc_shell-t -f ./fir_synth.tcl | tee synth.out  
+synth/bc_1.vg:      $(HEADERS) $(SIMFILES) synth/bc_1_synth.tcl
+	cd synth && dc_shell-t -f ./bc_1_synth.tcl | tee synth.out 
 
+synth/bc_2.vg:      $(HEADERS) $(SIMFILES) synth/bc_2_synth.tcl
+	cd synth && dc_shell-t -f ./bc_2_synth.tcl | tee synth.out 
+
+synth/fir1.vg:      $(HEADERS) $(SIMFILES) synth/fir1.tcl
+	cd synth && dc_shell-t -f ./fir1.tcl | tee synth.out 
+
+synth/fir2.vg:      $(HEADERS) $(SIMFILES) synth/fir2.tcl
+	cd synth && dc_shell-t -f ./fir2.tcl | tee synth.out 
+
+synth/fir3.vg:      $(HEADERS) $(SIMFILES) synth/fir3.tcl
+	cd synth && dc_shell-t -f ./fir3.tcl | tee synth.out 
+
+synth/fir4.vg:      $(HEADERS) $(SIMFILES) synth/fir4.tcl
+	cd synth && dc_shell-t -f ./fir4.tcl | tee synth.out 
+
+synth/filter.vg:	$(HEADERS) $(SIMFILES) synth/filter.tcl
+	cd synth && dc_shell-t -f ./filter.tcl | tee synth.out 
+
+synth/total.vg:		$(HEADERS) $(SIMFILES) synth/total.tcl
+	cd synth && dc_shell-t -f ./total.tcl | tee synth.out 
+
+synth/total_cas.vg: $(HEADERS) $(SIMFILES) synth/total_cas.tcl
+	cd synth && dc_shell-t -f ./total_cas.tcl | tee synth.out 
+
+synth/total_scale.vg: $(HEADERS) $(SIMFILES) synth/total_scale.tcl
+	cd synth && dc_shell-t -f ./total_scale.tcl | tee synth.out 
+
+synth/mult_out.vg: $(HEADERS) matlab_bc/fir3/mult_out.v synth/mult_out.tcl
+	cd synth && dc_shell-t -f ./mult_out.tcl | tee synth.out 
 #####
 # Should be no need to modify after here
 #####
