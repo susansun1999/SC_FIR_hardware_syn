@@ -2,22 +2,32 @@
 ****************************************
 check_design summary:
 Version:     O-2018.06
-Date:        Thu Feb 18 12:23:02 2021
+Date:        Wed Feb 24 14:09:10 2021
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                     16
-    Shorted outputs (LINT-31)                                      16
+Inputs/Outputs                                                     20
+    Shorted outputs (LINT-31)                                      20
 
-Cells                                                               4
-    Cells do not drive (LINT-1)                                     4
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+
+Nets                                                               76
+    Net type is unknown (LINT-38)                                  76
 --------------------------------------------------------------------------------
 
 Warning: In design 'total_scale', cell 'B_8' does not drive any nets. (LINT-1)
-Warning: In design 'total_scale', cell 'my_total_cas/my_input_ctrl_cas/B_2' does not drive any nets. (LINT-1)
-Warning: In design 'total_scale', cell 'my_mult_out/B_5' does not drive any nets. (LINT-1)
-Warning: In design 'total_scale', cell 'my_mult_out/B_4' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_total_cas/my_input_ctrl_cas/B_5' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_total_cas/my_input_ctrl_cas/B_4' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_mult_out/B_11' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_mult_out/B_10' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_mult_out/B_9' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', cell 'my_mult_out/B_8' does not drive any nets. (LINT-1)
+Warning: In design 'total_scale', output port 'filter_out[3][9]' is connected directly to output port 'filter_out[1][9]'. (LINT-31)
+Warning: In design 'total_scale', output port 'filter_out[3][9]' is connected directly to output port 'filter_out[2][9]'. (LINT-31)
+Warning: In design 'total_scale', output port 'filter_out[3][8]' is connected directly to output port 'filter_out[1][8]'. (LINT-31)
+Warning: In design 'total_scale', output port 'filter_out[3][8]' is connected directly to output port 'filter_out[2][8]'. (LINT-31)
 Warning: In design 'total_scale', output port 'filter_out[3][7]' is connected directly to output port 'filter_out[1][7]'. (LINT-31)
 Warning: In design 'total_scale', output port 'filter_out[3][7]' is connected directly to output port 'filter_out[2][7]'. (LINT-31)
 Warning: In design 'total_scale', output port 'filter_out[3][6]' is connected directly to output port 'filter_out[1][6]'. (LINT-31)
@@ -34,4 +44,80 @@ Warning: In design 'total_scale', output port 'filter_out[3][1]' is connected di
 Warning: In design 'total_scale', output port 'filter_out[3][1]' is connected directly to output port 'filter_out[2][1]'. (LINT-31)
 Warning: In design 'total_scale', output port 'filter_out[3][0]' is connected directly to output port 'filter_out[1][0]'. (LINT-31)
 Warning: In design 'total_scale', output port 'filter_out[3][0]' is connected directly to output port 'filter_out[2][0]'. (LINT-31)
+Warning: In design 'total_scale', net 'a14[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a14[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a13[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a12[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a11[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a10[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a9[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][0]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][1]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][2]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][3]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][4]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][5]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][6]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][7]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][8]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][9]' has multiple drivers (unknown wired-logic type). (LINT-38)
+Warning: In design 'total_scale', net 'a8[1][10]' has multiple drivers (unknown wired-logic type). (LINT-38)
 1

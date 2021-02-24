@@ -101,13 +101,14 @@ HEADERS =
 #SIMFILES = SC_fb/cemux_n12_q12_M149_d1_s0_g0.v
 #SIMFILES = matlab_bc/total.v matlab_bc/input_ctrl.v matlab_bc/bc_1.v matlab_bc/bc_2.v matlab_bc/bc_3.v matlab_bc/bc_4.v matlab_bc/bc_5.v matlab_bc/bc_6.v matlab_bc/bc_7.v matlab_bc/bc_8.v
 #SIMFILES = matlab_bc/total_cas.v matlab_bc/input_ctrl_cas.v matlab_bc/fir1.v matlab_bc/fir2/fir2.v matlab_bc/fir3/fir3.v matlab_bc/fir4/fir4.v
-SIMFILES = matlab_bc/fir3/total_scale.v matlab_bc/fir3/input_ctrl_2.v matlab_bc/fir3/input_ctrl.v matlab_bc/fir4/input_ctrl_4.v matlab_bc/fir3/mult_out.v matlab_bc/total_cas.v matlab_bc/fir1.v matlab_bc/fir2/fir2.v matlab_bc/fir3/fir3.v matlab_bc/fir4/fir4.v matlab_bc/input_ctrl_cas.v
+#SIMFILES = matlab_bc/fir3/total_scale.v matlab_bc/fir3/input_ctrl_2.v matlab_bc/fir3/input_ctrl.v matlab_bc/fir4/input_ctrl_4.v matlab_bc/fir3/mult_out.v matlab_bc/total_cas.v matlab_bc/fir1.v matlab_bc/fir2/fir2.v matlab_bc/fir3/fir3.v matlab_bc/fir4/fir4.v matlab_bc/input_ctrl_cas.v
+SIMFILES = new_matlab_bc/total_scale.v new_matlab_bc/input_ctrl_2.v new_matlab_bc/input_ctrl.v new_matlab_bc/input_ctrl_4.v new_matlab_bc/mult_out.v new_matlab_bc/total_cas.v new_matlab_bc/fir1.v new_matlab_bc/fir2/fir2.v new_matlab_bc/fir3/fir3.v new_matlab_bc/fir4/fir4.v new_matlab_bc/input_ctrl_cas.v
 
 #SYNFILES = synth/HWA_total.vg
 #SYNFILES = synth/BC_total.vg
 #SYNFILES = synth/bc_1.vg
 #SYNFILES = synth/bc_2.vg
-SYNFILES = synth/total_scale.vg
+SYNFILES = synth/total_scale_new.vg
 #SYNFILES = synth/fir1.vg
 #SYNFILES = synth/filter.vg
 
@@ -154,6 +155,9 @@ synth/total_cas.vg: $(HEADERS) $(SIMFILES) synth/total_cas.tcl
 
 synth/total_scale.vg: $(HEADERS) $(SIMFILES) synth/total_scale.tcl
 	cd synth && dc_shell-t -f ./total_scale.tcl | tee synth.out 
+
+synth/total_scale_new.vg: $(HEADERS) $(SIMFILES) synth/total_scale_new.tcl
+	cd synth && dc_shell-t -f ./total_scale_new.tcl | tee synth.out 
 
 synth/mult_out.vg: $(HEADERS) matlab_bc/fir3/mult_out.v synth/mult_out.tcl
 	cd synth && dc_shell-t -f ./mult_out.tcl | tee synth.out 
